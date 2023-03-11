@@ -20,5 +20,4 @@ garnet_site_occupancy <- function(database) {
       dplyr::mutate(sum_f4=Si,
              sum_f6=Al+Ti+Cr+Fe3,
              sum_f8=Fe2+Mn+Mg+Ca)
-
   }
