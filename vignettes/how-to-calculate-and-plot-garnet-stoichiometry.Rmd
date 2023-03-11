@@ -19,6 +19,9 @@ knitr::opts_chunk$set(
 - install package devtools to download both ztR (for garnet steichieometry) and ggarnet to plot the garnet end-members in ternary diagram from github directly.
 ```{r setup}
 
+devtools::install_github("gabertol/ztR")
+devtools::install_github("gabertol/ggarnet")
+
 library(tidyverse)
 library(ztR)
 library(ggarnet)
@@ -29,26 +32,25 @@ library(ggarnet)
 #2. Importing
 - Import a table from .csv or excel with garnet mineral chemistry data, or use the benchmark dataframe provided by benchmark_garnet1() function
 ```{r}
-
 # Use dataset provided
 Gnt_1<-garnet_benchmark_01()
 
 # Or import your dataset
 library(readxl) # Import package readxl to import direct from excel
 
-your_data<-read.csv("file-location.csv")
-your_data<-readxl::readexcel("file-location.xlsx")
+#your_data<-read.csv("file-location.csv")
+#your_data<-readxl::readexcel("file-location.xlsx")
 
 ```
 
-#3. Steichiometry calculation
+#3. Stoichiometry calculation
 - 
 ```{r}
 #Atom units calculation
 garnet_atom_units(Gnt_1)
 
 #Site occupancy calculation
-garnet_atom_units(Gnt_1)) %>% 
+garnet_atom_units(Gnt_1) %>% 
   garnet_site_occupancy(.)
 
 # Fe2+Fe3 in uvarovite,andradite,Ca-Ti garnet
@@ -69,16 +71,20 @@ garnet_atom_units(Gnt_1) %>%  # convert the weight% chemistry data to atomic uni
 # Calculating all in a single dataframe
 
 BCH_01<-garnet_atom_units(Gnt_1) %>% 
-        site_ocupancy(.) %>% 
-        cbind(.,grt_endmember_fe3(.)) %>% 
-        cbind(.,grt_endmember_fe(.)) %>% 
-        cbind(.,grt_endmember_fe2(.)) 
+        garnet_site_occupancy(.) %>% 
+        cbind(.,garnet_endmember_fe3(.)) %>% 
+        cbind(.,garnet_endmember_fe(.)) %>% 
+        cbind(.,garnet_endmember_fe2(.)) 
 
 ```
 
 #4. Plot in garnet classification ternary diagram
 
 ```{r}
+ggarnet_fe_mn()+
+geom_point(data=BCH_01,aes(x=Fe2+Fe3+Mn,y=Ca,z=Mg))
 
+ggarnet_mn()+
+geom_point(data=BCH_01,aes(x=Mn,y=Ca,z=Mg))
 ```
 

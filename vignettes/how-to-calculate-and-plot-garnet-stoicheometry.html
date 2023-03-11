@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!-- saved from url=(0128)file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="generator" content="pandoc">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>how-to-calculate-and-plot-garnet-stoicheometry</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+<script type="text/javascript" src="./how-to-calculate-and-plot-garnet-stoicheometry_files/MathJax.js.download"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+
+
+
+
+<h1 class="title toc-ignore">how-to-calculate-and-plot-garnet-stoicheometry</h1>
+
+
+
+<p>#1. Libraries import</p>
+<ul>
+<li>install package devtools to download both ztR (for garnet
+steichieometry) and ggarnet to plot the garnet end-members in ternary
+diagram from github directly.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gabertol/ztR"</span>)</span>
+<span id="cb1-3"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Skipping install of 'ztR' from a github remote, the SHA1 (2182f08f) has not changed since last install.</span></span>
+<span id="cb1-4"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span>
+<span id="cb1-5"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-5" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gabertol/ggarnet"</span>)</span>
+<span id="cb1-6"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Skipping install of 'ggarnet' from a github remote, the SHA1 (db05020a) has not changed since last install.</span></span>
+<span id="cb1-7"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Use `force = TRUE` to force installation</span></span>
+<span id="cb1-8"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-10"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Attaching packages</span></span>
+<span id="cb1-11"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ───────────────────────────────────────</span></span>
+<span id="cb1-12"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; tidyverse 1.3.2 ──</span></span>
+<span id="cb1-13"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ ggplot2 3.3.6     ✔ purrr   0.3.4</span></span>
+<span id="cb1-14"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ tibble  3.1.7     ✔ dplyr   1.0.9</span></span>
+<span id="cb1-15"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ tidyr   1.2.0     ✔ stringr 1.4.0</span></span>
+<span id="cb1-16"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ readr   2.1.2     ✔ forcats 0.5.1</span></span>
+<span id="cb1-17"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span></span>
+<span id="cb1-18"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span id="cb1-19"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span id="cb1-20"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ztR)</span>
+<span id="cb1-21"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggarnet)</span></code></pre></div>
+<p>#2. Importing - Import a table from .csv or excel with garnet mineral
+chemistry data, or use the benchmark dataframe provided by
+benchmark_garnet1() function</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use dataset provided</span></span>
+<span id="cb2-2"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Gnt_1<span class="ot">&lt;-</span><span class="fu">garnet_benchmark_01</span>()</span>
+<span id="cb2-3"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Or import your dataset</span></span>
+<span id="cb2-5"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co"># Import package readxl to import direct from excel</span></span>
+<span id="cb2-6"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#your_data&lt;-read.csv("file-location.csv")</span></span>
+<span id="cb2-8"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#your_data&lt;-readxl::readexcel("file-location.xlsx")</span></span></code></pre></div>
+<div id="stoichiometry-calculation" class="section level2">
+<h2>#3. Stoichiometry calculation</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Atom units calculation</span></span>
+<span id="cb3-2"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">garnet_atom_units</span>(Gnt_1)</span>
+<span id="cb3-3"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 9 × 25</span></span>
+<span id="cb3-4"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # Groups:   specimen [1]</span></span>
+<span id="cb3-5"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   specimen sample element value weight no_cations no_oxigens position mol_wt</span></span>
+<span id="cb3-6"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span id="cb3-7"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        1 ex1    Si      37.4    28.1          1          2        4   60.1</span></span>
+<span id="cb3-8"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2        1 ex1    Ti       0.28   47.9          1          2        4   79.9</span></span>
+<span id="cb3-9"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3        1 ex1    Al      10.1    27.0          2          3        3  102. </span></span>
+<span id="cb3-10"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4        1 ex1    Cr       0      52.0          2          3        3  152. </span></span>
+<span id="cb3-11"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5        1 ex1    Fe3      0      55.8          2          3        3  160. </span></span>
+<span id="cb3-12"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6        1 ex1    Fe2     19.4    55.8          1          1        2   71.8</span></span>
+<span id="cb3-13"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7        1 ex1    Mn       0.14   54.9          1          1        2   70.9</span></span>
+<span id="cb3-14"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8        1 ex1    Mg       1.55   24.3          1          1        2   40.3</span></span>
+<span id="cb3-15"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9        1 ex1    Ca      29.6    40.1          1          1        2   56.1</span></span>
+<span id="cb3-16"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 16 more variables: r_ox_cat &lt;dbl&gt;, mole_cations &lt;dbl&gt;,</span></span>
+<span id="cb3-17"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   mole_oxigens &lt;dbl&gt;, sum_MO &lt;dbl&gt;, sum_MC &lt;dbl&gt;, norm_cations &lt;dbl&gt;,</span></span>
+<span id="cb3-18"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   norm_oxygen &lt;dbl&gt;, sum_charges &lt;dbl&gt;, charge_norm_cations &lt;dbl&gt;,</span></span>
+<span id="cb3-19"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   charge_diff &lt;dbl&gt;, atom_units_FE3 &lt;dbl&gt;, atom_units &lt;dbl&gt;,</span></span>
+<span id="cb3-20"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   normalized_oxygen_FE3 &lt;dbl&gt;, normalized_oxygen &lt;dbl&gt;, sum_AU &lt;dbl&gt;,</span></span>
+<span id="cb3-21"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   sum_NO &lt;dbl&gt;</span></span>
+<span id="cb3-22"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#Site occupancy calculation</span></span>
+<span id="cb3-24"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">garnet_atom_units</span>(Gnt_1) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-25"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">garnet_site_occupancy</span>(.)</span>
+<span id="cb3-26"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 14</span></span>
+<span id="cb3-27"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # Groups:   specimen [1]</span></span>
+<span id="cb3-28"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   specimen sample    Si     Ti    Al    Cr   Fe3   Fe2      Mn    Mg    Ca</span></span>
+<span id="cb3-29"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb3-30"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        1 ex1     3.00 0.0169 0.952     0  1.02 0.274 0.00950 0.185  2.54</span></span>
+<span id="cb3-31"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 3 more variables: sum_f4 &lt;dbl&gt;, sum_f6 &lt;dbl&gt;, sum_f8 &lt;dbl&gt;</span></span>
+<span id="cb3-32"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Fe2+Fe3 in uvarovite,andradite,Ca-Ti garnet</span></span>
+<span id="cb3-34"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="fu">garnet_atom_units</span>(Gnt_1) <span class="sc">%&gt;%</span>  <span class="co"># convert the weight% chemistry data to atomic units</span></span>
+<span id="cb3-35"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="fu">garnet_site_occupancy</span>(.) <span class="sc">%&gt;%</span>  <span class="co"># define site occupancy per element</span></span>
+<span id="cb3-36"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-36" aria-hidden="true" tabindex="-1"></a>        <span class="fu">garnet_endmember_fe3</span>(.)  <span class="co"># calculate garnet end-member based on Fe3 content resulting uvarovite,andradite,Ca-Ti garnet </span></span>
+<span id="cb3-37"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Adding missing grouping variables: `specimen`</span></span>
+<span id="cb3-38"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 9</span></span>
+<span id="cb3-39"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # Groups:   specimen [1]</span></span>
+<span id="cb3-40"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   specimen almandine_fe3 pyrope_fe3 grossular_fe3 spessartine_fe3 uvarovite_fe3</span></span>
+<span id="cb3-41"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;           &lt;dbl&gt;         &lt;dbl&gt;</span></span>
+<span id="cb3-42"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        1          9.11       6.15             0           0.315             0</span></span>
+<span id="cb3-43"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 3 more variables: andradite_fe3 &lt;dbl&gt;, ca_ti_garnet__fe3 &lt;dbl&gt;,</span></span>
+<span id="cb3-44"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   sum_fe3 &lt;dbl&gt;</span></span>
+<span id="cb3-45"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="co">#  Fe2+Fe3 in grossularia, pyrope, almandine, and spessartine</span></span>
+<span id="cb3-47"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="fu">garnet_atom_units</span>(Gnt_1) <span class="sc">%&gt;%</span>  <span class="co"># convert the weight% chemistry data to atomic units</span></span>
+<span id="cb3-48"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-48" aria-hidden="true" tabindex="-1"></a>        <span class="fu">garnet_site_occupancy</span>(.) <span class="sc">%&gt;%</span>  <span class="co"># define site occupancy per element</span></span>
+<span id="cb3-49"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-49" aria-hidden="true" tabindex="-1"></a>        <span class="fu">garnet_endmember_fe2</span>(.)  <span class="co"># calculate garnet endmembers proportion using the Fe3 and Fe2 for grossularia, pyrope, almandine, and spessartine- without the presence of spessartine, uvarovite, andradite and Ca-Ti garnets</span></span>
+<span id="cb3-50"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Adding missing grouping variables: `specimen`</span></span>
+<span id="cb3-51"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 9</span></span>
+<span id="cb3-52"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # Groups:   specimen [1]</span></span>
+<span id="cb3-53"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   specimen almandine_fe2 pyrope_fe2 grossular_fe2 spessartine_fe2 uvarovite_fe2</span></span>
+<span id="cb3-54"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;           &lt;dbl&gt;         &lt;dbl&gt;</span></span>
+<span id="cb3-55"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        1          9.11       6.15          84.4           0.315             0</span></span>
+<span id="cb3-56"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 3 more variables: andradite_fe2 &lt;dbl&gt;, ca_ti_garnet__fe2 &lt;dbl&gt;,</span></span>
+<span id="cb3-57"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   sum_fe2 &lt;dbl&gt;</span></span>
+<span id="cb3-58"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co">#  Fe2+Fe3 in grossularia, pyrope, almandine, and spessartine</span></span>
+<span id="cb3-60"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="fu">garnet_atom_units</span>(Gnt_1) <span class="sc">%&gt;%</span>  <span class="co"># convert the weight% chemistry data to atomic units</span></span>
+<span id="cb3-61"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-61" aria-hidden="true" tabindex="-1"></a>        <span class="fu">garnet_site_occupancy</span>(.) <span class="sc">%&gt;%</span>  <span class="co"># define site occupancy per element</span></span>
+<span id="cb3-62"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-62" aria-hidden="true" tabindex="-1"></a>        <span class="fu">garnet_endmember_fe</span>(.)  <span class="co"># calculate garnet endmembers proportion using the Fe3 and Fe2 for grossularia, pyrope, almandine, and spessartine - without the presence of spessartine, uvarovite, andradite and Ca-Ti garnets</span></span>
+<span id="cb3-63"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Adding missing grouping variables: `specimen`</span></span>
+<span id="cb3-64"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 9</span></span>
+<span id="cb3-65"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # Groups:   specimen [1]</span></span>
+<span id="cb3-66"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   specimen almandine_fe pyrope_fe grossular_fe spessartine_fe uvarovite_fe</span></span>
+<span id="cb3-67"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;</span></span>
+<span id="cb3-68"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        1         32.1      4.59         63.0          0.235            0</span></span>
+<span id="cb3-69"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 3 more variables: andradite_fe &lt;dbl&gt;, ca_ti_garnet__fe &lt;dbl&gt;,</span></span>
+<span id="cb3-70"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   sum_fe &lt;dbl&gt;</span></span>
+<span id="cb3-71"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-72"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating all in a single dataframe</span></span>
+<span id="cb3-73"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-74"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-74" aria-hidden="true" tabindex="-1"></a>BCH_01<span class="ot">&lt;-</span><span class="fu">garnet_atom_units</span>(Gnt_1) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-75"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-75" aria-hidden="true" tabindex="-1"></a>        <span class="fu">garnet_site_occupancy</span>(.) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-76"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-76" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cbind</span>(.,<span class="fu">garnet_endmember_fe3</span>(.)) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-77"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-77" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cbind</span>(.,<span class="fu">garnet_endmember_fe</span>(.)) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-78"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-78" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cbind</span>(.,<span class="fu">garnet_endmember_fe2</span>(.)) </span>
+<span id="cb3-79"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Adding missing grouping variables: `specimen`</span></span>
+<span id="cb3-80"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; New names:</span></span></code></pre></div>
+<p>#4. Plot in garnet classification ternary diagram</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarnet_fe_mn</span>()<span class="sc">+</span></span>
+<span id="cb4-2"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">data=</span>BCH_01,<span class="fu">aes</span>(<span class="at">x=</span>Fe2<span class="sc">+</span>Fe3<span class="sc">+</span>Mn,<span class="at">y=</span>Ca,<span class="at">z=</span>Mg))</span>
+<span id="cb4-3"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Registered S3 methods overwritten by 'ggtern':</span></span>
+<span id="cb4-4"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   method           from   </span></span>
+<span id="cb4-5"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   grid.draw.ggplot ggplot2</span></span>
+<span id="cb4-6"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   plot.ggplot      ggplot2</span></span>
+<span id="cb4-7"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   print.ggplot     ggplot2</span></span>
+<span id="cb4-8"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: Ignoring unknown aesthetics: z</span></span>
+<span id="cb4-9"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ignoring unknown aesthetics: z</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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"><!-- --></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarnet_mn</span>()<span class="sc">+</span></span>
+<span id="cb5-3"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">data=</span>BCH_01,<span class="fu">aes</span>(<span class="at">x=</span>Mn,<span class="at">y=</span>Ca,<span class="at">z=</span>Mg))</span>
+<span id="cb5-4"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: Ignoring unknown aesthetics: z</span></span>
+<span id="cb5-5"><a href="file:///C:/Users/gaber/AppData/Local/Temp/RtmpEnpZ1m/preview-2478bef2209.dir/how-to-calculate-and-plot-garnet-stoichiometry.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Ignoring unknown aesthetics: z</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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"><!-- --></p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+
+</body></html>
