@@ -6,11 +6,10 @@
 #' @export
 #'
 #' @examples
-#'
 #' garnet_atom_units(garnet_benchmark_01(),garnet_EW()) |>
 #' garnet_site_occupancy(.)
-#'
-garnet_site_occupancy <- function(variables) {
+
+garnet_site_occupancy<-function(database) {
   database|>
     dplyr::select(specimen,sample,element,atom_units)  |>
     dplyr::group_by(specimen)  |>
