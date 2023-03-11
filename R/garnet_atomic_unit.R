@@ -7,18 +7,21 @@
 #' @export
 #'
 #' @examples
-#' garnet_atom_units(garnet_benchmark_01(),garnet_EW())
+#' A<-garnet_benchmark_01()
+#' garnet_atom_units(A)
 #'
-garnet_atom_units <- function(database,weights=ztR::EW_garnet()) {
+garnet_atom_units <- function(database,weights=garnet_EW()) {
 
-  database |>
-    dplyr::mutate(Fe2O3=0) |>
-    dplyr::select(everything(),SiO2,TiO2,Al2O3,Cr2O3,Fe2O3,FeO=Fe,MnO,MgO,CaO) |>
-    tidyr::pivot_longer(cols=SiO2:ncol(.),values_to="value",names_to="element") |>
-    dplyr::left_join(.,weights,by="element") |>
+  weigths<-weights
+
+ database %>%
+    dplyr::mutate(Fe2O3=0)  %>%
+    dplyr::select(everything(),SiO2,TiO2,Al2O3,Cr2O3,Fe2O3,FeO,MnO,MgO,CaO) %>%
+    tidyr::pivot_longer(cols=SiO2:ncol(.),values_to="value",names_to="element") %>%
+    dplyr::left_join(.,weights,by="element")  %>%
     dplyr::mutate(mole_cations=(value*no_cations)/mol_wt,
-                  mole_oxigens=(value*no_oxigens)/mol_wt) |>
-    dplyr::group_by(specimen) |>
+                  mole_oxigens=(value*no_oxigens)/mol_wt) %>%
+    dplyr::group_by(specimen) %>%
     dplyr::mutate(sum_MO=sum(mole_oxigens),        #Sum of anions
                   sum_MC=sum(mole_cations),        #Sum of cations
                   norm_cations=(8*mole_cations)/sum_MC,        #normalize cations to 8 cations
