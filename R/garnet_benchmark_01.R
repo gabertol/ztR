@@ -16,7 +16,7 @@ garnet_benchmark_01 <- function() {
                   1,"ex1","FeO",19.35,
                   1,"ex1","MnO",0.14,
                   1,"ex1","MgO",1.55,
-                  1,"ex1","CaO",29.63) |>
+                  1,"ex1","CaO",29.63) %>%
     tidyr::pivot_wider(names_from="element",
                        values_from="value")
 }

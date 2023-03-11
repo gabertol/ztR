@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-#' #' garnet_atom_units(garnet_benchmark_01()) %>%  # convert the weight% chemistry data to atomic units
+#' garnet_atom_units(garnet_benchmark_01()) %>%  # convert the weight% chemistry data to atomic units
 #' garnet_site_occupancy(.) %>%  # define site occupancy per element
 #' garnet_endmember_fe(.)
 garnet_endmember_fe<-function(database){

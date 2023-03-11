@@ -19,7 +19,7 @@ garnet_EW <- function() {
                   "MnO",54.938044,1,1,2,
                   "K2O",94.196,2,1,2,
                   "BaO",137.77,1,1,2,
-                  "Cr2O3",51.996,2,3,3) |>
+                  "Cr2O3",51.996,2,3,3)  %>%
     dplyr::mutate(mol_wt=(no_cations*weight)+(no_oxigens*15.9994),
                   r_ox_cat=no_oxigens/no_cations)
 }
