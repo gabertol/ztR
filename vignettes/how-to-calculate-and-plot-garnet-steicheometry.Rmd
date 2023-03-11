@@ -1,0 +1,84 @@
+---
+title: "how-to-calculate-and-plot-garnet-steicheometry"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{how-to-calculate-and-plot-garnet-steicheometry}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+#1. Libraries import
+
+- install package devtools to download both ztR (for garnet steichieometry) and ggarnet to plot the garnet end-members in ternary diagram from github directly.
+```{r setup}
+
+library(tidyverse)
+library(ztR)
+library(ggarnet)
+
+
+```
+
+#2. Importing
+- Import a table from .csv or excel with garnet mineral chemistry data, or use the benchmark dataframe provided by benchmark_garnet1() function
+```{r}
+
+# Use dataset provided
+Gnt_1<-garnet_benchmark_01()
+
+# Or import your dataset
+library(readxl) # Import package readxl to import direct from excel
+
+your_data<-read.csv("file-location.csv")
+your_data<-readxl::readexcel("file-location.xlsx")
+
+```
+
+#3. Steichiometry calculation
+- 
+```{r}
+#Atom units calculation
+garnet_atom_units(Gnt_1)
+
+#Site occupancy calculation
+garnet_atom_units(Gnt_1)) %>% 
+  garnet_site_occupancy(.)
+
+# Fe2+Fe3 in uvarovite,andradite,Ca-Ti garnet
+garnet_atom_units(Gnt_1) %>%  # convert the weight% chemistry data to atomic units
+        garnet_site_occupancy(.) %>%  # define site occupancy per element
+        garnet_endmember_fe3(.)  # calculate garnet end-member based on Fe3 content resulting uvarovite,andradite,Ca-Ti garnet 
+
+#  Fe2+Fe3 in grossularia, pyrope, almandine, and spessartine
+garnet_atom_units(Gnt_1) %>%  # convert the weight% chemistry data to atomic units
+        garnet_site_occupancy(.) %>%  # define site occupancy per element
+        garnet_endmember_fe2(.)  # calculate garnet endmembers proportion using the Fe3 and Fe2 for grossularia, pyrope, almandine, and spessartine- without the presence of spessartine, uvarovite, andradite and Ca-Ti garnets
+
+#  Fe2+Fe3 in grossularia, pyrope, almandine, and spessartine
+garnet_atom_units(Gnt_1) %>%  # convert the weight% chemistry data to atomic units
+        garnet_site_occupancy(.) %>%  # define site occupancy per element
+        garnet_endmember_fe(.)  # calculate garnet endmembers proportion using the Fe3 and Fe2 for grossularia, pyrope, almandine, and spessartine - without the presence of spessartine, uvarovite, andradite and Ca-Ti garnets
+
+# Calculating all in a single dataframe
+
+BCH_01<-garnet_atom_units(Gnt_1) %>% 
+        site_ocupancy(.) %>% 
+        cbind(.,grt_endmember_fe3(.)) %>% 
+        cbind(.,grt_endmember_fe(.)) %>% 
+        cbind(.,grt_endmember_fe2(.)) 
+
+```
+
+#4. Plot in garnet classification ternary diagram
+
+```{r}
+
+```
+
