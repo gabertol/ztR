@@ -1,18 +1,12 @@
 Package: ztR
-<<<<<<< HEAD
 Title: ztR
-=======
 Title: What the Package Does (One Line, Title Case)
->>>>>>> bf4bff2a15911abd68b4fa7fc3ef9873a286834d
 Version: 0.0.0.9000
 Authors@R: 
     person("Gabriel", "Bertolini", , "first.gabertol@gmailcom.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3873-6190"))
-<<<<<<< HEAD
 Description: ZIRCON-TOURMALINE-RUTILE (ZTR) Mineral end-members and crystal chemistry calculations for SEM-EDS, EMPA or any mineral chemistry dataset.
-=======
 Description: Mineral end-members and crystal chemistry calculations for SEM-EDS, EMPA or any mineral chemistry dataset.
->>>>>>> bf4bff2a15911abd68b4fa7fc3ef9873a286834d
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
