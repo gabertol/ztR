@@ -35,4 +35,4 @@ garnet_atom_units <- function(database,weights=ztR::EW_garnet()) {
                   element=c("Si","Ti","Al","Cr","Fe3","Fe2","Mn","Mg","Ca"))
 
 }
-}
+
