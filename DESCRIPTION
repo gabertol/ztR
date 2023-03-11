@@ -13,5 +13,8 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+<<<<<<< HEAD
 URL: https://github.com/gabertol/ztR
 BugReports: https://github.com/gabertol/ztR/issues
+=======
+>>>>>>> 03375c16773f7aa990945d7e57a42cc63691d1b6
