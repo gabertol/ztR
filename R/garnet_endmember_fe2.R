@@ -9,6 +9,7 @@
 #' #' garnet_atom_units(garnet_benchmark_01()) %>%  # convert the weight% chemistry data to atomic units
 #' garnet_site_occupancy(.) %>%  # define site occupancy per element
 #' garnet_endmember_fe2(.)
+
 garnet_endmember_fe2<-function(database){
   database %>%
     mutate(almandine_fe2=100*((Fe2)/(Fe2+Mn+Mg+Ca)),
@@ -20,3 +21,5 @@ garnet_endmember_fe2<-function(database){
            ca_ti_garnet__fe2=0,
            sum_fe2=almandine_fe2+pyrope_fe2+grossular_fe2+spessartine_fe2+uvarovite_fe2+andradite_fe2+ca_ti_garnet__fe2) %>%
     dplyr::select(almandine_fe2:sum_fe2)
+
+}

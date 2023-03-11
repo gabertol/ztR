@@ -10,6 +10,7 @@
 #' garnet_site_occupancy(.)
 
 garnet_site_occupancy<-function(database) {
+
   database %>%
     dplyr::select(specimen,sample,element,atom_units)  %>%
     dplyr::group_by(specimen)  %>%
@@ -19,5 +20,4 @@ garnet_site_occupancy<-function(database) {
                   sum_f6=Al+Ti+Cr+Fe3,
                   sum_f8=Fe2+Mn+Mg+Ca)
 }
-
 
