@@ -1,6 +1,6 @@
 #' garnet_endmember_fe3
 #'
-#' @param database a dataframe with element atomic units per crystallographic site or a dataframe from garnet_site_occupancy()
+#' @param function to calculate the proportion of garnet end-members using the calculated Fe+3 to calculate Almandine, Pyrope, spessartine, Cr-Ti garnet, andradite, uvarovite. Use it with you trust the chemistry closure - measuring volatiles as F- and have Cr or Ti garnets.
 #'
 #' @return a dataframe with garnet endmembers proportion using the Fe+3 for spessartine, uvarovite, andradite and Ca-Ti garnets, without the presence of grossularia
 #' @export
