@@ -3,8 +3,10 @@ title: "how-to-calculate-and-plot-garnet-stoicheometry"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{how-to-calculate-and-plot-garnet-stoicheometry}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
@@ -46,6 +48,9 @@ library(readxl) # Import package readxl to import direct from excel
 #3. Stoichiometry calculation
 - 
 ```{r}
+# Garnet atomic weights
+garnet_EW()
+
 #Atom units calculation
 garnet_atom_units(Gnt_1)
 
@@ -86,5 +91,25 @@ geom_point(data=BCH_01,aes(x=Fe2+Fe3+Mn,y=Ca,z=Mg))
 
 ggarnet_mn()+
 geom_point(data=BCH_01,aes(x=Mn,y=Ca,z=Mg))
+```
+
+# DHZ calculation
+```{r}
+
+# Tourmaline
+read.csv("./data/tourmaline_DHZ.csv") %>%   
+    chemical_formula(.,31,16)
+
+# Garnet
+ read.csv("./data/garnet_DHZ.csv") %>% 
+    chemical_formula(.,24,16) 
+  
+# Epidote 
+ read.csv("./data/epidote_DHZ.csv") %>% 
+    chemical_formula(.,c(12.5,13,12.5,12.5,12.5,13),8)  # vector with different qtty of oxigens
+  
+
+}
+
 ```
 
