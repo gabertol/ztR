@@ -20,9 +20,10 @@
 #' read.csv("./data/epidote_DHZ.csv") %>%
 #' chemical_formula(.,oxigens=c(12.5,13,12.5,12.5,12.5,13),8)
 #'
-chemical_formula<- function(dataframe,oxigens,cations,weight_location="./data/element_weights.csv") {
+chemical_formula<- function(dataframe,oxigens,cations,weight_location="/data/element_weights.csv") {
 
-  weight<-read.csv(weight_location) %>%
+    local<-paste(paste(find.package("ztR"),"./data/element_weights.csv",sep="")
+  weight<-read.csv(local) %>%
     dplyr::mutate(mol_wt=(no_cations*weight)+(no_oxigens*15.9994),
                   r_ox_cat=no_oxigens/no_cations,
                   r_cat_ox=no_cations/no_oxigens,
@@ -43,7 +44,9 @@ chemical_formula<- function(dataframe,oxigens,cations,weight_location="./data/el
     mutate(sum_an=sum(atom_prop_an_per_mol,na.rm = TRUE),
            fac_an=base_oxigen/sum_an,
            no_an_ox=atom_prop_an_per_mol*fac_an,
-           APFU=no_an_ox*r_cat_ox) %>%
+           APFU=no_an_ox*r_cat_ox,
+           APFU=ifelse(is.na(APFU),0,APFU)) %>%
     dplyr::select(specimen,mineral,element,APFU) %>%
     pivot_wider(values_from = APFU,names_from = element)
+
 }

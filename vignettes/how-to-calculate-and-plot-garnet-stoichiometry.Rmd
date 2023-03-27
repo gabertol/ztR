@@ -98,18 +98,42 @@ geom_point(data=BCH_01,aes(x=Mn,y=Ca,z=Mg))
 
 # Tourmaline
 read.csv("./data/tourmaline_DHZ.csv") %>%   
-    chemical_formula(.,31,16)
+    chemical_formula(.,31,16)->tur
 
 # Garnet
  read.csv("./data/garnet_DHZ.csv") %>% 
-    chemical_formula(.,24,16) 
+    chemical_formula(.,24,16) -> GT
   
 # Epidote 
  read.csv("./data/epidote_DHZ.csv") %>% 
     chemical_formula(.,c(12.5,13,12.5,12.5,12.5,13),8)  # vector with different qtty of oxigens
   
 
-}
 
 ```
 
+
+#4. Plot in garnet classification ternary diagram
+
+```{r}
+ggarnet_fe_mn()+
+geom_point(data=GT,aes(x=Fe2O3+FeO+MnO,z=CaO,y=MgO,shape=mineral),size=4.5,alpha=0.5)
+
+ggarnet_mn()+
+geom_point(data=GT,aes(x=Fe2O3+FeO+MnO,y=CaO,z=MgO))
+
+ggarnet_tourmaline()+
+  geom_point(data=tur,aes(x=Fe2O3+FeO,y=Al2O3,z=MgO,shape=mineral),size=4.5,alpha=0.5)
+  
+
+```
+
+# Crystallographic sites
+```{r}
+sites_tur<-tribble(~T,
+                   Z,
+                   Z,
+                   )
+```
+
+# End-member
