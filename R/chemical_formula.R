@@ -31,13 +31,14 @@ chemical_formula<- function(dataframe,oxigens,cations,weight_location="/data/ele
                   r_cat_an=weight/mol_wt,
                   r_an_cat=mol_wt/weight)
 
+elements_select<-unique(weight$element)
 
     dataframe %>%
     mutate(base_oxigen=oxigens,
            base_cation=cations,
            across(.col=SiO2:ncol(.),~replace(., is.na(.), 0)),
            H2O=ifelse("H2O_plus" %in% colnames(.),H2O_plus+H2O_minus,0)) %>%
-    dplyr::select(specimen,mineral,base_oxigen,base_cation,SiO2,everything(),-X,-H2O_plus,-H2O_minus) %>%
+    dplyr::select(specimen,sample,base_oxigen,base_cation,any_of(elements_select)) %>%
     tidyr::pivot_longer(cols=SiO2:ncol(.),values_to="value",names_to="element") %>%
     left_join(.,weight,by="element") %>%
     mutate( ox_mol_prop=value/mol_wt,
@@ -48,7 +49,7 @@ chemical_formula<- function(dataframe,oxigens,cations,weight_location="/data/ele
            fac_an=base_oxigen/sum_an,
            no_an_ox=atom_prop_an_per_mol*fac_an,
            APFU=no_an_ox*r_cat_ox) %>%
-    dplyr::select(specimen,mineral,element="pure",APFU) %>%
+    dplyr::select(specimen,sample,element="pure",APFU) %>%
     pivot_wider(values_from = APFU,names_from = element)
 
 }
