@@ -22,8 +22,9 @@
 #'
 chemical_formula<- function(dataframe,oxigens,cations,weight_location="/data/element_weights.csv") {
 
-    local<-paste(paste(find.package("ztR"),"./data/element_weights.csv",sep="")
-  weight<-read.csv(local) %>%
+  local<-paste(find.package("ztR"),weight_location,sep="")
+  local_logic<-ifelse(weight_location=="/data/element_weights.csv",local,weight_location)
+  weight<-read.csv(local_logic) %>%
     dplyr::mutate(mol_wt=(no_cations*weight)+(no_oxigens*15.9994),
                   r_ox_cat=no_oxigens/no_cations,
                   r_cat_ox=no_cations/no_oxigens,
@@ -33,20 +34,22 @@ chemical_formula<- function(dataframe,oxigens,cations,weight_location="/data/ele
 
     dataframe %>%
     mutate(base_oxigen=oxigens,
-           base_cation=cations) %>%
-    dplyr::select(specimen,mineral,base_oxigen,base_cation,SiO2,everything(),-X) %>%
+           base_cation=cations,
+           across(.col=SiO2:ncol(.),~replace(., is.na(.), 0)),
+           H2O=ifelse("H2O_plus" %in% colnames(.),H2O_plus+H2O_minus,0)) %>%
+    dplyr::select(specimen,mineral,base_oxigen,base_cation,SiO2,everything(),-X,-H2O_plus,-H2O_minus) %>%
     tidyr::pivot_longer(cols=SiO2:ncol(.),values_to="value",names_to="element") %>%
     left_join(.,weight,by="element") %>%
-    mutate(ox_mol_prop=value/mol_wt,
+    mutate( ox_mol_prop=value/mol_wt,
            atom_prop_an_per_mol=ox_mol_prop*no_oxigens,
            atom_prop_cat_per_mol=ox_mol_prop*no_cations) %>%
     group_by(specimen) %>%
     mutate(sum_an=sum(atom_prop_an_per_mol,na.rm = TRUE),
            fac_an=base_oxigen/sum_an,
            no_an_ox=atom_prop_an_per_mol*fac_an,
-           APFU=no_an_ox*r_cat_ox,
-           APFU=ifelse(is.na(APFU),0,APFU)) %>%
-    dplyr::select(specimen,mineral,element,APFU) %>%
+           APFU=no_an_ox*r_cat_ox) %>%
+    dplyr::select(specimen,mineral,element="pure",APFU) %>%
     pivot_wider(values_from = APFU,names_from = element)
 
 }
+

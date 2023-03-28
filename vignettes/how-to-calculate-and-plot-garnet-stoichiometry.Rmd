@@ -117,23 +117,72 @@ read.csv("./data/tourmaline_DHZ.csv") %>%
 
 ```{r}
 ggarnet_fe_mn()+
-geom_point(data=GT,aes(x=Fe2O3+FeO+MnO,z=CaO,y=MgO,shape=mineral),size=4.5,alpha=0.5)
+geom_point(data=GT,aes(x=Fe3+Fe+Mn,z=Ca,y=Mg,shape=mineral),size=4.5,alpha=0.5)
 
 ggarnet_mn()+
-geom_point(data=GT,aes(x=Fe2O3+FeO+MnO,y=CaO,z=MgO))
+geom_point(data=GT,aes(x=Fe3+Fe+Mn,y=Ca,z=Mg))
 
 ggarnet_tourmaline()+
-  geom_point(data=tur,aes(x=Fe2O3+FeO,y=Al2O3,z=MgO,shape=mineral),size=4.5,alpha=0.5)
+  geom_point(data=tur,aes(x=Fe3+Fe,y=Al,z=Mg,shape=mineral),size=4.5,alpha=0.5)
   
 
 ```
 
 # Crystallographic sites
 ```{r}
-sites_tur<-tribble(~T,
-                   Z,
-                   Z,
-                   )
+sites_epi<-tribble(~element,~prim_site,~sec_site,~total_site1,~total_site2,
+                   "Si",1,1,3,3,
+                   "Ti",2,2,3,3,
+                   "Al",2,1,3,3, 
+                   "Fe3",2,2,3,3, 
+                   "Mn3",2,2,3,3,
+                   "Y",3,3,2,2,  
+                   "Ce",3,3,2,2, 
+                   "La",3,3,2,2,  
+                   "Fe",3,3,2,2,   
+                   "Mn",3,3,2,2,  
+                   "Mg",3,3,2,2,  
+                   "Ca",3,3,2,2,  
+                   "Na",3,3,2,2,   
+                   "K",3,3,2,2,   
+                   "OH",4,4,1,1)
+
+sites_gar<-tribble(~element,~prim_site,~sec_site,~total_site1,~total_site2,~order_s1,~order_s2,
+        "Si",1,1,6,6,1,1, 
+        "Ti",2,2,4,4,NA,NA,
+        "Al",2,1,4,6,1,2,  
+        "Cr",2,2,4,4,NA,NA,  
+        "Fe3",2,2,4,4,NA,NA,
+        "Fe",3,3,6,6,NA,NA,  
+        "Mn",3,3,6,6,NA,NA, 
+        "Mg",3,3,6,6,NA,NA, 
+        "Ca",3,3,6,6,NA,NA) 
+
+
+
+sites_tur<-tribble(~element,~prim_site,~sec_site,~total_site1,~total_site2,~order_s1,~order_s2,
+   "Si","T","T",6,6,1,1,
+   "B","Z","T",6,6,1,3,
+   "Al","Z","T",6,6,2,2,
+   "Ti","Y","Y",3,3,NA,NA,
+   "Fe","Y","Y",3,3,NA,NA,
+   "Fe3","Z","Y",6,3,4,NA,
+   "Mg","Z","Y",6,3,2,2,
+   "Mn","Y","Y",3,3,NA,NA,
+   "Zn","Y","Y",3,3,NA,NA,
+   "Li","Y","Y",3,3,NA,NA,
+   "K","X","X",1,1,NA,NA,
+   "Ca","X","X",1,1,NA,NA,
+   "Sr","X","X",1,1,NA,NA,
+   "Na","X","X",1,1,NA,NA, 
+   "F","W","W",4,4,2,2,   
+   "OH","W","W",4,4,1,1,   
+  
+)
 ```
 
 # End-member
+```{r}
+garnet
+```
+
