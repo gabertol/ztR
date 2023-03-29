@@ -24,6 +24,7 @@ chemical_formula<- function(dataframe,oxigens,cations,weight_location="/data/ele
 
   local<-paste(find.package("ztR"),weight_location,sep="")
   local_logic<-ifelse(weight_location=="/data/element_weights.csv",local,weight_location)
+
   weight<-read.csv(local_logic) %>%
     dplyr::mutate(mol_wt=(no_cations*weight)+(no_oxigens*15.9994),
                   r_ox_cat=no_oxigens/no_cations,
@@ -32,13 +33,14 @@ chemical_formula<- function(dataframe,oxigens,cations,weight_location="/data/ele
                   r_an_cat=mol_wt/weight)
 
 elements_select<-unique(weight$element)
+elements_remove<-c("H2O_plus","H2O_minus")
 
     dataframe %>%
     mutate(base_oxigen=oxigens,
            base_cation=cations,
            across(.col=SiO2:ncol(.),~replace(., is.na(.), 0)),
            H2O=ifelse("H2O_plus" %in% colnames(.),H2O_plus+H2O_minus,0)) %>%
-    dplyr::select(specimen,sample,base_oxigen,base_cation,any_of(elements_select)) %>%
+    dplyr::select(specimen,sample,base_oxigen,base_cation,any_of(elements_select),-any_of(elements_remove)) %>%
     tidyr::pivot_longer(cols=SiO2:ncol(.),values_to="value",names_to="element") %>%
     left_join(.,weight,by="element") %>%
     mutate( ox_mol_prop=value/mol_wt,

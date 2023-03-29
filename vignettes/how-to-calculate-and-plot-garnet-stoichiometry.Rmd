@@ -31,81 +31,22 @@ library(ggarnet)
 
 ```
 
-#2. Importing
-- Import a table from .csv or excel with garnet mineral chemistry data, or use the benchmark dataframe provided by benchmark_garnet1() function
-```{r}
-# Use dataset provided
-Gnt_1<-garnet_benchmark_01()
-
-# Or import your dataset
-library(readxl) # Import package readxl to import direct from excel
-
-#your_data<-read.csv("file-location.csv")
-#your_data<-readxl::readexcel("file-location.xlsx")
-
-```
-
-#3. Stoichiometry calculation
-- 
-```{r}
-# Garnet atomic weights
-garnet_EW()
-
-#Atom units calculation
-garnet_atom_units(Gnt_1)
-
-#Site occupancy calculation
-garnet_atom_units(Gnt_1) %>% 
-  garnet_site_occupancy(.)
-
-# Fe2+Fe3 in uvarovite,andradite,Ca-Ti garnet
-garnet_atom_units(Gnt_1) %>%  # convert the weight% chemistry data to atomic units
-        garnet_site_occupancy(.) %>%  # define site occupancy per element
-        garnet_endmember_fe3(.)  # calculate garnet end-member based on Fe3 content resulting uvarovite,andradite,Ca-Ti garnet 
-
-#  Fe2+Fe3 in grossularia, pyrope, almandine, and spessartine
-garnet_atom_units(Gnt_1) %>%  # convert the weight% chemistry data to atomic units
-        garnet_site_occupancy(.) %>%  # define site occupancy per element
-        garnet_endmember_fe2(.)  # calculate garnet endmembers proportion using the Fe3 and Fe2 for grossularia, pyrope, almandine, and spessartine- without the presence of spessartine, uvarovite, andradite and Ca-Ti garnets
-
-#  Fe2+Fe3 in grossularia, pyrope, almandine, and spessartine
-garnet_atom_units(Gnt_1) %>%  # convert the weight% chemistry data to atomic units
-        garnet_site_occupancy(.) %>%  # define site occupancy per element
-        garnet_endmember_fe(.)  # calculate garnet endmembers proportion using the Fe3 and Fe2 for grossularia, pyrope, almandine, and spessartine - without the presence of spessartine, uvarovite, andradite and Ca-Ti garnets
-
-# Calculating all in a single dataframe
-
-BCH_01<-garnet_atom_units(Gnt_1) %>% 
-        garnet_site_occupancy(.) %>% 
-        cbind(.,garnet_endmember_fe3(.)) %>% 
-        cbind(.,garnet_endmember_fe(.)) %>% 
-        cbind(.,garnet_endmember_fe2(.)) 
-
-```
-
-#4. Plot in garnet classification ternary diagram
-
-```{r}
-ggarnet_fe_mn()+
-geom_point(data=BCH_01,aes(x=Fe2+Fe3+Mn,y=Ca,z=Mg))
-
-ggarnet_mn()+
-geom_point(data=BCH_01,aes(x=Mn,y=Ca,z=Mg))
-```
-
 # DHZ calculation
 ```{r}
 
 # Tourmaline
-read.csv("./data/tourmaline_DHZ.csv") %>%   
-    chemical_formula(.,31,16)->tur
+read.csv("./data/tourmaline_DHZ.csv") %>% 
+  dplyr::select(specimen,sample=mineral,everything(),-X) %>% 
+  chemical_formula(.,31,16)->tur
 
 # Garnet
  read.csv("./data/garnet_DHZ.csv") %>% 
+  dplyr::select(specimen,sample=mineral,everything(),-X) %>% 
     chemical_formula(.,24,16) -> GT
   
 # Epidote 
  read.csv("./data/epidote_DHZ.csv") %>% 
+  dplyr::select(specimen,sample=mineral,everything(),-X) %>% 
     chemical_formula(.,c(12.5,13,12.5,12.5,12.5,13),8)  # vector with different qtty of oxigens
   
 
@@ -117,14 +58,16 @@ read.csv("./data/tourmaline_DHZ.csv") %>%
 
 ```{r}
 ggarnet_fe_mn()+
-geom_point(data=GT,aes(x=Fe3+Fe+Mn,z=Ca,y=Mg,shape=mineral),size=4.5,alpha=0.5)
+geom_point(data=GT,aes(x=Fe3+Fe+Mn,z=Ca,y=Mg,shape=sample),size=4.5,alpha=0.5)
 
 ggarnet_mn()+
-geom_point(data=GT,aes(x=Fe3+Fe+Mn,y=Ca,z=Mg))
+geom_point(data=GT,aes(x=Fe3+Fe+Mn,y=Ca,z=Mg,,shape=sample),size=4.5,alpha=0.5)
 
 ggarnet_tourmaline()+
-  geom_point(data=tur,aes(x=Fe3+Fe,y=Al,z=Mg,shape=mineral),size=4.5,alpha=0.5)
+  geom_point(data=tur,aes(x=Fe3+Fe,y=Al,z=Mg,shape=sample),size=4.5,alpha=0.5)
   
+ggtern()+
+  geom_point(data=tur,aes(x=Fe3+Fe,y=Al,z=Mg,shape=sample),size=4.5,alpha=0.5)
 
 ```
 
