@@ -27,11 +27,12 @@ devtools::install_github("gabertol/ggarnet")
 library(tidyverse)
 library(ztR)
 library(ggarnet)
+library(ggtern)
 
 
 ```
 
-# DHZ calculation
+#2. DHZ calculation
 ```{r}
 
 # Tourmaline
@@ -54,7 +55,7 @@ read.csv("./data/tourmaline_DHZ.csv") %>%
 ```
 
 
-#4. Plot in garnet classification ternary diagram
+3. Plot in garnet classification ternary diagram
 
 ```{r}
 ggarnet_fe_mn()+
@@ -67,7 +68,7 @@ ggarnet_tourmaline()+
   geom_point(data=tur,aes(x=Fe3+Fe,y=Al,z=Mg,shape=sample),size=4.5,alpha=0.5)
   
 ggtern()+
-  geom_point(data=tur,aes(x=Fe3+Fe,y=Al,z=Mg,shape=sample),size=4.5,alpha=0.5)
+  geom_point(data=tur,aes(x=Fe3+Fe,y=Ca,z=Mg,shape=sample),size=4.5,alpha=0.5)
 
 ```
 
