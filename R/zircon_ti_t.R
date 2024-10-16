@@ -8,7 +8,7 @@
 #'
 #' @param pressure Pressure in giga Pascal.
 #' @param aSiO2 Activity fraction of SiO2 (default: 1).
-#' @param aTiO2 Molar fraction of TiO2 (default: 1).
+#' @param aTiO2 Activity fraction of TiO2 (default: 1).
 #' @param ti_ppm Concentration of titanium in parts per million.
 #' @param equation Equation to use for calculation: "crisp" or "watson" (default: "crisp").
 #'

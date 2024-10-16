@@ -21,8 +21,8 @@ knitr::opts_chunk$set(
 - install package devtools to download both ztR (for garnet steichieometry) and ggarnet to plot the garnet end-members in ternary diagram from github directly.
 ```{r setup}
 
-devtools::install_github("gabertol/ztR")
-devtools::install_github("gabertol/ggarnet")
+#devtools::install_github("gabertol/ztR")
+#devtools::install_github("gabertol/ggarnet")
 
 library(tidyverse)
 library(ztR)
@@ -38,17 +38,17 @@ library(ggtern)
 # Tourmaline
 read.csv("./data/tourmaline_DHZ.csv") %>% 
   dplyr::select(specimen,sample=mineral,everything(),-X) %>% 
-  chemical_formula(.,31,16)->tur
+   bind_cols(.,chemical_formula(.,31,16))->tur
 
 # Garnet
  read.csv("./data/garnet_DHZ.csv") %>% 
   dplyr::select(specimen,sample=mineral,everything(),-X) %>% 
-    chemical_formula(.,24,16) -> GT
+   bind_cols(.,chemical_formula(.,24,16)) -> GT
   
 # Epidote 
  read.csv("./data/epidote_DHZ.csv") %>% 
   dplyr::select(specimen,sample=mineral,everything(),-X) %>% 
-    chemical_formula(.,c(12.5,13,12.5,12.5,12.5,13),8)  # vector with different qtty of oxigens
+    bind_cols(.,chemical_formula(.,c(12.5,13,12.5,12.5,12.5,13),8))  # vector with different qtty of oxigens
   
 
 
@@ -125,9 +125,4 @@ sites_tur<-tribble(~element,~prim_site,~sec_site,~total_site1,~total_site2,~orde
 )
 ```
 
-# End-member
-```{r}
-garnet
-```
 
-# Adjuster

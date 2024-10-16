@@ -1,0 +1,80 @@
+---
+title: "zircon_geochemistry"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{zircon_geochemistry}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ztR)
+library(tidyverse)
+```
+
+```{r}
+A1<-read_csv("data/stds_zircon.csv")
+
+BD<-stds_zircon %>% 
+    mutate(spot=row_number(),by=sample) %>% 
+    rename_with(~ str_replace_all(., "_mean|_ppm", "") %>%
+                str_replace_all("_2se_int", "_2s"))
+
+
+
+
+```
+
+```{r}
+
+normalize <- function(BD, element_vector = al27:ta181, database = "mcdon_sun_1995.csv", element_plus_size = TRUE) {
+  
+  # Verificação básica do argumento BD
+  if (!is.data.frame(BD)) {
+    stop("BD argument must be a dataframe.")
+  }
+  
+
+  norm <- read.csv(system.file("extdata", database, package = "ztR")) 
+  
+
+  key_column <- if (element_plus_size) "element_2" else "element"
+  
+  # Pivotando BD para o formato longo
+  BD_long <- BD %>%
+    select({{ element_vector }}, -contains("_2s")) %>%
+    mutate(name = row_number()) %>%
+    pivot_longer(cols = -name, names_to = key_column, values_to = "value_BD")
+  
+  # Juntando BD_long com o banco de dados norm e realizando a normalização
+  BD_normalized <- BD_long %>%
+    left_join(norm, by = key_column) %>%
+    mutate(normalized_value = value_BD / value)
+
+  # Convertendo de volta para o formato largo e adicionando o sufixo "_N"
+  BD_normalized_wide <- BD_normalized %>%
+    select(name, !!sym(key_column), normalized_value) %>%
+    pivot_wider(names_from = !!sym(key_column), values_from = normalized_value, names_sep = "") %>%
+    rename_with(~ paste0(., "_N"), -name)  # Adiciona o sufixo "_N" às colunas, exceto "name"
+
+  # Removendo a coluna "name_N" e retornando o dataframe final
+  result <- BD %>%
+    bind_cols(BD_normalized_wide %>% select(-name))
+  
+  return(result)
+}
+
+
+normalize(BD)
+
+
+
+```
+
