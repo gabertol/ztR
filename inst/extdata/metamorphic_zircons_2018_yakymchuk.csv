@@ -1,0 +1,1358 @@
+sample,spot,u_ppm,th_ppm,th_u,group,terrane
+100726,8.1,453.0,257.0,0.6,Yilgarn,Archean Cratons
+112160,9.1,56.0,174.0,3.1,Rudall,Proterozoic Orogens
+187115,38.1,21.0,29.0,1.5,Musgraves,Proterozoic Orogens
+174588,6.1,77.0,70.0,0.9,Musgraves,Proterozoic Orogens
+182475,23.1,89.8,30.3,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+184307,13.1,132.0,353.0,2.8,Albany-Fraser Orogen,Proterozoic Orogens
+194381,11.1,268.2,446.2,1.7,Musgraves,Proterozoic Orogens
+100758,33.1,178.0,76.0,0.4,Yilgarn,Archean Cratons
+195826,28.3,3380.2,13.6,0.0,Capricon Orogen,Proterozoic Orogens
+194740,31.1,52.9,1.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,54.1,138.4,381.3,2.8,Musgraves,Proterozoic Orogens
+194725,34.1,52.4,0.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174737,8.2,31.0,78.0,2.6,Musgraves,Proterozoic Orogens
+194381,49.1,145.9,265.3,1.9,Musgraves,Proterozoic Orogens
+189540,22.1,36.8,96.5,2.7,Musgraves,Proterozoic Orogens
+189540,44.1,22.4,207.0,9.5,Musgraves,Proterozoic Orogens
+184307,22.2,71.0,112.0,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+182475,45.1,83.4,17.3,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194725,23.1,60.2,0.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174588,18.1,47.0,46.0,1.0,Musgraves,Proterozoic Orogens
+194740,29.1,91.8,3.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184312,29.1,29.0,54.0,1.9,Albany-Fraser Orogen,Proterozoic Orogens
+189540,43.1,13.0,256.9,20.5,Musgraves,Proterozoic Orogens
+182475,21.1,105.7,33.9,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194740,15.1,41.0,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184307,4.1,203.0,439.0,2.2,Albany-Fraser Orogen,Proterozoic Orogens
+194725,26.1,79.9,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,13.1,289.6,242.1,0.9,Musgraves,Proterozoic Orogens
+194381,68.1,255.8,222.8,0.9,Musgraves,Proterozoic Orogens
+195826,28.1,4179.4,22.1,0.0,Capricon Orogen,Proterozoic Orogens
+184307,10.1,121.0,294.0,2.5,Albany-Fraser Orogen,Proterozoic Orogens
+112134,17.1,1327.0,57.0,0.0,Leeuwin,Proterozoic Orogens
+189540,48.1,12.2,292.9,24.8,Musgraves,Proterozoic Orogens
+195826,4.8,3849.8,17.8,0.0,Capricon Orogen,Proterozoic Orogens
+194740,34.1,46.8,0.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,43.1,132.2,257.7,2.0,Musgraves,Proterozoic Orogens
+195826,4.7,4157.3,19.4,0.0,Capricon Orogen,Proterozoic Orogens
+194740,12.1,77.6,2.7,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+199422,40.1,31.9,0.8,0.0,Basins,Basins
+184307,9.1,101.0,231.0,2.4,Albany-Fraser Orogen,Proterozoic Orogens
+189540,16.2,17.0,197.4,12.0,Musgraves,Proterozoic Orogens
+195826,5.1,3709.9,17.2,0.0,Capricon Orogen,Proterozoic Orogens
+174588,10.2,61.0,56.0,1.0,Musgraves,Proterozoic Orogens
+184307,17.1,103.0,219.0,2.2,Albany-Fraser Orogen,Proterozoic Orogens
+184312,27.1,193.0,3.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,62.1,107.8,221.4,2.1,Musgraves,Proterozoic Orogens
+194725,31.1,38.7,0.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+195826,28.2,3824.1,16.7,0.0,Capricon Orogen,Proterozoic Orogens
+101348,8.1,1027.0,934.0,0.9,Yilgarn,Archean Cratons
+194740,17.1,80.1,1.8,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174588,15.1,50.0,53.0,1.1,Musgraves,Proterozoic Orogens
+187115,40.1,22.0,19.0,0.9,Musgraves,Proterozoic Orogens
+189540,23.1,23.5,130.0,5.7,Musgraves,Proterozoic Orogens
+194728,38.1,114.5,0.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194728,26.1,110.2,1.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182475,53.1,46.0,16.2,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+174737,12.1,41.0,87.0,2.2,Musgraves,Proterozoic Orogens
+195826,4.6,3093.0,15.8,0.0,Capricon Orogen,Proterozoic Orogens
+195826,27.1,3796.3,22.6,0.0,Capricon Orogen,Proterozoic Orogens
+194725,24.1,58.2,2.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+195826,4.2,2681.7,7.9,0.0,Capricon Orogen,Proterozoic Orogens
+182475,19.1,138.1,29.2,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+182203,23.1,151.5,363.2,2.5,Albany-Fraser Orogen,Proterozoic Orogens
+194725,14.2,84.9,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,46.1,219.2,281.2,1.3,Musgraves,Proterozoic Orogens
+194728,40.1,105.3,0.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,17.1,1884.4,143.3,0.1,Musgraves,Proterozoic Orogens
+174737,23.2,41.0,184.0,4.6,Musgraves,Proterozoic Orogens
+183492,4.1,283.0,281.0,1.0,Leeuwin,Proterozoic Orogens
+184312,33.1,100.0,96.0,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+112134,4.1,650.0,59.0,0.1,Leeuwin,Proterozoic Orogens
+112144A,17.1,109.0,75.0,0.7,Leeuwin,Proterozoic Orogens
+118914,12.1,1326.0,1008.0,0.8,Rudall,Proterozoic Orogens
+118937,10.1,79.0,116.0,1.5,Yilgarn,Archean Cratons
+118979,4.1,241.0,110.0,0.5,Pilbara,Archean Cratons
+142930,15.1,4543.0,64.0,0.0,Capricon Orogen,Proterozoic Orogens
+177910,15.2,95.0,14.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+98255,3.1,370.0,95.0,0.3,Yilgarn,Archean Cratons
+182203,18.1,95.4,131.5,1.4,Albany-Fraser Orogen,Proterozoic Orogens
+184312,1.1,39.0,166.0,4.4,Albany-Fraser Orogen,Proterozoic Orogens
+184312,14.1,55.0,209.0,3.9,Albany-Fraser Orogen,Proterozoic Orogens
+187115,1.2,12.0,15.0,1.3,Musgraves,Proterozoic Orogens
+194722,21.1,310.0,6.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194728,10.2,58.6,0.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+187174,13.1,2996.9,176.5,0.1,Musgraves,Proterozoic Orogens
+187195,11.1,3431.9,214.0,0.1,Musgraves,Proterozoic Orogens
+198532,13.1,508.0,10.4,0.0,Yilgarn,Archean Cratons
+182203,29.1,158.5,210.0,1.4,Albany-Fraser Orogen,Proterozoic Orogens
+174588,20.1,55.0,57.0,1.1,Musgraves,Proterozoic Orogens
+184307,21.1,119.0,199.0,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+194381,35.1,198.0,355.3,1.9,Musgraves,Proterozoic Orogens
+191706,15.1,93.5,43.9,0.5,Musgraves,Proterozoic Orogens
+198532,31.1,1202.8,7.4,0.0,Yilgarn,Archean Cratons
+194718,8.1,43.8,15.5,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+88410,21.1,145.0,106.0,0.7,Capricon Orogen,Proterozoic Orogens
+194802,15.1,2757.0,2193.5,0.8,Musgraves,Proterozoic Orogens
+194735,4.1,79.3,0.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194777,78.1,127.1,78.8,0.6,Basins,Basins
+184307,19.1,88.0,208.0,2.5,Albany-Fraser Orogen,Proterozoic Orogens
+194702,7.1,42.9,2.4,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+183466,16.1,2604.0,61.0,0.0,Musgraves,Proterozoic Orogens
+184128,13.1,7.0,0.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194707,16.1,75.5,0.7,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+185508,5.1,229.0,202.0,0.9,Musgraves,Proterozoic Orogens
+194381,55.1,259.3,212.6,0.8,Musgraves,Proterozoic Orogens
+194722,23.1,279.5,15.5,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194422,52.1,100.0,27.0,0.3,Musgraves,Proterozoic Orogens
+194422,34.2,128.0,16.0,0.1,Musgraves,Proterozoic Orogens
+183726,24.1,48.7,157.8,3.3,Musgraves,Proterozoic Orogens
+194381,28.1,530.3,420.3,0.8,Musgraves,Proterozoic Orogens
+194714,45.1,64.9,70.2,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+112117,5.2,95.0,144.0,1.5,Yilgarn,Archean Cratons
+112136,17.1,242.0,10.0,0.0,Leeuwin,Proterozoic Orogens
+112144A,10.1,337.0,174.0,0.5,Leeuwin,Proterozoic Orogens
+112160,9.2,59.0,253.0,4.3,Rudall,Proterozoic Orogens
+118947,8.1,338.0,305.0,0.9,Yilgarn,Archean Cratons
+142930,12.1,4295.0,64.0,0.0,Capricon Orogen,Proterozoic Orogens
+174588,5.1,58.0,61.0,1.1,Musgraves,Proterozoic Orogens
+184161,13.1,504.0,9.0,0.0,Capricon Orogen,Proterozoic Orogens
+198532,10.2,442.8,9.7,0.0,Yilgarn,Archean Cratons
+194381,12.1,393.7,136.6,0.4,Musgraves,Proterozoic Orogens
+194708,13.1,152.2,0.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194702,2.1,43.2,0.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194714,4.1,158.8,155.3,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+174558,2.1,123.0,61.0,0.5,Musgraves,Proterozoic Orogens
+174737,15.1,33.0,93.0,2.9,Musgraves,Proterozoic Orogens
+187115,22.1,22.0,33.0,1.6,Musgraves,Proterozoic Orogens
+189540,15.2,19.8,250.4,13.1,Musgraves,Proterozoic Orogens
+182475,1.1,82.0,7.5,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+187174,15.1,1980.7,102.8,0.1,Musgraves,Proterozoic Orogens
+194714,29.1,65.1,58.0,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+194777,29.1,44.5,39.0,0.9,Basins,Basins
+174737,24.2,41.0,137.0,3.5,Musgraves,Proterozoic Orogens
+194381,44.1,383.4,425.6,1.1,Musgraves,Proterozoic Orogens
+174558,8.2,153.0,64.0,0.4,Musgraves,Proterozoic Orogens
+184312,11.1,53.0,171.0,3.3,Albany-Fraser Orogen,Proterozoic Orogens
+194422,15.2,132.0,11.0,0.1,Musgraves,Proterozoic Orogens
+198532,9.2,604.3,9.2,0.0,Yilgarn,Archean Cratons
+174737,10.2,40.0,124.0,3.2,Musgraves,Proterozoic Orogens
+174737,22.2,26.0,80.0,3.2,Musgraves,Proterozoic Orogens
+194778,14.1,38.5,194.0,5.2,Albany-Fraser Orogen,Proterozoic Orogens
+194381,42.1,574.4,418.3,0.8,Musgraves,Proterozoic Orogens
+174748,15.1,230.0,357.0,1.6,Musgraves,Proterozoic Orogens
+185508,36.1,607.0,357.0,0.6,Musgraves,Proterozoic Orogens
+194381,16.1,258.0,198.5,0.8,Musgraves,Proterozoic Orogens
+182203,7.1,153.7,239.3,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+183466,6.1,2275.0,119.0,0.1,Musgraves,Proterozoic Orogens
+194381,14.1,157.6,340.9,2.2,Musgraves,Proterozoic Orogens
+182203,20.1,223.9,225.1,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+180867,46.1,130.4,426.8,3.4,Musgraves,Proterozoic Orogens
+194433,1.1,596.7,16.8,0.0,Musgraves,Proterozoic Orogens
+194381,64.1,246.1,135.9,0.6,Musgraves,Proterozoic Orogens
+183596,11.2,1093.0,48.0,0.1,Musgraves,Proterozoic Orogens
+192552,1.3,29.5,32.5,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+194722,17.1,194.9,5.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194433,4.1,307.0,124.9,0.4,Musgraves,Proterozoic Orogens
+174558,9.1,189.0,107.0,0.6,Musgraves,Proterozoic Orogens
+194422,41.1,106.0,22.0,0.2,Musgraves,Proterozoic Orogens
+194743,1.1,45.1,0.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+198532,14.1,753.0,8.8,0.0,Yilgarn,Archean Cratons
+182473,24.1,227.0,1.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194777,38.1,33.4,92.8,2.9,Basins,Basins
+182435,20.1,28.1,74.2,2.7,Albany-Fraser Orogen,Proterozoic Orogens
+194728,42.2,92.2,1.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182203,22.1,88.3,142.8,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+174588,9.1,86.0,67.0,0.8,Musgraves,Proterozoic Orogens
+185593,3.1,1578.0,418.0,0.3,Musgraves,Proterozoic Orogens
+194381,8.1,138.1,346.8,2.6,Musgraves,Proterozoic Orogens
+194740,8.1,70.9,2.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194714,34.1,150.2,192.6,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+180867,9.1,211.3,335.5,1.6,Musgraves,Proterozoic Orogens
+105001,6.1,1441.0,913.0,0.6,Yilgarn,Archean Cratons
+112177,5.1,157.0,106.0,0.7,Yilgarn,Archean Cratons
+142930,18.1,4486.0,69.0,0.0,Capricon Orogen,Proterozoic Orogens
+142985,3.1,381.0,219.0,0.6,Pilbara,Archean Cratons
+184161,23.1,532.0,45.0,0.1,Capricon Orogen,Proterozoic Orogens
+180867,12.1,245.0,263.2,1.1,Musgraves,Proterozoic Orogens
+194381,20.1,150.3,352.7,2.4,Musgraves,Proterozoic Orogens
+194722,6.1,164.1,15.5,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194379,2.1,1701.4,211.2,0.1,Musgraves,Proterozoic Orogens
+184307,24.1,125.0,320.0,2.7,Albany-Fraser Orogen,Proterozoic Orogens
+194422,43.2,72.0,24.0,0.3,Musgraves,Proterozoic Orogens
+194381,10.1,230.8,272.1,1.2,Musgraves,Proterozoic Orogens
+194722,5.2,53.7,1.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194778,56.1,59.7,70.6,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+185593,1.1,562.0,295.0,0.5,Musgraves,Proterozoic Orogens
+185593,32.1,578.0,276.0,0.5,Musgraves,Proterozoic Orogens
+194381,51.1,343.6,329.9,1.0,Musgraves,Proterozoic Orogens
+182435,7.1,23.5,54.4,2.4,Albany-Fraser Orogen,Proterozoic Orogens
+191751,3.1,3330.1,130.0,0.0,Musgraves,Proterozoic Orogens
+184312,22.1,115.0,268.0,2.4,Albany-Fraser Orogen,Proterozoic Orogens
+185593,6.2,1409.0,474.0,0.4,Musgraves,Proterozoic Orogens
+180867,16.2,158.5,337.2,2.2,Musgraves,Proterozoic Orogens
+194728,28.1,115.9,0.7,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,53.1,220.9,154.4,0.7,Musgraves,Proterozoic Orogens
+194742,9.1,82.6,1.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194722,29.1,225.6,17.9,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192523,11.2,61.8,54.2,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+183596,52.1,164.0,192.0,1.2,Musgraves,Proterozoic Orogens
+185606,10.2,3184.0,184.0,0.1,Musgraves,Proterozoic Orogens
+194422,28.2,153.0,45.0,0.3,Musgraves,Proterozoic Orogens
+180867,28.1,290.3,300.4,1.1,Musgraves,Proterozoic Orogens
+199422,33.1,32.4,0.1,0.0,Basins,Basins
+194393,20.1,99.0,260.0,2.7,Musgraves,Proterozoic Orogens
+174737,17.1,34.0,82.0,2.5,Musgraves,Proterozoic Orogens
+190651,31.1,515.4,1.3,0.0,Capricon Orogen,Proterozoic Orogens
+174588,19.1,100.0,66.0,0.7,Musgraves,Proterozoic Orogens
+183466,2.1,137.0,148.0,1.1,Musgraves,Proterozoic Orogens
+184128,26.1,673.0,85.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+182435,2.1,86.0,159.4,1.9,Albany-Fraser Orogen,Proterozoic Orogens
+189540,33.1,59.4,135.8,2.4,Musgraves,Proterozoic Orogens
+194381,19.1,254.7,143.0,0.6,Musgraves,Proterozoic Orogens
+191751,4.1,2573.9,468.1,0.2,Musgraves,Proterozoic Orogens
+198532,7.2,461.1,13.6,0.0,Yilgarn,Archean Cratons
+174558,6.1,134.0,57.0,0.4,Musgraves,Proterozoic Orogens
+182475,20.1,97.6,28.9,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+187289,32.1,897.3,138.3,0.2,Musgraves,Proterozoic Orogens
+182485,11.1,3658.9,320.2,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194705,13.1,5702.3,30082.0,5.5,Albany-Fraser Orogen,Proterozoic Orogens
+174558,14.2,156.0,64.0,0.4,Musgraves,Proterozoic Orogens
+185593,46.1,439.0,223.0,0.5,Musgraves,Proterozoic Orogens
+187109,32.1,1031.0,391.0,0.4,Musgraves,Proterozoic Orogens
+180867,48.1,197.9,242.8,1.3,Musgraves,Proterozoic Orogens
+195826,27.3,2565.3,17.8,0.0,Capricon Orogen,Proterozoic Orogens
+187195,7.1,2319.7,120.8,0.1,Musgraves,Proterozoic Orogens
+174558,25.1,108.0,56.0,0.5,Musgraves,Proterozoic Orogens
+174737,27.1,28.0,87.0,3.3,Musgraves,Proterozoic Orogens
+194422,12.1,133.0,29.0,0.2,Musgraves,Proterozoic Orogens
+194718,2.1,168.1,106.2,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+189540,32.1,15.2,233.9,15.9,Musgraves,Proterozoic Orogens
+194381,34.1,383.2,295.8,0.8,Musgraves,Proterozoic Orogens
+192531,9.1,134.8,192.4,1.5,Albany-Fraser Orogen,Proterozoic Orogens
+194802,17.1,2134.3,1097.0,0.5,Musgraves,Proterozoic Orogens
+180867,42.1,127.5,396.4,3.2,Musgraves,Proterozoic Orogens
+190651,27.1,319.5,1.1,0.0,Capricon Orogen,Proterozoic Orogens
+174748,2.1,235.0,226.0,1.0,Musgraves,Proterozoic Orogens
+183492,13.1,190.0,296.0,1.6,Musgraves,Proterozoic Orogens
+183596,41.1,603.0,382.0,0.7,Musgraves,Proterozoic Orogens
+98255,22.1,62.0,29.0,0.5,Yilgarn,Archean Cratons
+194722,16.1,277.3,37.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194718,1.1,139.3,66.6,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194784,9.1,283.3,18.8,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192532,12.1,26.8,21.3,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+182477,11.1,123.0,45.0,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+192524,20.1,57.5,161.1,2.9,Albany-Fraser Orogen,Proterozoic Orogens
+174748,21.1,431.0,246.0,0.6,Musgraves,Proterozoic Orogens
+183466,8.1,3244.0,187.0,0.1,Musgraves,Proterozoic Orogens
+184161,31.1,480.0,7.0,0.0,Capricon Orogen,Proterozoic Orogens
+184161,20.1,581.0,10.0,0.0,Capricon Orogen,Proterozoic Orogens
+182475,8.2,146.4,7.4,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+190651,15.2,410.4,4.4,0.0,Capricon Orogen,Proterozoic Orogens
+194767,6.1,699.2,12.2,0.0,Musgraves,Proterozoic Orogens
+194802,21.1,3350.4,126.4,0.0,Musgraves,Proterozoic Orogens
+187174,16.1,2304.9,296.0,0.1,Musgraves,Proterozoic Orogens
+185593,26.1,347.0,154.0,0.5,Musgraves,Proterozoic Orogens
+185593,9.1,385.0,236.0,0.6,Musgraves,Proterozoic Orogens
+194381,29.1,276.5,103.4,0.4,Musgraves,Proterozoic Orogens
+194802,10.1,2453.4,168.6,0.1,Musgraves,Proterozoic Orogens
+194381,1.1,280.1,168.2,0.6,Musgraves,Proterozoic Orogens
+192524,9.1,46.9,131.4,2.9,Albany-Fraser Orogen,Proterozoic Orogens
+182485,15.1,2089.7,301.8,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+174558,10.1,178.0,60.0,0.4,Musgraves,Proterozoic Orogens
+180057,38.1,108.0,44.0,0.4,Pilbara,Archean Cratons
+184307,3.1,195.0,400.0,2.1,Albany-Fraser Orogen,Proterozoic Orogens
+185593,35.1,386.0,172.0,0.5,Musgraves,Proterozoic Orogens
+185942,10.2,527.0,8.0,0.0,Capricon Orogen,Proterozoic Orogens
+194742,29.1,74.6,2.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194784,8.3,291.7,15.8,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192523,18.2,77.6,55.2,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+190651,8.2,450.6,6.0,0.0,Capricon Orogen,Proterozoic Orogens
+177908,15.1,377.0,87.0,0.2,Yilgarn,Archean Cratons
+177908,15.1,377.0,87.0,0.2,Yilgarn,Archean Cratons
+177910,20.2,238.0,30.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+180057,32.1,48.0,2.0,0.0,Pilbara,Archean Cratons
+184123,9.1,1184.0,21.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184160,10.1,365.0,13.0,0.0,Capricon Orogen,Proterozoic Orogens
+187109,33.1,1385.0,341.0,0.3,Musgraves,Proterozoic Orogens
+194381,60.1,232.0,379.5,1.7,Musgraves,Proterozoic Orogens
+194381,18.1,311.8,238.5,0.8,Musgraves,Proterozoic Orogens
+194740,24.1,132.3,1.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182435,12.1,35.3,63.9,1.9,Albany-Fraser Orogen,Proterozoic Orogens
+194767,20.1,1488.0,163.8,0.1,Musgraves,Proterozoic Orogens
+182203,12.1,224.2,246.2,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+191751,1.1,2462.1,433.1,0.2,Musgraves,Proterozoic Orogens
+195849,57.1,1993.6,24.9,0.0,Capricon Orogen,Proterozoic Orogens
+180057,2.1,28.0,16.0,0.6,Pilbara,Archean Cratons
+183587,8.1,203.0,165.0,0.8,Musgraves,Proterozoic Orogens
+183596,5.1,509.0,73.0,0.2,Musgraves,Proterozoic Orogens
+184161,36.1,569.0,8.0,0.0,Capricon Orogen,Proterozoic Orogens
+187403,54.2,1072.0,6.0,0.0,Capricon Orogen,Proterozoic Orogens
+194705,10.1,556.4,48.7,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192531,10.1,106.5,108.4,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+182203,31.1,84.0,142.0,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+190651,33.1,434.0,25.0,0.1,Capricon Orogen,Proterozoic Orogens
+192549,10.1,58.4,94.8,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+182203,6.1,124.5,159.2,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+194734,4.1,737.3,9.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174737,7.1,33.0,84.0,2.7,Musgraves,Proterozoic Orogens
+174748,16.2,669.0,293.0,0.5,Musgraves,Proterozoic Orogens
+174748,16.3,310.0,438.0,1.5,Musgraves,Proterozoic Orogens
+174748,1.2,223.0,356.0,1.7,Musgraves,Proterozoic Orogens
+183496,16.1,40.0,73.0,1.9,Musgraves,Proterozoic Orogens
+183596,43.1,242.0,219.0,0.9,Musgraves,Proterozoic Orogens
+184123,15.1,1504.0,11.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184161,40.1,530.0,9.0,0.0,Capricon Orogen,Proterozoic Orogens
+187109,38.1,1763.0,491.0,0.3,Musgraves,Proterozoic Orogens
+194718,13.1,196.1,123.2,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+195849,38.2,1806.0,2.6,0.0,Capricon Orogen,Proterozoic Orogens
+182203,14.1,106.9,196.0,1.9,Albany-Fraser Orogen,Proterozoic Orogens
+194734,20.1,672.0,7.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192549,9.1,57.5,67.5,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+184307,5.1,99.0,236.0,2.5,Albany-Fraser Orogen,Proterozoic Orogens
+194705,14.1,4403.4,88518.4,20.8,Albany-Fraser Orogen,Proterozoic Orogens
+198532,12.1,574.7,10.5,0.0,Yilgarn,Archean Cratons
+192549,7.1,59.7,74.6,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+191751,8.1,2546.3,469.7,0.2,Musgraves,Proterozoic Orogens
+194709,19.1,506.3,282.6,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+194802,13.1,2745.8,150.9,0.1,Musgraves,Proterozoic Orogens
+194708,7.1,190.8,1.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182477,2.1,5877.6,399.5,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+174748,23.1,728.0,314.0,0.5,Musgraves,Proterozoic Orogens
+177910,18.2,286.0,23.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+183492,15.1,282.0,525.0,1.9,Musgraves,Proterozoic Orogens
+183492,31.1,615.0,134.0,0.2,Musgraves,Proterozoic Orogens
+183596,55.1,244.0,153.0,0.7,Musgraves,Proterozoic Orogens
+187403,32.1,1329.0,5.0,0.0,Capricon Orogen,Proterozoic Orogens
+194722,25.1,267.6,14.2,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194740,19.1,82.2,1.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192531,13.1,157.4,96.0,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+183726,6.1,84.1,279.3,3.4,Musgraves,Proterozoic Orogens
+194784,12.1,304.4,20.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+195849,24.2,1800.9,25.9,0.0,Capricon Orogen,Proterozoic Orogens
+194433,2.1,362.0,177.9,0.5,Musgraves,Proterozoic Orogens
+194433,14.1,1103.0,129.6,0.1,Musgraves,Proterozoic Orogens
+198532,4.2,513.7,11.3,0.0,Yilgarn,Archean Cratons
+192549,12.1,58.5,91.8,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+174558,20.2,212.0,154.0,0.8,Musgraves,Proterozoic Orogens
+184125,26.1,2524.0,128.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+185508,40.1,582.0,203.0,0.4,Musgraves,Proterozoic Orogens
+194422,27.2,109.0,16.0,0.2,Musgraves,Proterozoic Orogens
+182203,9.1,196.8,209.6,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+187289,30.1,879.7,226.3,0.3,Musgraves,Proterozoic Orogens
+194381,32.1,163.6,320.1,2.0,Musgraves,Proterozoic Orogens
+194777,43.1,38.8,79.4,2.1,Basins,Basins
+183726,2.2,93.1,423.5,4.7,Musgraves,Proterozoic Orogens
+182475,17.1,141.0,28.2,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194705,9.1,2383.9,45061.4,19.5,Albany-Fraser Orogen,Proterozoic Orogens
+194714,35.1,110.9,133.1,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+187289,2.1,4056.1,100.6,0.0,Musgraves,Proterozoic Orogens
+194725,17.1,70.6,0.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192524,10.1,61.4,171.6,2.9,Albany-Fraser Orogen,Proterozoic Orogens
+182473,22.1,1325.5,153.5,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192531,4.1,43.5,34.8,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+105010,11.1,731.0,277.0,0.4,Yilgarn,Archean Cratons
+105010,21.1,218.0,66.0,0.3,Yilgarn,Archean Cratons
+142874,6.1,283.0,171.0,0.6,Pilbara,Archean Cratons
+168949,12.1,979.0,23.0,0.0,Capricon Orogen,Proterozoic Orogens
+174748,13.1,191.0,324.0,1.8,Musgraves,Proterozoic Orogens
+177910,21.2,85.0,16.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+183587,24.1,212.0,184.0,0.9,Musgraves,Proterozoic Orogens
+183596,1.1,286.0,95.0,0.3,Musgraves,Proterozoic Orogens
+183596,2.2,665.0,29.0,0.0,Musgraves,Proterozoic Orogens
+183596,47.1,515.0,229.0,0.5,Musgraves,Proterozoic Orogens
+185593,43.1,233.0,104.0,0.5,Musgraves,Proterozoic Orogens
+185593,15.1,492.0,234.0,0.5,Musgraves,Proterozoic Orogens
+194422,9.1,115.0,31.0,0.3,Musgraves,Proterozoic Orogens
+83662,1.1,2250.0,998.0,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+83676A,7.2,861.0,42.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+180867,38.1,107.0,218.2,2.1,Musgraves,Proterozoic Orogens
+195849,49.1,1684.5,26.9,0.0,Capricon Orogen,Proterozoic Orogens
+177910,13.2,276.0,33.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+180057,24.2,44.0,22.0,0.5,Pilbara,Archean Cratons
+184123,14.1,1403.0,18.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184160,56.1,274.0,8.0,0.0,Capricon Orogen,Proterozoic Orogens
+185508,2.1,517.0,246.0,0.5,Musgraves,Proterozoic Orogens
+185942,54.1,469.0,58.0,0.1,Capricon Orogen,Proterozoic Orogens
+195849,55.1,1903.4,27.0,0.0,Capricon Orogen,Proterozoic Orogens
+182203,16.1,453.4,184.9,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194714,3.2,78.0,67.8,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+194701,27.1,295.1,10.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,7.2,119.2,79.7,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+194778,37.1,124.0,140.2,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+194802,25.1,2307.4,120.2,0.1,Musgraves,Proterozoic Orogens
+177910,16.2,83.0,15.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+183466,15.1,3194.0,26.0,0.0,Musgraves,Proterozoic Orogens
+183587,49.1,1119.0,176.0,0.2,Musgraves,Proterozoic Orogens
+185593,33.1,300.0,125.0,0.4,Musgraves,Proterozoic Orogens
+185942,64.1,467.0,30.0,0.1,Capricon Orogen,Proterozoic Orogens
+192552,9.1,34.6,36.0,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+182435,10.1,34.0,53.2,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+192524,14.1,51.5,147.0,3.0,Albany-Fraser Orogen,Proterozoic Orogens
+192552,5.1,87.3,32.6,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194722,24.1,214.8,4.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+183726,29.1,123.8,209.5,1.7,Musgraves,Proterozoic Orogens
+189540,41.1,19.5,127.0,6.7,Musgraves,Proterozoic Orogens
+187289,1.1,894.8,112.9,0.1,Musgraves,Proterozoic Orogens
+194381,6.1,248.3,139.4,0.6,Musgraves,Proterozoic Orogens
+191751,6.1,2084.7,510.9,0.3,Musgraves,Proterozoic Orogens
+182477,9.1,59.8,29.6,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194381,26.1,269.9,252.6,1.0,Musgraves,Proterozoic Orogens
+174748,35.2,585.0,275.0,0.5,Musgraves,Proterozoic Orogens
+183496,15.2,202.0,166.0,0.9,Musgraves,Proterozoic Orogens
+184312,19.1,85.0,133.0,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+194767,21.1,418.7,204.6,0.5,Musgraves,Proterozoic Orogens
+192531,16.1,150.8,189.1,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+194701,42.1,326.3,36.8,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194722,11.1,191.7,32.8,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194767,19.1,800.8,92.3,0.1,Musgraves,Proterozoic Orogens
+183587,11.1,397.0,158.0,0.4,Musgraves,Proterozoic Orogens
+183596,14.1,376.0,231.0,0.6,Musgraves,Proterozoic Orogens
+183596,24.1,378.0,316.0,0.9,Musgraves,Proterozoic Orogens
+184123,27.1,521.0,10.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184312,16.1,31.0,58.0,1.9,Albany-Fraser Orogen,Proterozoic Orogens
+192532,8.1,105.7,60.8,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+192549,6.1,56.3,53.3,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+194718,9.1,92.9,39.3,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194714,3.1,173.7,92.4,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194802,33.1,2468.2,142.7,0.1,Musgraves,Proterozoic Orogens
+198532,6.1,802.7,8.3,0.0,Yilgarn,Archean Cratons
+191751,18.1,492.4,139.1,0.3,Musgraves,Proterozoic Orogens
+194802,22.1,4470.7,223.1,0.1,Musgraves,Proterozoic Orogens
+194381,3.1,338.3,418.2,1.3,Musgraves,Proterozoic Orogens
+194714,25.1,111.0,149.8,1.4,Albany-Fraser Orogen,Proterozoic Orogens
+182435,1.1,82.4,143.4,1.8,Albany-Fraser Orogen,Proterozoic Orogens
+174558,7.1,102.0,48.0,0.5,Musgraves,Proterozoic Orogens
+180057,12.1,70.0,18.0,0.3,Pilbara,Archean Cratons
+183466,2.2,1720.0,164.0,0.1,Musgraves,Proterozoic Orogens
+183466,59.2,3191.0,43.0,0.0,Musgraves,Proterozoic Orogens
+183587,9.1,596.0,164.0,0.3,Musgraves,Proterozoic Orogens
+183596,33.2,398.0,9.0,0.0,Musgraves,Proterozoic Orogens
+183596,38.1,235.0,178.0,0.8,Musgraves,Proterozoic Orogens
+184161,19.1,538.0,20.0,0.0,Capricon Orogen,Proterozoic Orogens
+194422,38.2,137.0,27.0,0.2,Musgraves,Proterozoic Orogens
+198532,3.2,562.2,9.0,0.0,Yilgarn,Archean Cratons
+180867,2.2,234.3,274.1,1.2,Musgraves,Proterozoic Orogens
+194702,1.1,149.0,0.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184150,14.1,290.0,82.3,0.3,Musgraves,Proterozoic Orogens
+189540,7.1,34.6,176.9,5.3,Musgraves,Proterozoic Orogens
+194705,12.1,2338.1,54993.8,24.3,Albany-Fraser Orogen,Proterozoic Orogens
+183726,30.2,563.7,395.8,0.7,Musgraves,Proterozoic Orogens
+182203,10.1,93.3,284.1,3.1,Albany-Fraser Orogen,Proterozoic Orogens
+194802,9.1,2665.3,151.6,0.1,Musgraves,Proterozoic Orogens
+194701,25.1,58.8,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194778,38.2,50.8,30.1,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+194714,46.1,52.1,51.0,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+195849,46.1,1387.7,23.0,0.0,Capricon Orogen,Proterozoic Orogens
+194722,13.1,210.8,8.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182473,14.1,591.0,30.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+183466,21.1,3730.0,51.0,0.0,Musgraves,Proterozoic Orogens
+185508,39.1,362.0,222.0,0.6,Musgraves,Proterozoic Orogens
+185593,36.2,417.0,209.0,0.5,Musgraves,Proterozoic Orogens
+194422,45.1,117.0,28.0,0.3,Musgraves,Proterozoic Orogens
+194718,12.1,567.6,672.3,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+187289,5.1,2078.0,47.6,0.0,Musgraves,Proterozoic Orogens
+194381,48.1,312.4,189.9,0.6,Musgraves,Proterozoic Orogens
+194381,23.1,181.7,337.7,1.9,Musgraves,Proterozoic Orogens
+192531,17.1,63.4,57.8,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+182203,11.1,90.9,182.6,2.1,Albany-Fraser Orogen,Proterozoic Orogens
+192531,12.1,30.3,23.9,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+192531,7.1,123.1,162.5,1.4,Albany-Fraser Orogen,Proterozoic Orogens
+182477,19.1,1227.2,352.2,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+182203,3.1,83.9,168.3,2.1,Albany-Fraser Orogen,Proterozoic Orogens
+205194,7.1,1789.0,8.3,0.0,Musgraves,Proterozoic Orogens
+182475,14.1,100.9,16.3,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+174748,32.1,1152.0,245.0,0.2,Musgraves,Proterozoic Orogens
+178749,1.1,928.0,22.0,0.0,Capricon Orogen,Proterozoic Orogens
+185508,29.1,1021.0,670.0,0.7,Musgraves,Proterozoic Orogens
+194718,16.1,408.3,207.9,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194708,18.1,311.3,2.7,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+180867,6.1,179.0,313.2,1.8,Musgraves,Proterozoic Orogens
+182203,28.1,81.4,119.1,1.5,Albany-Fraser Orogen,Proterozoic Orogens
+194785,12.2,436.5,12.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+187289,58.1,589.4,222.5,0.4,Musgraves,Proterozoic Orogens
+194802,26.1,2450.5,116.6,0.0,Musgraves,Proterozoic Orogens
+194718,6.1,389.5,192.8,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194705,4.1,4036.0,74448.0,19.1,Albany-Fraser Orogen,Proterozoic Orogens
+194777,35.1,46.1,73.8,1.7,Basins,Basins
+180867,23.1,137.7,317.0,2.4,Musgraves,Proterozoic Orogens
+174748,46.2,829.0,232.0,0.3,Musgraves,Proterozoic Orogens
+177908,58.1,347.0,102.0,0.3,Yilgarn,Archean Cratons
+183587,47.1,215.0,137.0,0.7,Musgraves,Proterozoic Orogens
+184123,44.1,658.0,5.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184161,47.1,489.0,6.0,0.0,Capricon Orogen,Proterozoic Orogens
+187109,10.1,2556.0,730.0,0.3,Musgraves,Proterozoic Orogens
+194422,2.2,70.0,36.0,0.5,Musgraves,Proterozoic Orogens
+88410,34.1,559.0,52.0,0.1,Capricon Orogen,Proterozoic Orogens
+194433,6.1,257.8,144.2,0.6,Musgraves,Proterozoic Orogens
+194714,11.1,62.6,48.6,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+180867,7.1,115.2,383.7,3.4,Musgraves,Proterozoic Orogens
+194718,18.1,426.4,200.8,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+208414,13.2,120.7,90.1,0.8,Musgraves,Proterozoic Orogens
+182475,25.1,541.8,35.9,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+191751,2.1,1547.5,166.6,0.1,Musgraves,Proterozoic Orogens
+194767,1.1,135.7,86.8,0.7,Musgraves,Proterozoic Orogens
+194718,17.1,344.8,257.0,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+194768,21.1,832.0,115.7,0.1,Musgraves,Proterozoic Orogens
+194768,19.1,2335.6,257.3,0.1,Musgraves,Proterozoic Orogens
+194433,3.1,664.6,427.1,0.7,Musgraves,Proterozoic Orogens
+174588,22.1,62.0,65.0,1.1,Musgraves,Proterozoic Orogens
+183596,7.1,238.0,321.0,1.4,Musgraves,Proterozoic Orogens
+184307,20.1,174.0,393.0,2.3,Albany-Fraser Orogen,Proterozoic Orogens
+185593,4.2,513.0,185.0,0.4,Musgraves,Proterozoic Orogens
+88410,41.1,499.0,11.0,0.0,Capricon Orogen,Proterozoic Orogens
+192552,11.2,24.7,23.8,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+194705,7.2,2336.8,38949.2,17.2,Albany-Fraser Orogen,Proterozoic Orogens
+194743,70.1,42.3,0.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194718,5.1,428.4,202.5,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+189540,10.1,36.8,210.6,5.9,Musgraves,Proterozoic Orogens
+194767,9.2,2914.0,167.8,0.1,Musgraves,Proterozoic Orogens
+205194,5.1,1758.7,23.4,0.0,Musgraves,Proterozoic Orogens
+194718,11.1,506.0,246.7,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+192508,9.2,1244.1,265.1,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+100710,21.1,492.0,220.0,0.5,Yilgarn,Archean Cratons
+104949C,6.1,466.0,287.0,0.6,Yilgarn,Archean Cratons
+105001,15.1,1620.0,908.0,0.6,Yilgarn,Archean Cratons
+105009,5.1,539.0,341.0,0.6,Yilgarn,Archean Cratons
+105014,12.1,136.0,124.0,0.9,Yilgarn,Archean Cratons
+112175,25.1,45.0,31.0,0.7,Yilgarn,Archean Cratons
+112341,9.1,184.0,262.0,1.4,Rudall,Proterozoic Orogens
+118979,10.1,76.0,33.0,0.4,Pilbara,Archean Cratons
+142835,23.1,170.0,39.0,0.2,Pilbara,Archean Cratons
+142901,9.1,1876.0,933.0,0.5,Yilgarn,Archean Cratons
+142930,22.1,3973.0,62.0,0.0,Capricon Orogen,Proterozoic Orogens
+142966,10.1,161.0,62.0,0.4,Pilbara,Archean Cratons
+168949,4.1,1729.0,32.0,0.0,Capricon Orogen,Proterozoic Orogens
+168949,8.1,1009.0,15.0,0.0,Capricon Orogen,Proterozoic Orogens
+168949,13.1,1274.0,1060.0,0.8,Capricon Orogen,Proterozoic Orogens
+168949,17.1,1935.0,1895.0,1.0,Capricon Orogen,Proterozoic Orogens
+169001,14.1,1147.0,81.0,0.1,leeuwin,Proterozoic Orogens
+174748,8.1,892.0,241.0,0.3,Musgraves,Proterozoic Orogens
+183496,27.1,103.0,142.0,1.4,Musgraves,Proterozoic Orogens
+183587,48.1,415.0,176.0,0.4,Musgraves,Proterozoic Orogens
+183596,20.1,312.0,404.0,1.3,Musgraves,Proterozoic Orogens
+184122,2.1,566.0,22.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184125,29.1,1476.0,234.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+184125,39.1,538.0,168.0,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+83701A,2.1,254.0,387.0,1.5,Albany-Fraser Orogen,Proterozoic Orogens
+98255,4.1,735.0,151.0,0.2,Yilgarn,Archean Cratons
+98256,4.1,10709.0,10155.0,1.0,Yilgarn,Archean Cratons
+182477,17.1,1982.1,504.2,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194767,18.2,1718.3,50.0,0.0,Musgraves,Proterozoic Orogens
+195849,44.1,1619.2,2.4,0.0,Capricon Orogen,Proterozoic Orogens
+192532,5.2,29.3,21.3,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+192530,17.1,90.3,77.5,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+192531,14.1,150.1,98.7,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+174558,12.1,155.0,53.0,0.4,Musgraves,Proterozoic Orogens
+183255,9.1,3949.0,205.0,0.1,Capricon Orogen,Proterozoic Orogens
+183587,5.1,513.0,351.0,0.7,Musgraves,Proterozoic Orogens
+183596,36.1,394.0,124.0,0.3,Musgraves,Proterozoic Orogens
+184123,26.1,1098.0,62.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184128,17.1,604.0,88.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+185593,7.1,1167.0,414.0,0.4,Musgraves,Proterozoic Orogens
+185942,57.1,452.0,116.0,0.3,Capricon Orogen,Proterozoic Orogens
+194422,35.2,220.0,17.0,0.1,Musgraves,Proterozoic Orogens
+192532,5.1,147.8,99.1,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+192531,13.2,131.6,135.6,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+182475,11.1,56.2,14.3,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194767,7.1,1206.6,66.2,0.1,Musgraves,Proterozoic Orogens
+189540,35.1,30.9,276.4,9.2,Musgraves,Proterozoic Orogens
+192552,4.1,325.5,50.6,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194718,14.1,244.9,176.8,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+194705,8.1,2793.3,46611.6,17.2,Albany-Fraser Orogen,Proterozoic Orogens
+195849,12.2,1693.5,43.7,0.0,Capricon Orogen,Proterozoic Orogens
+174558,11.2,140.0,55.0,0.4,Musgraves,Proterozoic Orogens
+183587,4.1,274.0,124.0,0.5,Musgraves,Proterozoic Orogens
+184312,30.1,124.0,3.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192531,14.2,130.4,139.9,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+195826,4.9,1195.0,3.0,0.0,Capricon Orogen,Proterozoic Orogens
+192531,17.2,135.6,191.4,1.5,Albany-Fraser Orogen,Proterozoic Orogens
+194705,10.1,2130.0,54252.9,26.3,Albany-Fraser Orogen,Proterozoic Orogens
+182485,27.1,228.9,171.6,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+194767,16.1,2052.7,61.3,0.0,Musgraves,Proterozoic Orogens
+182477,20.1,1643.9,593.0,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194714,40.1,103.0,162.4,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+198532,34.1,1403.0,16.3,0.0,Yilgarn,Archean Cratons
+192549,11.1,69.9,115.7,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+194743,36.1,109.0,4.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192531,15.2,122.8,83.2,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+194381,41.1,185.1,346.1,1.9,Musgraves,Proterozoic Orogens
+192523,21.1,98.6,43.5,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+177910,20.1,77.0,18.0,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+177910,10.2,553.0,6.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184125,43.1,2091.0,46.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184125,41.1,1034.0,181.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+187109,40.1,1643.0,428.0,0.3,Musgraves,Proterozoic Orogens
+194714,22.1,152.6,201.3,1.4,Albany-Fraser Orogen,Proterozoic Orogens
+205194,12.1,479.2,6.4,0.0,Musgraves,Proterozoic Orogens
+192523,8.1,112.3,50.7,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+195849,56.1,1689.0,24.7,0.0,Capricon Orogen,Proterozoic Orogens
+182477,4.1,2175.4,359.6,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194734,19.1,789.3,7.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182203,15.1,234.7,242.0,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+182477,14.1,1366.9,286.7,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+184150,36.1,353.4,69.2,0.2,Musgraves,Proterozoic Orogens
+192530,20.1,150.1,171.6,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+194728,30.1,70.0,0.8,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194728,6.1,95.2,0.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174748,5.2,731.0,224.0,0.3,Musgraves,Proterozoic Orogens
+177908,34.1,698.0,90.0,0.1,Yilgarn,Archean Cratons
+177908,34.1,698.0,90.0,0.1,Yilgarn,Archean Cratons
+184123,25.1,2462.0,33.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+185942,72.1,388.0,85.0,0.2,Capricon Orogen,Proterozoic Orogens
+187109,34.1,1011.0,348.0,0.4,Musgraves,Proterozoic Orogens
+189540,19.1,26.7,291.4,11.3,Musgraves,Proterozoic Orogens
+192523,20.1,46.2,27.3,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+194709,29.1,251.5,126.6,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+192530,19.1,222.8,287.8,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+192531,6.1,116.1,151.3,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+194714,38.1,62.0,61.6,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+192523,13.1,48.5,32.0,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+174748,14.1,197.0,303.0,1.6,Musgraves,Proterozoic Orogens
+182473,8.1,128.0,28.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+183492,2.1,336.0,494.0,1.5,Musgraves,Proterozoic Orogens
+183587,18.1,303.0,144.0,0.5,Musgraves,Proterozoic Orogens
+184122,27.1,546.0,25.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184125,37.1,1230.0,202.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+187403,24.1,1526.0,8.0,0.0,Capricon Orogen,Proterozoic Orogens
+194705,8.2,2773.6,47366.4,17.6,Albany-Fraser Orogen,Proterozoic Orogens
+182203,32.1,428.9,158.9,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+192531,5.2,100.1,101.1,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,20.1,86.6,54.8,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+194705,20.1,3587.2,31612.6,9.1,Albany-Fraser Orogen,Proterozoic Orogens
+192549,4.1,51.1,42.9,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+194735,29.1,1059.3,85.4,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194381,22.1,194.7,296.5,1.6,Musgraves,Proterozoic Orogens
+183726,22.1,154.3,194.6,1.3,Musgraves,Proterozoic Orogens
+192524,4.2,63.6,136.7,2.2,Albany-Fraser Orogen,Proterozoic Orogens
+174737,21.2,36.0,84.0,2.4,Musgraves,Proterozoic Orogens
+174748,30.1,588.0,278.0,0.5,Musgraves,Proterozoic Orogens
+177908,17.1,381.0,117.0,0.3,Yilgarn,Archean Cratons
+177908,17.1,381.0,117.0,0.3,Yilgarn,Archean Cratons
+183492,30.1,310.0,361.0,1.2,Musgraves,Proterozoic Orogens
+184160,59.1,475.0,22.0,0.1,Capricon Orogen,Proterozoic Orogens
+187109,35.1,1700.0,485.0,0.3,Musgraves,Proterozoic Orogens
+194802,27.1,2648.0,382.4,0.1,Musgraves,Proterozoic Orogens
+194718,7.1,250.9,115.1,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194705,6.2,2945.4,50921.0,17.9,Albany-Fraser Orogen,Proterozoic Orogens
+194743,50.1,93.0,0.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192552,2.2,82.1,47.2,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+192524,2.1,81.7,217.2,2.7,Albany-Fraser Orogen,Proterozoic Orogens
+194714,31.1,122.8,40.5,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+192523,18.1,51.2,0.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194722,12.1,292.3,75.1,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+184150,17.1,159.3,87.1,0.6,Musgraves,Proterozoic Orogens
+192552,14.2,876.2,14.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194705,6.1,3603.6,69250.1,19.9,Albany-Fraser Orogen,Proterozoic Orogens
+182475,10.1,96.3,29.0,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+192531,2.1,50.2,44.3,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+182476,29.1,1546.2,51.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+183492,27.1,197.0,332.0,1.7,Musgraves,Proterozoic Orogens
+183587,13.2,269.0,110.0,0.4,Musgraves,Proterozoic Orogens
+183587,53.1,282.0,297.0,1.1,Musgraves,Proterozoic Orogens
+183587,7.1,730.0,324.0,0.5,Musgraves,Proterozoic Orogens
+183587,35.1,108.0,374.0,3.6,Musgraves,Proterozoic Orogens
+185942,4.2,411.0,79.0,0.2,Capricon Orogen,Proterozoic Orogens
+194422,13.1,125.0,23.0,0.2,Musgraves,Proterozoic Orogens
+194705,16.1,1973.4,56974.0,29.8,Albany-Fraser Orogen,Proterozoic Orogens
+195849,47.1,1654.5,30.9,0.0,Capricon Orogen,Proterozoic Orogens
+194393,24.2,121.0,320.5,2.7,Musgraves,Proterozoic Orogens
+194705,1.2,6131.9,88127.6,14.9,Albany-Fraser Orogen,Proterozoic Orogens
+182477,16.1,1217.8,365.9,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194379,7.1,594.6,281.6,0.5,Musgraves,Proterozoic Orogens
+182473,60.1,733.7,129.7,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+182203,30.1,70.9,76.6,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+194784,13.1,252.6,17.2,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192523,1.1,107.0,44.8,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194433,23.1,328.3,220.2,0.7,Musgraves,Proterozoic Orogens
+194714,32.1,67.4,56.1,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+192524,15.1,57.1,137.3,2.5,Albany-Fraser Orogen,Proterozoic Orogens
+182477,21.1,1732.9,479.4,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194705,11.3,3378.4,87505.1,26.8,Albany-Fraser Orogen,Proterozoic Orogens
+194743,51.1,27.5,0.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194705,21.2,2328.6,56542.6,25.1,Albany-Fraser Orogen,Proterozoic Orogens
+194767,14.1,2159.4,163.4,0.1,Musgraves,Proterozoic Orogens
+174748,6.1,1317.0,238.0,0.2,Musgraves,Proterozoic Orogens
+177907,46.1,651.0,21.0,0.0,Yilgarn,Archean Cratons
+183492,16.1,206.0,240.0,1.2,Musgraves,Proterozoic Orogens
+183596,34.1,317.0,176.0,0.6,Musgraves,Proterozoic Orogens
+184122,28.1,737.0,30.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+88410,44.1,1315.0,525.0,0.4,Capricon Orogen,Proterozoic Orogens
+194768,6.1,2869.1,310.8,0.1,Musgraves,Proterozoic Orogens
+194725,16.1,63.4,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182477,8.1,1455.4,318.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194393,16.1,108.5,250.1,2.4,Musgraves,Proterozoic Orogens
+195849,41.2,1486.2,27.3,0.0,Capricon Orogen,Proterozoic Orogens
+195849,45.1,1620.8,22.6,0.0,Capricon Orogen,Proterozoic Orogens
+194714,37.1,317.0,166.3,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+192524,17.1,87.9,276.3,3.2,Albany-Fraser Orogen,Proterozoic Orogens
+194728,39.1,123.0,1.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174558,1.1,157.0,63.0,0.4,Musgraves,Proterozoic Orogens
+177908,36.1,406.0,98.0,0.3,Yilgarn,Archean Cratons
+177908,36.1,406.0,98.0,0.3,Yilgarn,Archean Cratons
+177910,11.2,376.0,34.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+177910,12.2,374.0,12.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182473,1.1,544.0,86.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+183596,23.1,490.0,318.0,0.7,Musgraves,Proterozoic Orogens
+184122,12.1,468.0,25.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184123,32.1,972.0,7.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184125,27.1,1634.0,141.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+185593,20.1,363.0,204.0,0.6,Musgraves,Proterozoic Orogens
+187115,9.1,22.0,25.0,1.2,Musgraves,Proterozoic Orogens
+187403,58.1,1881.0,12.0,0.0,Capricon Orogen,Proterozoic Orogens
+195849,6.2,1186.1,15.2,0.0,Capricon Orogen,Proterozoic Orogens
+192524,11.1,57.7,147.0,2.6,Albany-Fraser Orogen,Proterozoic Orogens
+194725,33.1,104.2,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194740,11.1,71.7,3.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192523,15.1,130.9,143.2,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+194433,19.1,341.5,201.9,0.6,Musgraves,Proterozoic Orogens
+183726,4.2,1784.5,190.8,0.1,Musgraves,Proterozoic Orogens
+192524,19.1,50.5,139.1,2.8,Albany-Fraser Orogen,Proterozoic Orogens
+192552,15.1,26.2,22.9,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+192523,7.1,65.6,39.6,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+194714,15.1,118.1,182.9,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+194707,17.1,137.7,3.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,40.1,240.2,308.3,1.3,Musgraves,Proterozoic Orogens
+195826,27.4,1291.6,13.0,0.0,Capricon Orogen,Proterozoic Orogens
+183726,30.1,61.7,284.7,4.8,Musgraves,Proterozoic Orogens
+189540,20.1,23.8,342.4,14.9,Musgraves,Proterozoic Orogens
+194705,5.1,3344.1,62452.1,19.3,Albany-Fraser Orogen,Proterozoic Orogens
+182476,31.1,1696.6,43.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+180867,45.1,177.0,288.3,1.7,Musgraves,Proterozoic Orogens
+192531,11.1,178.7,266.3,1.5,Albany-Fraser Orogen,Proterozoic Orogens
+192532,9.1,69.4,84.5,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+100710,16.1,535.0,212.0,0.4,Yilgarn,Archean Cratons
+100710,17.1,494.0,247.0,0.5,Yilgarn,Archean Cratons
+100710,28.1,361.0,233.0,0.7,Yilgarn,Archean Cratons
+104975,33.1,578.0,476.0,0.8,Yilgarn,Archean Cratons
+105001,11.1,1174.0,568.0,0.5,Yilgarn,Archean Cratons
+105010,5.1,1560.0,1006.0,0.6,Yilgarn,Archean Cratons
+112117,13.1,290.0,281.0,1.0,Yilgarn,Archean Cratons
+112144A,2.1,321.0,224.0,0.7,leeuwin,Proterozoic Orogens
+112176,18.1,308.0,411.0,1.3,Yilgarn,Archean Cratons
+118976,10.1,126.0,71.0,0.6,pilbara,Archean Cratons
+118976,26.1,375.0,307.0,0.8,pilbara,Archean Cratons
+142821,22.1,280.0,147.0,0.5,Yilgarn,Archean Cratons
+142835,11.1,118.0,62.0,0.5,pilbara,Archean Cratons
+168949,1.1,1088.0,29.0,0.0,Capricon Orogen,Proterozoic Orogens
+168949,18.1,295.0,144.0,0.5,Capricon Orogen,Proterozoic Orogens
+168949,20.1,1506.0,190.0,0.1,Capricon Orogen,Proterozoic Orogens
+177908,13.1,484.0,140.0,0.3,Yilgarn,Archean Cratons
+177908,13.1,484.0,140.0,0.3,Yilgarn,Archean Cratons
+183587,42.1,1754.0,238.0,0.1,Musgraves,Proterozoic Orogens
+183596,6.2,843.0,33.0,0.0,Musgraves,Proterozoic Orogens
+184122,18.1,611.0,29.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184123,16.1,2170.0,7.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184125,22.1,2224.0,102.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184128,14.2,695.0,20.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184161,32.1,785.0,7.0,0.0,Capricon Orogen,Proterozoic Orogens
+185593,29.1,1868.0,163.0,0.1,Musgraves,Proterozoic Orogens
+83701A,10.1,2031.0,184.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+187174,22.1,585.1,258.8,0.5,Musgraves,Proterozoic Orogens
+194722,20.1,197.9,6.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,6.2,28.7,12.1,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+182485,19.1,895.9,686.8,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+187174,10.1,768.7,1142.2,1.5,Musgraves,Proterozoic Orogens
+194705,21.1,2192.6,51917.9,24.5,Albany-Fraser Orogen,Proterozoic Orogens
+194705,25.3,4199.8,68627.8,16.9,Albany-Fraser Orogen,Proterozoic Orogens
+183726,28.1,233.2,269.4,1.2,Musgraves,Proterozoic Orogens
+195849,48.1,1619.6,99.5,0.1,Capricon Orogen,Proterozoic Orogens
+192524,16.1,46.4,126.1,2.8,Albany-Fraser Orogen,Proterozoic Orogens
+194725,6.2,79.4,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194778,47.1,156.0,76.8,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+192523,6.1,103.1,41.4,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+187174,57.1,1110.7,344.5,0.3,Musgraves,Proterozoic Orogens
+194381,36.1,408.1,268.7,0.7,Musgraves,Proterozoic Orogens
+183587,5.2,193.0,203.0,1.1,Musgraves,Proterozoic Orogens
+184122,19.1,557.0,31.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184125,23.1,748.0,138.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+187109,41.1,2812.0,512.0,0.2,Musgraves,Proterozoic Orogens
+182473,18.1,270.8,51.4,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+192532,14.1,152.0,96.9,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+182473,57.1,1033.6,16.8,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192531,12.2,75.2,74.2,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,6.1,64.4,40.4,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+182435,18.1,26.4,35.2,1.4,Albany-Fraser Orogen,Proterozoic Orogens
+192523,12.2,117.1,49.1,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+195849,51.1,1429.4,20.6,0.0,Capricon Orogen,Proterozoic Orogens
+192524,13.1,60.2,172.5,3.0,Albany-Fraser Orogen,Proterozoic Orogens
+194433,17.1,804.0,65.6,0.1,Musgraves,Proterozoic Orogens
+194705,14.2,4327.8,86234.0,20.6,Albany-Fraser Orogen,Proterozoic Orogens
+192531,3.2,119.8,159.1,1.4,Albany-Fraser Orogen,Proterozoic Orogens
+194714,39.1,62.3,61.9,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+192524,18.1,60.8,152.9,2.6,Albany-Fraser Orogen,Proterozoic Orogens
+189540,49.1,19.2,140.3,7.6,Musgraves,Proterozoic Orogens
+194381,63.1,246.5,224.4,0.9,Musgraves,Proterozoic Orogens
+194728,29.1,104.3,2.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+177908,5.2,505.0,107.0,0.2,Yilgarn,Archean Cratons
+183496,3.2,108.0,70.0,0.7,Musgraves,Proterozoic Orogens
+187109,18.1,1248.0,455.0,0.4,Musgraves,Proterozoic Orogens
+187109,30.1,1601.0,399.0,0.3,Musgraves,Proterozoic Orogens
+187113,18.1,723.0,44.0,0.1,Musgraves,Proterozoic Orogens
+194709,20.1,1399.3,401.6,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+192531,1.1,31.7,22.9,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+194705,2.1,3427.2,69876.8,21.1,Albany-Fraser Orogen,Proterozoic Orogens
+182203,26.1,240.9,291.9,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+194701,30.1,259.3,9.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192549,13.1,71.4,51.7,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+182485,6.1,1203.0,92.9,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+182477,18.1,2108.9,721.0,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194705,7.1,2262.6,40815.9,18.6,Albany-Fraser Orogen,Proterozoic Orogens
+192524,12.1,38.4,105.5,2.8,Albany-Fraser Orogen,Proterozoic Orogens
+194735,25.1,938.0,75.5,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192531,6.2,38.2,28.8,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+194705,25.2,3225.1,56664.9,18.2,Albany-Fraser Orogen,Proterozoic Orogens
+194768,8.1,2131.5,265.6,0.1,Musgraves,Proterozoic Orogens
+182475,42.1,266.9,87.2,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194707,15.1,357.7,21.1,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+183596,21.2,627.0,23.0,0.0,Musgraves,Proterozoic Orogens
+184125,15.1,1013.0,197.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+185593,47.1,310.0,156.0,0.5,Musgraves,Proterozoic Orogens
+185593,29.2,1395.0,358.0,0.3,Musgraves,Proterozoic Orogens
+187115,6.1,21.0,20.0,1.0,Musgraves,Proterozoic Orogens
+192524,6.1,122.3,382.4,3.2,Albany-Fraser Orogen,Proterozoic Orogens
+194433,16.1,260.2,195.3,0.8,Musgraves,Proterozoic Orogens
+194705,1.3,4724.6,75654.3,16.5,Albany-Fraser Orogen,Proterozoic Orogens
+192549,14.1,65.4,44.2,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+208414,27.1,137.7,120.4,0.9,Musgraves,Proterozoic Orogens
+192552,13.2,41.5,19.6,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+180867,43.1,117.0,358.7,3.2,Musgraves,Proterozoic Orogens
+182475,5.1,89.0,22.8,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194705,18.2,3017.9,42923.6,14.7,Albany-Fraser Orogen,Proterozoic Orogens
+192530,14.1,283.1,232.6,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+194433,11.1,492.9,280.6,0.6,Musgraves,Proterozoic Orogens
+183726,31.1,62.5,235.6,3.9,Musgraves,Proterozoic Orogens
+194768,14.1,1456.1,149.1,0.1,Musgraves,Proterozoic Orogens
+174588,31.1,52.0,55.0,1.1,Musgraves,Proterozoic Orogens
+183587,13.1,449.0,120.0,0.3,Musgraves,Proterozoic Orogens
+183587,12.1,1235.0,166.0,0.1,Musgraves,Proterozoic Orogens
+184122,5.1,502.0,21.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184123,20.1,390.0,4.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184307,8.1,142.0,299.0,2.2,Albany-Fraser Orogen,Proterozoic Orogens
+182475,16.1,101.8,32.6,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+192524,4.1,98.5,239.6,2.5,Albany-Fraser Orogen,Proterozoic Orogens
+194785,4.1,411.6,9.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+183726,35.1,74.8,316.9,4.4,Musgraves,Proterozoic Orogens
+194777,34.1,51.5,36.1,0.7,Basins,Basins
+194433,20.1,450.6,263.5,0.6,Musgraves,Proterozoic Orogens
+194433,8.1,1196.3,76.2,0.1,Musgraves,Proterozoic Orogens
+194714,44.1,103.0,178.3,1.8,Albany-Fraser Orogen,Proterozoic Orogens
+194734,16.1,928.5,10.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194725,14.1,79.5,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,39.1,271.7,376.1,1.4,Musgraves,Proterozoic Orogens
+182485,9.1,855.8,146.8,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194705,15.2,2953.3,73032.9,25.6,Albany-Fraser Orogen,Proterozoic Orogens
+192532,17.1,73.1,44.4,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+174558,19.1,215.0,71.0,0.3,Musgraves,Proterozoic Orogens
+174748,4.1,1743.0,212.0,0.1,Musgraves,Proterozoic Orogens
+174748,63.1,575.0,336.0,0.6,Musgraves,Proterozoic Orogens
+183466,24.2,1198.0,11.0,0.0,Musgraves,Proterozoic Orogens
+183596,56.1,565.0,46.0,0.1,Musgraves,Proterozoic Orogens
+183596,54.1,219.0,294.0,1.4,Musgraves,Proterozoic Orogens
+184122,6.1,511.0,22.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184161,41.1,687.0,39.0,0.1,Capricon Orogen,Proterozoic Orogens
+182203,34.2,121.9,149.2,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+194705,11.1,2388.0,55257.2,23.9,Albany-Fraser Orogen,Proterozoic Orogens
+195849,50.1,1660.2,25.9,0.0,Capricon Orogen,Proterozoic Orogens
+192532,5.3,93.6,56.0,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+182203,27.1,203.5,239.0,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+194705,17.2,2433.7,39815.0,16.9,Albany-Fraser Orogen,Proterozoic Orogens
+194714,30.1,51.3,38.0,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+184150,26.1,233.9,109.7,0.5,Musgraves,Proterozoic Orogens
+195849,58.1,1039.2,16.7,0.0,Capricon Orogen,Proterozoic Orogens
+182485,12.1,187.7,191.5,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+192523,10.2,73.1,67.4,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+177908,88.2,572.0,63.0,0.1,Yilgarn,Archean Cratons
+177910,2.2,308.0,19.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+182473,11.1,238.0,122.0,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+183596,15.1,211.0,256.0,1.3,Musgraves,Proterozoic Orogens
+183596,30.1,475.0,276.0,0.6,Musgraves,Proterozoic Orogens
+184161,10.1,495.0,13.0,0.0,Capricon Orogen,Proterozoic Orogens
+187113,6.1,1064.0,179.0,0.2,Musgraves,Proterozoic Orogens
+195849,53.1,1745.6,25.1,0.0,Capricon Orogen,Proterozoic Orogens
+194728,42.1,68.4,0.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182475,31.1,297.3,24.1,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194393,21.1,76.8,243.1,3.3,Musgraves,Proterozoic Orogens
+194381,21.1,253.3,269.3,1.1,Musgraves,Proterozoic Orogens
+192552,7.2,257.5,40.3,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194714,2.2,869.1,365.2,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194722,26.1,256.5,27.7,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192523,16.1,90.1,47.2,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+192552,3.2,329.3,52.4,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194707,18.1,352.4,3.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174588,11.1,50.0,51.0,1.1,Musgraves,Proterozoic Orogens
+177908,10.1,417.0,116.0,0.3,Yilgarn,Archean Cratons
+177908,10.1,417.0,116.0,0.3,Yilgarn,Archean Cratons
+183587,41.1,1345.0,190.0,0.2,Musgraves,Proterozoic Orogens
+184122,4.1,800.0,24.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+187113,24.1,665.0,51.0,0.1,Musgraves,Proterozoic Orogens
+187113,26.1,514.0,279.0,0.6,Musgraves,Proterozoic Orogens
+88410,40.1,534.0,24.0,0.0,Capricon Orogen,Proterozoic Orogens
+192552,8.1,338.9,59.1,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+192552,1.2,249.9,56.9,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+192532,18.1,50.8,59.3,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+192552,10.1,31.6,24.4,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+194768,7.1,981.6,61.8,0.1,Musgraves,Proterozoic Orogens
+191751,9.1,1014.5,352.9,0.4,Musgraves,Proterozoic Orogens
+182203,1.1,261.1,216.5,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+192531,15.1,169.3,258.3,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+194767,3.1,216.1,80.3,0.4,Musgraves,Proterozoic Orogens
+182477,12.1,2016.8,413.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+187289,40.1,845.5,136.2,0.2,Musgraves,Proterozoic Orogens
+189540,37.1,16.6,215.6,13.4,Musgraves,Proterozoic Orogens
+205194,4.1,1152.2,6.6,0.0,Musgraves,Proterozoic Orogens
+192524,7.1,52.0,135.2,2.7,Albany-Fraser Orogen,Proterozoic Orogens
+183492,24.1,261.0,268.0,1.1,Musgraves,Proterozoic Orogens
+184160,55.2,37.0,57.0,0.2,Capricon Orogen,Proterozoic Orogens
+185508,3.1,944.0,222.0,0.2,Musgraves,Proterozoic Orogens
+192531,16.2,65.0,54.2,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+194433,12.1,626.6,77.3,0.1,Musgraves,Proterozoic Orogens
+194722,35.1,156.2,3.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,8.2,82.1,52.5,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+182477,3.2,1167.6,305.5,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194722,15.1,316.1,12.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194725,22.1,103.0,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+198532,30.2,1185.5,7.6,0.0,Yilgarn,Archean Cratons
+182477,10.1,88.9,42.9,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+192508,25.1,1142.8,4.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192531,3.1,67.5,48.3,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+183726,6.1,1619.2,200.6,0.1,Musgraves,Proterozoic Orogens
+182435,11.1,93.4,127.2,1.4,Albany-Fraser Orogen,Proterozoic Orogens
+187174,59.1,1483.0,479.9,0.3,Musgraves,Proterozoic Orogens
+194433,15.1,442.1,116.6,0.3,Musgraves,Proterozoic Orogens
+192523,17.1,62.7,40.6,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+194433,13.1,423.9,293.2,0.7,Musgraves,Proterozoic Orogens
+184122,20.1,608.0,27.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184160,22.1,543.0,31.0,0.1,Capricon Orogen,Proterozoic Orogens
+185942,70.1,476.0,85.0,0.2,Capricon Orogen,Proterozoic Orogens
+194422,38.1,66.0,10.0,0.2,Musgraves,Proterozoic Orogens
+194709,25.1,402.4,99.4,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+184150,2.1,155.5,67.3,0.4,Musgraves,Proterozoic Orogens
+182473,16.1,149.7,47.2,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194768,2.1,1685.7,234.8,0.1,Musgraves,Proterozoic Orogens
+182203,36.1,142.6,143.0,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+182477,1.1,1977.5,371.3,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+182485,23.1,911.6,788.0,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+182477,13.1,1192.3,345.9,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+100710,2.1,1449.0,742.0,0.5,Yilgarn,Archean Cratons
+100710,12.1,199.0,105.0,0.5,Yilgarn,Archean Cratons
+100710,22.1,322.0,141.0,0.4,Yilgarn,Archean Cratons
+101348,10.1,86.0,46.0,0.5,Yilgarn,Archean Cratons
+104970,15.1,140.0,10.0,0.1,Yilgarn,Archean Cratons
+104970,24.1,628.0,151.0,0.2,Yilgarn,Archean Cratons
+104970,32.1,457.0,181.0,0.4,Yilgarn,Archean Cratons
+104970,38.1,252.0,54.0,0.2,Yilgarn,Archean Cratons
+104975,2.1,649.0,299.0,0.5,Yilgarn,Archean Cratons
+104975,7.1,649.0,179.0,0.3,Yilgarn,Archean Cratons
+104975,12.1,503.0,233.0,0.5,Yilgarn,Archean Cratons
+105009,11.1,619.0,132.0,0.2,Yilgarn,Archean Cratons
+105010,1.1,110.0,67.0,0.6,Yilgarn,Archean Cratons
+105014,16.1,323.0,117.0,0.4,Yilgarn,Archean Cratons
+118914,9.1,1102.0,506.0,0.5,Rudall,Proterozoic Orogens
+118990,8.1,102.0,131.0,1.3,Basins,Basins
+142821,7.1,246.0,89.0,0.4,Yilgarn,Archean Cratons
+183587,51.1,458.0,144.0,0.3,Musgraves,Proterozoic Orogens
+184125,4.1,899.0,156.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+184160,42.1,322.0,15.0,0.1,Capricon Orogen,Proterozoic Orogens
+83701A,4.1,305.0,370.0,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+83701A,8.1,413.0,174.0,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+182203,25.1,124.6,232.5,1.9,Albany-Fraser Orogen,Proterozoic Orogens
+198532,32.1,1261.8,8.7,0.0,Yilgarn,Archean Cratons
+194718,15.1,425.8,252.5,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+194714,26.1,67.4,60.7,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+194718,4.1,123.5,59.0,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194393,23.1,158.0,312.7,2.0,Musgraves,Proterozoic Orogens
+194714,43.1,126.7,28.6,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+182203,37.1,188.8,311.0,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+192524,5.1,58.7,153.4,2.7,Albany-Fraser Orogen,Proterozoic Orogens
+194381,7.1,312.8,361.6,1.2,Musgraves,Proterozoic Orogens
+174748,3.1,1563.0,305.0,0.2,Musgraves,Proterozoic Orogens
+183587,26.1,322.0,352.0,1.1,Musgraves,Proterozoic Orogens
+184125,28.1,1366.0,249.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+184161,30.1,541.0,23.0,0.0,Capricon Orogen,Proterozoic Orogens
+187113,22.1,377.0,66.0,0.2,Musgraves,Proterozoic Orogens
+194705,23.1,3843.5,63753.5,17.1,Albany-Fraser Orogen,Proterozoic Orogens
+194722,41.1,228.7,118.5,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+187289,3.1,628.8,117.3,0.2,Musgraves,Proterozoic Orogens
+192552,12.1,27.7,27.3,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+194718,20.1,562.2,481.4,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+194705,17.1,2300.9,44484.7,20.0,Albany-Fraser Orogen,Proterozoic Orogens
+194722,18.1,254.8,86.4,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+195849,52.1,1786.9,26.0,0.0,Capricon Orogen,Proterozoic Orogens
+194705,8.1,1771.3,25.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194740,41.1,65.6,2.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,3.1,188.1,114.6,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+194764,12.1,589.7,355.2,0.6,Musgraves,Proterozoic Orogens
+183492,18.1,213.0,382.0,1.9,Musgraves,Proterozoic Orogens
+183492,29.1,201.0,334.0,1.7,Musgraves,Proterozoic Orogens
+187109,26.1,1629.0,390.0,0.3,Musgraves,Proterozoic Orogens
+194422,16.1,139.0,34.0,0.3,Musgraves,Proterozoic Orogens
+88410,9.1,388.0,18.0,0.1,Capricon Orogen,Proterozoic Orogens
+194705,18.1,4198.1,40801.1,10.0,Albany-Fraser Orogen,Proterozoic Orogens
+194705,11.2,2096.3,49466.8,24.4,Albany-Fraser Orogen,Proterozoic Orogens
+194333,5.2,61.6,8.6,0.1,Musgraves,Proterozoic Orogens
+192523,2.1,56.0,40.4,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+192531,1.2,213.8,355.4,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+192549,5.1,55.1,35.8,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+194393,19.1,94.1,289.7,3.2,Musgraves,Proterozoic Orogens
+194777,27.1,149.8,30.2,0.2,Basins,Basins
+187174,56.1,322.2,296.9,1.0,Musgraves,Proterozoic Orogens
+182476,12.1,2050.2,146.6,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194743,28.1,157.6,0.7,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194714,8.1,63.8,47.1,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+195826,27.2,1085.5,5.5,0.0,Capricon Orogen,Proterozoic Orogens
+182477,5.1,1496.4,417.0,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194714,2.1,214.3,70.2,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+192532,16.1,78.8,82.1,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+192523,14.1,59.5,37.9,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+192524,3.1,113.0,347.0,3.2,Albany-Fraser Orogen,Proterozoic Orogens
+177908,4.2,355.0,94.0,0.3,Yilgarn,Archean Cratons
+177908,4.2,355.0,94.0,0.3,Yilgarn,Archean Cratons
+177910,19.2,78.0,23.0,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+183466,20.1,2247.0,111.0,0.1,Musgraves,Proterozoic Orogens
+183587,10.2,260.0,331.0,1.3,Musgraves,Proterozoic Orogens
+184161,45.1,609.0,9.0,0.0,Capricon Orogen,Proterozoic Orogens
+194778,50.1,175.0,28.1,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194740,35.1,55.8,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,7.1,194.1,90.9,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+182476,35.1,1162.7,14.7,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194742,12.1,56.5,1.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192549,16.1,57.2,49.6,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+182203,33.1,129.8,209.8,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+183726,20.1,135.6,367.1,2.8,Musgraves,Proterozoic Orogens
+194718,10.1,90.0,39.3,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+182203,24.1,182.1,229.4,1.3,Albany-Fraser Orogen,Proterozoic Orogens
+182477,15.1,1424.0,271.7,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+182203,19.1,188.1,200.8,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+182473,3.1,349.0,62.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+184307,18.1,95.0,187.0,2.0,Albany-Fraser Orogen,Proterozoic Orogens
+194422,44.1,91.0,25.0,0.3,Musgraves,Proterozoic Orogens
+194777,41.1,40.7,63.1,1.6,Basins,Basins
+194393,37.1,125.0,300.6,2.5,Musgraves,Proterozoic Orogens
+194725,35.1,63.4,3.3,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194705,3.1,3619.7,79464.8,22.7,Albany-Fraser Orogen,Proterozoic Orogens
+194707,6.1,262.0,2.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194705,10.2,458.1,82.3,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+192532,3.2,18.9,13.0,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+182203,21.1,128.3,145.0,1.2,Albany-Fraser Orogen,Proterozoic Orogens
+194707,11.2,124.1,0.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192552,5.2,43.7,38.3,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+192549,2.1,61.7,87.3,1.5,Albany-Fraser Orogen,Proterozoic Orogens
+199422,22.2,64.3,3.7,0.1,Basins,Basins
+180867,40.1,171.3,215.5,1.3,Musgraves,Proterozoic Orogens
+192524,3.2,54.1,147.5,2.8,Albany-Fraser Orogen,Proterozoic Orogens
+194740,33.1,88.8,3.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174748,59.1,462.0,245.0,0.6,Musgraves,Proterozoic Orogens
+177910,8.2,391.0,7.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+183587,28.1,1590.0,40.0,0.0,Musgraves,Proterozoic Orogens
+182476,34.1,891.4,9.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+195849,54.1,1544.3,47.3,0.0,Capricon Orogen,Proterozoic Orogens
+194705,22.1,4773.0,93448.1,20.2,Albany-Fraser Orogen,Proterozoic Orogens
+194705,15.1,2446.9,57111.4,24.1,Albany-Fraser Orogen,Proterozoic Orogens
+192524,8.1,77.6,217.3,2.9,Albany-Fraser Orogen,Proterozoic Orogens
+194718,19.1,415.9,203.5,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+182475,6.1,100.1,1.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+199422,2.1,121.1,78.0,0.7,Basins,Basins
+198532,30.1,555.2,10.6,0.0,Yilgarn,Archean Cratons
+182485,16.1,598.7,138.7,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+180057,33.1,99.0,15.0,0.2,Pilbara,Archean Cratons
+183596,32.1,335.0,180.0,0.6,Musgraves,Proterozoic Orogens
+184161,50.1,491.0,14.0,0.0,Capricon Orogen,Proterozoic Orogens
+182473,52.1,449.1,62.6,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194740,22.1,54.3,1.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194714,21.1,115.5,186.7,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+194740,20.1,47.6,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192549,8.1,71.8,72.1,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+194728,15.2,108.1,5.6,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+182473,6.1,162.0,34.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+184122,16.1,443.0,19.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194422,43.1,153.0,41.0,0.3,Musgraves,Proterozoic Orogens
+192549,3.1,58.6,55.0,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+194730,10.1,180.3,3.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,56.1,187.6,296.7,1.6,Musgraves,Proterozoic Orogens
+194728,7.1,117.4,0.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+208414,8.1,339.3,193.6,0.6,Musgraves,Proterozoic Orogens
+194778,42.1,207.6,14.7,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194433,3.2,704.0,101.1,0.1,Musgraves,Proterozoic Orogens
+174748,35.3,350.0,322.0,1.0,Musgraves,Proterozoic Orogens
+184123,8.1,97.0,1.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+88410,45.1,619.0,93.0,0.2,Capricon Orogen,Proterozoic Orogens
+182473,44.1,221.9,39.6,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+100710,1.1,569.0,341.0,0.6,Yilgarn,Archean Cratons
+104970,19.1,310.0,52.0,0.2,Yilgarn,Archean Cratons
+104970,33.1,606.0,105.0,0.2,Yilgarn,Archean Cratons
+104975,11.1,349.0,162.0,0.5,Yilgarn,Archean Cratons
+104975,17.1,675.0,192.0,0.3,Yilgarn,Archean Cratons
+105010,2.1,586.0,212.0,0.4,Yilgarn,Archean Cratons
+118937,4.3,109.0,84.0,0.8,Yilgarn,Archean Cratons
+118990,4.1,120.0,93.0,0.8,Basins,Basins
+132918,8.1,158.0,123.0,0.8,Yilgarn,Archean Cratons
+132918,16.1,221.0,222.0,1.0,Yilgarn,Archean Cratons
+142874,14.1,245.0,127.0,0.5,Pilbara,Archean Cratons
+142966,11.1,118.0,13.0,0.1,Pilbara,Archean Cratons
+144261,13.1,202.0,268.0,1.3,Basins,Basins
+174558,4.1,163.0,64.0,0.4,Musgraves,Proterozoic Orogens
+177908,1.2,600.0,174.0,0.3,Yilgarn,Archean Cratons
+177908,1.2,600.0,174.0,0.3,Yilgarn,Archean Cratons
+83652,5.1,300.0,122.0,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+83676A,7.1,857.0,62.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+98255,28.1,135.0,167.0,1.2,Yilgarn,Archean Cratons
+182477,3.1,1465.9,502.5,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194702,3.1,64.0,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194708,4.1,191.1,0.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194777,7.1,42.2,72.5,1.8,Basins,Basins
+184122,3.1,461.0,17.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+88410,43.1,541.0,14.0,0.0,Capricon Orogen,Proterozoic Orogens
+194740,42.1,80.9,3.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194791,4.1,179.5,69.8,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+192523,19.1,61.6,32.0,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194705,24.1,5138.8,117530.3,23.6,Albany-Fraser Orogen,Proterozoic Orogens
+174748,63.2,262.0,326.0,1.3,Musgraves,Proterozoic Orogens
+177908,47.2,477.0,88.0,0.2,Yilgarn,Archean Cratons
+88410,39.1,542.0,82.0,0.2,Capricon Orogen,Proterozoic Orogens
+184329,33.1,678.2,102.3,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194705,24.2,5038.3,84343.4,17.3,Albany-Fraser Orogen,Proterozoic Orogens
+194722,27.1,132.4,12.1,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194393,38.1,87.9,268.3,3.2,Musgraves,Proterozoic Orogens
+194433,5.2,408.2,221.0,0.6,Musgraves,Proterozoic Orogens
+194393,18.1,109.0,246.5,2.3,Musgraves,Proterozoic Orogens
+194714,23.1,59.0,48.3,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+194393,3.1,192.7,230.6,1.2,Musgraves,Proterozoic Orogens
+180867,19.1,169.8,454.5,2.8,Musgraves,Proterozoic Orogens
+192530,6.1,236.2,260.4,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+174737,19.1,44.0,89.0,2.1,Musgraves,Proterozoic Orogens
+183492,23.1,313.0,291.0,1.0,Musgraves,Proterozoic Orogens
+184161,48.1,760.0,10.0,0.0,Capricon Orogen,Proterozoic Orogens
+182485,3.1,705.4,73.2,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192532,11.1,30.2,20.5,0.7,Albany-Fraser Orogen,Proterozoic Orogens
+194381,45.1,406.4,177.1,0.5,Musgraves,Proterozoic Orogens
+182485,1.1,263.4,466.4,1.8,Albany-Fraser Orogen,Proterozoic Orogens
+182476,26.1,1109.7,10.8,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184329,24.1,2157.4,195.5,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+182203,13.1,88.8,97.4,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+177910,3.2,75.0,13.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+184307,1.1,188.0,424.0,2.3,Albany-Fraser Orogen,Proterozoic Orogens
+189540,30.1,13.8,241.1,18.0,Musgraves,Proterozoic Orogens
+187289,26.2,548.1,61.1,0.1,Musgraves,Proterozoic Orogens
+184150,39.1,532.9,128.0,0.2,Musgraves,Proterozoic Orogens
+180867,18.1,131.2,383.4,3.0,Musgraves,Proterozoic Orogens
+192531,5.1,100.7,96.1,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+194393,14.1,141.8,278.2,2.0,Musgraves,Proterozoic Orogens
+177910,5.2,274.0,15.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+183492,32.1,217.0,216.0,1.0,Musgraves,Proterozoic Orogens
+194433,18.1,306.6,165.2,0.6,Musgraves,Proterozoic Orogens
+192524,1.1,41.6,93.6,2.3,Albany-Fraser Orogen,Proterozoic Orogens
+192531,8.1,152.6,158.7,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+194705,1.1,4679.6,78546.8,17.3,Albany-Fraser Orogen,Proterozoic Orogens
+194785,24.1,123.1,111.3,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+192532,10.1,33.9,32.8,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,19.1,187.7,102.6,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+194740,14.1,37.9,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194740,13.1,83.8,2.8,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192530,11.1,247.4,213.0,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+182475,58.1,103.4,23.7,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194705,25.1,3736.4,64209.8,17.8,Albany-Fraser Orogen,Proterozoic Orogens
+182203,8.1,89.8,127.8,1.5,Albany-Fraser Orogen,Proterozoic Orogens
+174748,56.1,229.0,346.0,1.6,Musgraves,Proterozoic Orogens
+177910,7.2,367.0,17.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+177910,24.2,140.0,17.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+192523,3.1,72.9,61.8,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+187289,64.1,633.2,94.6,0.2,Musgraves,Proterozoic Orogens
+182485,21.1,411.2,203.0,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+194702,9.1,86.9,0.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182475,30.1,117.7,42.0,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+177908,8.1,406.0,110.0,0.3,Yilgarn,Archean Cratons
+177908,8.1,406.0,110.0,0.3,Yilgarn,Archean Cratons
+180867,3.1,183.0,320.8,1.8,Musgraves,Proterozoic Orogens
+194381,4.1,250.9,181.7,0.7,Musgraves,Proterozoic Orogens
+177908,38.1,406.0,118.0,0.3,Yilgarn,Archean Cratons
+183596,48.1,415.0,136.0,0.3,Musgraves,Proterozoic Orogens
+187109,29.1,653.0,332.0,0.5,Musgraves,Proterozoic Orogens
+194777,73.1,58.5,135.0,2.4,Basins,Basins
+194433,17.2,553.9,96.1,0.2,Musgraves,Proterozoic Orogens
+182476,32.1,867.0,4.6,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+189540,31.1,17.0,172.0,10.5,Musgraves,Proterozoic Orogens
+194743,40.1,79.6,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194728,22.1,93.3,3.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+104970,6.1,602.0,400.0,0.7,Yilgarn,Archean Cratons
+104970,23.1,369.0,60.0,0.2,Yilgarn,Archean Cratons
+105001,12.1,1277.0,212.0,0.2,Yilgarn,Archean Cratons
+105001,19.1,1152.0,881.0,0.8,Yilgarn,Archean Cratons
+105002,6.1,1072.0,78.0,0.1,Yilgarn,Archean Cratons
+105009,13.1,1002.0,23.0,0.0,Yilgarn,Archean Cratons
+105014,17.1,611.0,300.0,0.5,Yilgarn,Archean Cratons
+112177,9.1,144.0,92.0,0.6,Yilgarn,Archean Cratons
+118914,1.1,850.0,720.0,0.9,Rudall,Proterozoic Orogens
+118937,8.1,350.0,141.0,0.4,Yilgarn,Archean Cratons
+118947,15.1,419.0,477.0,1.1,Yilgarn,Archean Cratons
+142966,26.1,212.0,298.0,1.4,Pilbara,Archean Cratons
+142985,7.1,433.0,132.0,0.3,Pilbara,Archean Cratons
+144261,17.1,283.0,397.0,1.4,Basins,Basins
+183492,21.1,249.0,433.0,1.8,Musgraves,Proterozoic Orogens
+83701A,6.1,972.0,566.0,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+182435,19.1,43.1,64.7,1.6,Albany-Fraser Orogen,Proterozoic Orogens
+194718,3.1,150.4,59.6,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+194702,5.1,16.1,0.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194740,2.1,110.7,5.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+174737,11.1,33.0,111.0,3.5,Musgraves,Proterozoic Orogens
+185508,18.2,544.0,176.0,0.3,Musgraves,Proterozoic Orogens
+187113,21.1,389.0,61.0,0.2,Musgraves,Proterozoic Orogens
+194743,99.1,87.0,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194740,37.1,81.4,3.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194709,27.1,477.3,212.6,0.5,Albany-Fraser Orogen,Proterozoic Orogens
+184160,24.1,623.0,67.0,0.1,Capricon Orogen,Proterozoic Orogens
+194381,27.1,177.8,228.8,1.3,Musgraves,Proterozoic Orogens
+189540,46.1,17.6,167.2,9.8,Musgraves,Proterozoic Orogens
+194708,16.1,128.0,0.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194777,42.1,49.6,62.2,1.3,Basins,Basins
+194784,10.1,307.9,15.6,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194777,2.2,48.9,23.2,0.5,Basins,Basins
+194381,59.1,154.3,345.6,2.3,Musgraves,Proterozoic Orogens
+183496,18.1,39.0,69.0,1.9,Musgraves,Proterozoic Orogens
+183587,7.2,268.0,152.0,0.6,Musgraves,Proterozoic Orogens
+184125,6.1,1721.0,183.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194422,2.1,148.0,27.0,0.2,Musgraves,Proterozoic Orogens
+194393,25.1,119.4,231.5,2.0,Musgraves,Proterozoic Orogens
+194725,15.1,52.2,0.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182485,17.1,732.5,91.4,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+177910,17.2,82.0,20.0,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+183596,13.1,494.0,183.0,0.4,Musgraves,Proterozoic Orogens
+192531,4.2,120.0,110.1,0.9,Albany-Fraser Orogen,Proterozoic Orogens
+194749,4.2,11.2,2.4,0.2,Yilgarn,Archean Cratons
+184334,25.1,799.6,0.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+192532,4.1,111.6,39.6,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+182475,4.1,118.6,11.3,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194777,37.1,34.1,88.5,2.7,Basins,Basins
+183496,30.1,68.0,98.0,1.5,Musgraves,Proterozoic Orogens
+182485,10.1,496.8,19.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194725,27.1,71.9,7.7,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+182435,13.1,55.2,103.1,1.9,Albany-Fraser Orogen,Proterozoic Orogens
+184329,36.1,612.4,96.7,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194422,10.1,230.0,53.0,0.2,Musgraves,Proterozoic Orogens
+184128,24.1,31.0,1.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182475,9.1,93.1,3.3,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+195826,14.1,96.0,7.5,0.1,Capricon Orogen,Proterozoic Orogens
+184329,11.1,609.5,79.1,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194714,1.1,50.9,51.9,1.1,Albany-Fraser Orogen,Proterozoic Orogens
+183726,32.1,240.3,182.6,0.8,Musgraves,Proterozoic Orogens
+180867,47.1,102.3,384.0,3.9,Musgraves,Proterozoic Orogens
+192508,29.1,1414.9,105.8,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194728,23.1,127.4,7.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+100710,5.1,1869.0,845.0,0.5,Yilgarn,Archean Cratons
+100710,6.1,448.0,283.0,0.6,Yilgarn,Archean Cratons
+101381,2.1,418.0,165.0,0.4,Yilgarn,Archean Cratons
+104970,34.1,467.0,77.0,0.2,Yilgarn,Archean Cratons
+104975,1.1,1200.0,390.0,0.3,Yilgarn,Archean Cratons
+105001,8.1,929.0,301.0,0.3,Yilgarn,Archean Cratons
+105001,10.1,502.0,895.0,1.8,Yilgarn,Archean Cratons
+105002,17.1,964.0,105.0,0.1,Yilgarn,Archean Cratons
+118914,8.1,1909.0,727.0,0.4,Rudall,Proterozoic Orogens
+118947,14.1,429.0,580.0,1.4,Yilgarn,Archean Cratons
+118947,18.1,474.0,609.0,1.3,Yilgarn,Archean Cratons
+118950,16.1,227.0,106.0,0.5,Yilgarn,Archean Cratons
+132918,4.1,178.0,165.0,0.9,Yilgarn,Archean Cratons
+132918,23.1,325.0,335.0,1.0,Yilgarn,Archean Cratons
+142874,20.1,258.0,149.0,0.6,Pilbara,Archean Cratons
+142966,21.1,64.0,49.0,0.8,Pilbara,Archean Cratons
+142985,1.1,426.0,265.0,0.6,Pilbara,Archean Cratons
+142985,4.1,351.0,149.0,0.4,Pilbara,Archean Cratons
+142985,10.1,434.0,213.0,0.5,Pilbara,Archean Cratons
+183492,8.1,242.0,457.0,2.0,Musgraves,Proterozoic Orogens
+187115,49.1,38.0,33.0,0.9,Musgraves,Proterozoic Orogens
+187115,33.1,16.0,20.0,1.3,Musgraves,Proterozoic Orogens
+187113,23.1,987.0,181.0,0.2,Musgraves,Proterozoic Orogens
+187115,46.1,25.0,36.0,1.4,Musgraves,Proterozoic Orogens
+189540,34.1,19.5,315.6,16.7,Musgraves,Proterozoic Orogens
+187115,23.1,23.0,23.0,1.0,Musgraves,Proterozoic Orogens
+177910,4.2,463.0,6.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+88410,45.2,151.0,80.0,0.5,Capricon Orogen,Proterozoic Orogens
+194740,28.1,83.9,3.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182203,2.1,108.6,108.3,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+194740,23.1,38.2,0.2,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,31.1,245.2,202.1,0.9,Musgraves,Proterozoic Orogens
+183492,33.1,230.0,353.0,1.6,Musgraves,Proterozoic Orogens
+194740,36.1,71.5,7.4,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+182475,18.1,140.9,2.7,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194707,1.1,164.3,11.7,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194735,5.1,51.7,0.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,33.1,309.8,347.5,1.2,Musgraves,Proterozoic Orogens
+184329,35.1,105.6,0.4,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+195826,26.1,14.6,0.7,0.0,Capricon Orogen,Proterozoic Orogens
+194709,17.1,560.5,104.3,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+104975,14.1,359.0,200.0,0.6,Yilgarn,Archean Cratons
+105009,17.1,397.0,303.0,0.8,Yilgarn,Archean Cratons
+112177,23.1,124.0,65.0,0.5,Yilgarn,Archean Cratons
+118950,11.1,231.0,93.0,0.4,Yilgarn,Archean Cratons
+142835,12.1,138.0,64.0,0.5,Pilbara,Archean Cratons
+169001,11.1,1783.0,221.0,0.1,leeuwin,Proterozoic Orogens
+174737,26.1,39.0,137.0,3.6,Musgraves,Proterozoic Orogens
+194740,25.1,62.3,1.9,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194740,1.1,83.0,2.8,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194381,47.1,203.7,311.1,1.6,Musgraves,Proterozoic Orogens
+194708,19.1,381.8,18.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182203,5.1,113.8,187.7,1.7,Albany-Fraser Orogen,Proterozoic Orogens
+194728,31.1,306.2,8.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+184334,10.1,1991.9,21.1,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+189540,39.1,10.0,208.1,21.4,Musgraves,Proterozoic Orogens
+199422,2.2,163.2,104.4,0.7,Basins,Basins
+189540,18.2,19.2,326.6,17.6,Musgraves,Proterozoic Orogens
+100710,15.1,2615.0,1994.0,0.8,Yilgarn,Archean Cratons
+104970,35.1,561.0,110.0,0.2,Yilgarn,Archean Cratons
+105001,16.1,1129.0,51.0,0.1,Yilgarn,Archean Cratons
+105002,5.1,787.0,86.0,0.1,Yilgarn,Archean Cratons
+112144A,9.1,221.0,167.0,0.8,leeuwin,Proterozoic Orogens
+112177,4.1,150.0,112.0,0.8,Yilgarn,Archean Cratons
+118923,4.1,83.0,52.0,0.6,Pilbara,Archean Cratons
+142874,22.1,571.0,306.0,0.5,Pilbara,Archean Cratons
+142985,5.1,226.0,33.0,0.1,Pilbara,Archean Cratons
+144261,16.2,680.0,114.0,0.2,Basins,Basins
+194740,38.1,67.2,4.4,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+182477,6.1,54.9,21.1,0.4,Albany-Fraser Orogen,Proterozoic Orogens
+177910,6.2,406.0,12.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194785,22.1,74.1,384.0,5.4,Albany-Fraser Orogen,Proterozoic Orogens
+194740,9.1,65.0,3.2,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194785,6.1,522.0,152.5,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+189540,47.1,61.8,120.1,2.0,Musgraves,Proterozoic Orogens
+177908,6.2,560.0,116.0,0.2,Yilgarn,Archean Cratons
+177910,14.2,181.0,15.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+194740,10.1,81.1,2.8,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+187166,3.1,1173.5,120.1,0.1,Musgraves,Proterozoic Orogens
+195826,2.1,25.9,0.1,0.0,Capricon Orogen,Proterozoic Orogens
+208414,6.1,154.2,236.0,1.6,Musgraves,Proterozoic Orogens
+194740,6.1,70.3,2.5,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+104970,26.1,408.0,104.0,0.3,Yilgarn,Archean Cratons
+105012,5.1,273.0,138.0,0.5,Yilgarn,Archean Cratons
+118924,6.1,145.0,92.0,0.6,Basins,Basins
+142985,9.1,587.0,295.0,0.5,Pilbara,Archean Cratons
+144261,13.3,156.0,190.0,1.2,Basins,Basins
+189540,50.1,12.6,172.3,14.1,Musgraves,Proterozoic Orogens
+195826,7.1,27.9,0.1,0.0,Capricon Orogen,Proterozoic Orogens
+184329,34.1,2040.5,250.3,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+195826,4.1,23.4,0.0,0.0,Capricon Orogen,Proterozoic Orogens
+194785,5.1,273.3,264.5,1.0,Albany-Fraser Orogen,Proterozoic Orogens
+194709,28.1,351.3,201.3,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+174737,6.2,37.0,88.0,2.5,Musgraves,Proterozoic Orogens
+187166,15.1,1167.9,164.6,0.1,Musgraves,Proterozoic Orogens
+174737,5.1,95.0,376.0,4.1,Musgraves,Proterozoic Orogens
+104963,6.1,474.0,209.0,0.4,Yilgarn,Archean Cratons
+105009,6.1,590.0,129.0,0.2,Yilgarn,Archean Cratons
+142985,21.1,479.0,290.0,0.6,Pilbara,Archean Cratons
+83666,15.1,556.0,126.0,0.2,Albany-Fraser Orogen,Proterozoic Orogens
+194725,28.1,49.1,0.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+182475,7.1,95.1,5.0,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184128,18.1,17.0,13.0,0.8,Albany-Fraser Orogen,Proterozoic Orogens
+194740,32.1,79.4,3.9,0.1,Albany-Fraser Orogen,Proterozoic Orogens
+184128,20.1,10.0,0.0,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+194785,8.1,269.4,159.6,0.6,Albany-Fraser Orogen,Proterozoic Orogens
+189540,21.1,15.8,287.1,18.7,Musgraves,Proterozoic Orogens
+101348,4.1,949.0,596.0,0.6,Yilgarn,Archean Cratons
+104970,16.1,427.0,359.0,0.8,Yilgarn,Archean Cratons
+118950,20.1,272.0,87.0,0.3,Yilgarn,Archean Cratons
+182475,60.1,56.5,15.5,0.3,Albany-Fraser Orogen,Proterozoic Orogens
+194740,18.1,64.8,1.8,0.0,Albany-Fraser Orogen,Proterozoic Orogens
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
