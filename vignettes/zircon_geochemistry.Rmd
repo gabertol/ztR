@@ -20,7 +20,8 @@ library(tidyverse)
 ```
 
 ```{r}
-A1<-read_csv("data/stds_zircon.csv")
+file_path <- system.file("extdata", "stds_zircon.csv", package = "ztR")
+BD <- read_csv(file_path)
 
 BD<-stds_zircon %>% 
     mutate(spot=row_number(),by=sample) %>% 
@@ -42,26 +43,35 @@ normalize <- function(BD, element_vector = al27:ta181, database = "mcdon_sun_199
   }
   
 
-  norm <- read.csv(system.file("extdata", database, package = "ztR")) 
+  normA <- read.csv(system.file("extdata", database, package = "ztR")) %>% dplyr::select(-element,element="element_2") 
+  normB <- read.csv(system.file("extdata", database, package = "ztR")) %>% dplyr::select(-element_2) 
   
 
-  key_column <- if (element_plus_size) "element_2" else "element"
+norm <- if (element_plus_size) normA else normB
   
   # Pivotando BD para o formato longo
   BD_long <- BD %>%
     select({{ element_vector }}, -contains("_2s")) %>%
     mutate(name = row_number()) %>%
-    pivot_longer(cols = -name, names_to = key_column, values_to = "value_BD")
+    pivot_longer(cols = -name, names_to = "element", values_to = "value_BD")
   
   # Juntando BD_long com o banco de dados norm e realizando a normalização
   BD_normalized <- BD_long %>%
-    left_join(norm, by = key_column) %>%
-    mutate(normalized_value = value_BD / value)
+    left_join(norm, by = "element") %>%
+     mutate(
+    value_BD = as.numeric(value_BD),  # Converte value_BD para numérico
+    value = as.numeric(value),        # Converte value para numérico
+    normalized_value = if_else(
+      is.na(value_BD) | is.na(value) | value_BD < 0 | value < 0, 
+      NA_real_, 
+      value_BD / value
+    )
+  )
 
   # Convertendo de volta para o formato largo e adicionando o sufixo "_N"
   BD_normalized_wide <- BD_normalized %>%
-    select(name, !!sym(key_column), normalized_value) %>%
-    pivot_wider(names_from = !!sym(key_column), values_from = normalized_value, names_sep = "") %>%
+    select(name, element, normalized_value) %>%
+    pivot_wider(names_from = element, values_from = normalized_value, names_sep = "") %>%
     rename_with(~ paste0(., "_N"), -name)  # Adiciona o sufixo "_N" às colunas, exceto "name"
 
   # Removendo a coluna "name_N" e retornando o dataframe final
@@ -71,10 +81,32 @@ normalize <- function(BD, element_vector = al27:ta181, database = "mcdon_sun_199
   return(result)
 }
 
+BD2 %>% select(contains("_N")) %>% names()
 
-normalize(BD)
+BD2<-normalize(BD) %>% 
+  mutate(ce_nd=ce140_N/nd146_N,
+        dy_nd=dy163_N/yb172_N,
+        hf_y=hf177/y89,
+        yb_gd=y89/gd157_N,
+        H_L_ree=(la139_N+ce140_N+pr141_N+nd146_N+pr141_N)/(eu153_N+gd157_N+tb159_N+ho165_N+er166_N+tm169_N+yb172_N+lu175_N),
+        eu_eu=anomaly(eu153_N,sm147_N,gd157_N))
 
 
 
+```
+
+
+```{r}
+
+BD2 %>% 
+  dplyr::select(sample,la139_N:lu175_N) %>% 
+  mutate(spot=row_number(),.by=sample) %>% 
+  pivot_longer(col = la139_N:lu175_N) %>% 
+  mutate(name=str_remove(name,"_N"),
+         name=str_remove_all(name,"[0-9]")) %>% 
+  ggplot(aes(x=name,y=value,group=spot))+
+  geom_line()+
+  scale_y_log10(limits=c(0.00001,1000)) +
+  facet_wrap(~sample)
 ```
 
