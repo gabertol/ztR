@@ -20,11 +20,14 @@
 #' @export
 zircon_ti_t <- function(pressure, aSiO2 = 1, aTiO2 = 1, ti_ppm, equation = "watson") {
 
-  f <- zircon_ti_f_site(pressure)
+
   l_ti<-log10(ti_ppm)
-  log_Ti_f <-  log10(ti_ppm* f)
+
 
   if (equation == "crisp") {
+
+  f <- zircon_ti_f_site(pressure)
+    log_Ti_f <-  log10(ti_ppm* f)
 
     T <- (4800 / (5.84 - log_Ti_f + 0.12 * pressure + 0.0056 * pressure^3 + log10(aSiO2) - log10(aTiO2)))- 273.15
   }

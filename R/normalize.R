@@ -1,6 +1,6 @@
-normalize <- function(BD, element_vector = al27:ta181, database = "mcdon_sun_1995.csv", element_plus_size = TRUE) {
+normalize <- function(BD, element_vector = al27:ta181, database = "mcdon_sun_1995.csv", element_plus_size = TRUE,error_tag="_2s") {
 
-  # Verificação básica do argumento BD
+
   if (!is.data.frame(BD)) {
     stop("BD argument must be a dataframe.")
   }
@@ -12,13 +12,12 @@ normalize <- function(BD, element_vector = al27:ta181, database = "mcdon_sun_199
 
   norm <- if (element_plus_size) normA else normB
 
-  # Pivotando BD para o formato longo
   BD_long <- BD %>%
-    select({{ element_vector }}, -contains("_2s")) %>%
+    select({{ element_vector }}, -contains(error_tag)) %>%
     mutate(name = row_number()) %>%
     pivot_longer(cols = -name, names_to = "element", values_to = "value_BD")
 
-  # Juntando BD_long com o banco de dados norm e realizando a normalização
+
   BD_normalized <- BD_long %>%
     left_join(norm, by = "element") %>%
     mutate(

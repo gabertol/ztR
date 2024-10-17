@@ -83,13 +83,11 @@ norm <- if (element_plus_size) normA else normB
 
 BD2 %>% select(contains("_N")) %>% names()
 
-BD2<-normalize(BD) %>% 
-  mutate(ce_nd=ce140_N/nd146_N,
-        dy_nd=dy163_N/yb172_N,
-        hf_y=hf177/y89,
-        yb_gd=y89/gd157_N,
-        H_L_ree=(la139_N+ce140_N+pr141_N+nd146_N+pr141_N)/(eu153_N+gd157_N+tb159_N+ho165_N+er166_N+tm169_N+yb172_N+lu175_N),
-        eu_eu=anomaly(eu153_N,sm147_N,gd157_N))
+
+BD2<-normalize(BD) %>%
+  ratio_calculator() %>% 
+  mutate(sample=str_replace(sample,"91500-G","91500"),
+         sample=str_replace(sample,"FC1","FC-1"))
 
 
 
@@ -98,15 +96,82 @@ BD2<-normalize(BD) %>%
 
 ```{r}
 
+
 BD2 %>% 
-  dplyr::select(sample,la139_N:lu175_N) %>% 
+  mutate(age_accuracy=best_age_s2*100/best_age) %>% 
+  dplyr::select(sample,best_age,best_age_s2,age_accuracy,la139_N:lu175_N) %>% 
+  filter(best_age>0,
+         best_age<4500,
+         #keep=TRUE,age_accuracy<100
+         ) %>% 
   mutate(spot=row_number(),.by=sample) %>% 
   pivot_longer(col = la139_N:lu175_N) %>% 
+  filter(value>1e-10) %>% 
   mutate(name=str_remove(name,"_N"),
-         name=str_remove_all(name,"[0-9]")) %>% 
-  ggplot(aes(x=name,y=value,group=spot))+
-  geom_line()+
-  scale_y_log10(limits=c(0.00001,1000)) +
-  facet_wrap(~sample)
+         element=str_remove_all(name,"[0-9]"),
+         element_alpha = str_extract(name, "[aA-zZ]+"),
+        element_num = as.integer(str_remove(name, "[aA-zZ]+"))) %>%         mutate(n = n(),.by=sample) %>%  
+  ggplot(aes(x = fct_reorder(element_alpha, element_num),
+             y = value,
+             color = age_accuracy,
+             group = spot)) +
+  geom_line(alpha = 0.5) +
+  geom_point(alpha = 0.5) +
+  scale_y_log10(limits = c(0.0000000000000000000000001, 10000)) +
+  scale_color_distiller(palette = "Reds", direction = -1) +
+  facet_wrap(~ sample, labeller = label_both) +  # Exibe o número de observações em cada faceta
+  geom_text(aes(label = paste("n =", n)), 
+            x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
+```
+```{r}
+
+
+BD2 %>% 
+  mutate(age_accuracy=best_age_s2*100/best_age) %>% 
+  dplyr::select(sample,best_age,best_age_s2,age_accuracy,la139_N:lu175_N) %>% 
+  filter(best_age>0,
+         best_age<4500,
+         keep=TRUE,age_accuracy<50) %>% 
+  mutate(spot=row_number(),.by=sample) %>% 
+  filter(sample=="91500") %>% 
+  pivot_longer(col = la139_N:lu175_N) %>% 
+  mutate(name=str_remove(name,"_N"),
+         element=str_remove_all(name,"[0-9]"),
+         element_alpha = str_extract(name, "[aA-zZ]+"),
+        element_num = as.integer(str_remove(name, "[aA-zZ]+"))) %>%         mutate(n = n(),.by=sample) %>%  
+  ggplot(aes(x = value)) +
+  geom_histogram()+
+  #scale_y_log10(limits = c(0.0000000000000000000000001, 10000)) +
+  #scale_color_distiller(palette = "Reds", direction = 1) +
+  facet_wrap(~fct_reorder(element_alpha,element_num), labeller = label_both,scales="free_x") +  # Exibe o número de observações em cada faceta
+  scale_x_log10()+
+  geom_text(aes(label = paste("n =", n)), 
+            x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
+
+```
+```{r}
+BD2 %>% 
+  mutate(age_accuracy=best_age_s2*100/best_age) %>% 
+  dplyr::select(sample,best_age,best_age_s2,age_accuracy,la139_N:lu175_N) %>% 
+  filter(best_age>0,
+         best_age<4500,
+         #keep=TRUE,
+         #age_accuracy<50
+         ) %>% 
+  mutate(spot=row_number(),.by=sample) %>% 
+#  filter(sample=="91500") %>% 
+  pivot_longer(col = la139_N:lu175_N) %>% 
+  mutate(name=str_remove(name,"_N"),
+         element=str_remove_all(name,"[0-9]"),
+         element_alpha = str_extract(name, "[aA-zZ]+"),
+        element_num = as.integer(str_remove(name, "[aA-zZ]+"))) %>%         mutate(n = n(),.by=sample) %>%  
+  ggplot(aes(x = best_age)) +
+  geom_histogram()+
+  #scale_y_log10(limits = c(0.0000000000000000000000001, 10000)) +
+  #scale_color_distiller(palette = "Reds", direction = 1) +
+  facet_wrap(~sample, labeller = label_both,scales="free")  # Exibe o número de observações em cada faceta
+  scale_x_log10()+
+  geom_text(aes(label = paste("n =", n)), 
+            x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
 ```
 
