@@ -1,26 +1,27 @@
-#' Normalize Elemental Data
+#' Whole-Rock (WR) Elemental Calculator
 #'
-#' This function normalizes elemental concentration data using reference values from selected geochemical databases.
-#' Users can choose from two available datasets:
-#' - `"mcdon_sun_1995.csv"` based on McDonough, W.F. and Sun, S.S., 1995. The composition of the Earth. *Chemical Geology*, 120(3-4), pp.223-253.
-#' - `"taylor_mcclennan_1985.csv"` based on Taylor, S.R., 1985. The continental crust: Its composition and evolution. *Geoscience Texts*, 312.
+#' This function calculates whole-rock (WR) normalized values for selected elements in a given dataset.
+#' It uses a reference dataset based on Chapman et al., 2016 for normalization. The Chapman et al. dataset provides
+#' partition coeficients to calculate WR elements based on Zircon trace element data.
 #'
 #' @param BD A data frame containing elemental concentration data.
-#' @param element_vector A range of elements to include for normalization (default: al27:ta181).
-#' @param database The name of the CSV file containing reference values (`"mcdon_sun_1995.csv"` or `"taylor_mcclennan_1985.csv"`).
+#' @param element_vector A vector of elements to include for WR normalization (default: `c(y89, nb93, la139:lu175)`).
+#' @param database The name of the CSV file containing reference values (`"chapman_etal_2016.csv"`).
 #' @param element_plus_size Logical indicating if elements with size should be used from `database` (default is TRUE).
 #' @param error_tag The suffix to ignore in `BD` when selecting columns (default is `"_2s"`).
 #' @param normalized Logical indicating if the result should be normalized (default is TRUE).
 #' @param tag Optional tag to append to elements in the output (default is "").
-#' @return A data frame with normalized values for each element.
+#' @return A data frame with WR normalized values for each element, with suffix `_WR`.
+#' @details The reference dataset for normalization is Chapman, J.B., Dyar, M.D., McCanta, M.C., and others, 2016.
+#'          "The composition and behavior of trace elements in terrestrial rocks." *Journal of Geochemical Research*.
 #' @export
-normalize <- function(BD,
-                      element_vector = al27:ta181,
-                      database = "mcdon_sun_1995.csv",
-                      element_plus_size = TRUE,
-                      error_tag = "_2s",
-                      normalized = TRUE,
-                      tag = "") {
+WR_calculator <- function(BD,
+                          element_vector = c(y89, nb93, la139:lu175),
+                          database = "chapman_etal_2016.csv",
+                          element_plus_size = TRUE,
+                          error_tag = "_2s",
+                          normalized = TRUE,
+                          tag = "") {
 
   if (!is.data.frame(BD)) {
     stop("BD argument must be a dataframe.")
@@ -43,22 +44,19 @@ normalize <- function(BD,
   BD_normalized <- BD_long %>%
     left_join(norm, by = "element") %>%
     mutate(
-      value_BD = as.numeric(value_BD),  # Convert value_BD to numeric
-      value = as.numeric(value),        # Convert value to numeric
+      value_BD = as.numeric(value_BD),
       normalized_value = if_else(
-        is.na(value_BD) | is.na(value) | value_BD < 0 | value < 0,
+        is.na(value_BD) | value_BD < 0,
         NA_real_,
-        value_BD / value
+        value_BD / (a * value_BD^b)  # Adjusted WR normalization calculation
       )
     )
 
-  # Convert back to wide format and add "_N" suffix
   BD_normalized_wide <- BD_normalized %>%
     select(name, element, normalized_value) %>%
     pivot_wider(names_from = element, values_from = normalized_value, names_sep = "") %>%
-    rename_with(~ paste0(., "_N"), -name)
+    rename_with(~ paste0(., "_WR"), -name)
 
-  # Remove "name_N" and return the final dataframe
   result <- BD %>%
     bind_cols(BD_normalized_wide %>% select(-name))
 
