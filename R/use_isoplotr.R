@@ -15,7 +15,7 @@
 use_isoplotr <- function(df, age_type = 1) {
 
   # Define column names for the result data frame
-  col_name <- c("age_75", "s_2_75", "age_68", "s_2_68", "age_76", "s_2_76", "age_concordia", "s_2_concordia")
+  col_name <- c("age_75", "s_2_75", "age_68", "s_2_68", "age_76", "s_2_76", "age_concordia", "s_2_concordia","discordance_concordia")
 
   # Initialize an empty error data frame with the defined columns
   error_df <- data.frame(matrix(NA, nrow = 1, ncol = length(col_name)), stringsAsFactors = FALSE) %>%
@@ -28,7 +28,7 @@ use_isoplotr <- function(df, age_type = 1) {
   result <- df %>%
     dplyr::select(pb207_u235, pb207_u235_2s, pb206_u238, pb206_u238_2s, pb207_pb206, pb207_pb206_2s, rho_207pb_206pb_v_238u_206pb) %>%
     IsoplotR::read.data(method = "U-Pb", type = 3, ierr = 2) %>%
-    safe_age(type = age_type)
+    safe_age(type = age_type,discordance=IsoplotR::discfilter(option='c'))
 
   # Rename columns to match defined names
   colnames(result) <- col_name

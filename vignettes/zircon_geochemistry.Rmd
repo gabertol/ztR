@@ -21,78 +21,102 @@ library(tidyverse)
 
 ```{r}
 file_path <- system.file("extdata", "stds_zircon.csv", package = "ztR")
-BD <- read_csv(file_path)
+stds_zircon <- read_csv(file_path)
 
 BD<-stds_zircon %>% 
     mutate(spot=row_number(),by=sample) %>% 
     rename_with(~ str_replace_all(., "_mean|_ppm", "") %>%
                 str_replace_all("_2se_int", "_2s"))
 
-
-
-
 ```
 
 ```{r}
 
-normalize <- function(BD, element_vector = al27:ta181, database = "mcdon_sun_1995.csv", element_plus_size = TRUE) {
-  
-  # Verificação básica do argumento BD
-  if (!is.data.frame(BD)) {
-    stop("BD argument must be a dataframe.")
-  }
-  
-
-  normA <- read.csv(system.file("extdata", database, package = "ztR")) %>% dplyr::select(-element,element="element_2") 
-  normB <- read.csv(system.file("extdata", database, package = "ztR")) %>% dplyr::select(-element_2) 
-  
-
-norm <- if (element_plus_size) normA else normB
-  
-  # Pivotando BD para o formato longo
-  BD_long <- BD %>%
-    select({{ element_vector }}, -contains("_2s")) %>%
-    mutate(name = row_number()) %>%
-    pivot_longer(cols = -name, names_to = "element", values_to = "value_BD")
-  
-  # Juntando BD_long com o banco de dados norm e realizando a normalização
-  BD_normalized <- BD_long %>%
-    left_join(norm, by = "element") %>%
-     mutate(
-    value_BD = as.numeric(value_BD),  # Converte value_BD para numérico
-    value = as.numeric(value),        # Converte value para numérico
-    normalized_value = if_else(
-      is.na(value_BD) | is.na(value) | value_BD < 0 | value < 0, 
-      NA_real_, 
-      value_BD / value
-    )
-  )
-
-  # Convertendo de volta para o formato largo e adicionando o sufixo "_N"
-  BD_normalized_wide <- BD_normalized %>%
-    select(name, element, normalized_value) %>%
-    pivot_wider(names_from = element, values_from = normalized_value, names_sep = "") %>%
-    rename_with(~ paste0(., "_N"), -name)  # Adiciona o sufixo "_N" às colunas, exceto "name"
-
-  # Removendo a coluna "name_N" e retornando o dataframe final
-  result <- BD %>%
-    bind_cols(BD_normalized_wide %>% select(-name))
-  
-  return(result)
-}
-
-BD2 %>% select(contains("_N")) %>% names()
+BD %>% 
+  tidy_isoplotr() %>% 
+  view()
 
 
-BD2<-normalize(BD) %>%
-  ratio_calculator() %>% 
-  mutate(sample=str_replace(sample,"91500-G","91500"),
-         sample=str_replace(sample,"FC1","FC-1"))
-
+BD %>% 
+    dplyr::select(pb207_u235, pb207_u235_2s, pb206_u238, pb206_u238_2s, pb207_pb206, pb207_pb206_2s, rho_207pb_206pb_v_238u_206pb) %>%
+  slice(1) %>% 
+    IsoplotR::read.data(method = "U-Pb", type = 3, ierr = 2) %>%
+    IsoplotR::age(discordance=IsoplotR::discfilter(option='c'))
 
 
 ```
 
+
+```{r}
+
+BD2 %>% select(contains("_N")) %>% names()
+
+BD %>% 
+  # select(everything(),y89:y89_2s,la139:lu175_2s) %>% 
+  normalize() %>% view()
+
+
+
+
+normalize(BD,element_vector = c(y89,la139:lu175)) %>% view()
+
+BD2<-normalize(BD,element_vector = c(y89,la139:lu175)) %>% view()
+  ratio_calculator() %>% 
+  mutate(sample=str_replace(sample,"91500-G","91500"),
+         sample=str_replace(sample,"FC1","FC-1")) %>% 
+  tidy_isoplotr()
+
+
+```
+
+# Testing isolite and isoplotR ages
+
+```{r}
+BD2 %>% 
+  
+  mutate(error_68=age_68-pb206_u238_age,
+         error_75=age_75-pb207_u235_age,
+         error_76=age_76-pb207_pb206_age) %>%
+  ggplot(aes(x=error_68,y=error_75)) +
+  geom_point()+
+  facet_wrap(~sample,scales="free")
+
+
+BD2 %>% 
+  
+  mutate(error_68=age_68-pb206_u238_age,
+         error_75=age_75-pb207_u235_age,
+         error_76=age_76-pb207_pb206_age) %>% 
+  pivot_longer(cols=error_68:error_76) %>% 
+  ggplot(aes(x=value)) +
+  geom_histogram()+
+  facet_grid(name~sample,scales="free_x")
+
+
+  
+```
+
+# Differences in the mean of age and error of 76age among isolite ages and isoplotR ages
+
+```{r}
+BD2 %>% 
+  
+  mutate(error_68=age_68-pb206_u238_age,
+         error_75=age_75-pb207_u235_age,
+         error_76=age_76-pb207_pb206_age) %>% 
+  # age_68 e a mesma que pb206_u238_age, age_75 e a mesma que pb207_u235_age, age_76 e a mesma que pb207_pb206_age
+  # pivotar as colunas das idades e erros age_68, age_75, age_76, error_68, error_75, error_76 e pb206_u238_age, pb207_u235_age, pb207_pb206_age,pb206_u238_age_2s, pb207_u235_age_2s, pb207_pb206_age_2s
+  pivot_longer(cols  %in%  c(age_68:age_76,pb206_u238_age:pb206_u238_age_2s))
+  
+  pivot_longer(cols  %in%  c(age_68:age_76,pb206_u238_age:pb206_u238_age_2s)) %>% 
+  group_by(name) %>%
+  summarise(mean_age=mean(value,na.rm = TRUE)) %>% view()
+    
+  summarise(mean_error_68=mean(error_68),
+            mean_error_75=mean(error_75),
+            mean_error_76=mean(error_76),
+            ) %>%
+```
 
 ```{r}
 
@@ -123,6 +147,93 @@ BD2 %>%
   geom_text(aes(label = paste("n =", n)), 
             x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
 ```
+
+```{r}
+BD2 %>% 
+  mutate(age_accuracy=best_age_s2*100/best_age) %>% 
+  dplyr::select(sample,best_age,best_age_s2,age_accuracy,al27:ta181) %>% 
+  filter(best_age>0,
+         best_age<4500,
+         #keep=TRUE,age_accuracy<100
+         ) %>% 
+  mutate(spot=row_number(),.by=sample) %>% 
+  pivot_longer(col = al27:ta181) %>% 
+  filter(!str_detect(name,"_2s")) %>% 
+#  filter(value>1e-10) %>% 
+  mutate(name=str_remove(name,"_N"),
+         element=str_remove_all(name,"[0-9]"),
+         element_alpha = str_extract(name, "[aA-zZ]+"),
+        element_num = as.integer(str_remove(name, "[aA-zZ]+"))) %>%         mutate(n = n(),.by=sample) %>%  
+  ggplot(aes(x = fct_reorder(element_alpha, element_num),
+             y = value,
+             color = age_accuracy,
+             group = spot)) +
+  geom_line(alpha = 0.5) +
+  geom_point(alpha = 0.5) +
+  scale_y_log10(limits = c(0.0000000000000000000000001, 10000)) +
+  scale_color_distiller(palette = "Reds", direction = -1) +
+  facet_wrap(~ sample, labeller = label_both) +  # Exibe o número de observações em cada faceta
+  geom_text(aes(label = paste("n =", n)), 
+            x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
+```
+
+```{r}
+BD2 %>% 
+  mutate(age_accuracy=best_age_s2*100/best_age) %>% 
+  dplyr::select(sample,best_age,best_age_s2,age_accuracy,al27:ta181_2s) %>% 
+  filter(best_age>0,
+         best_age<4500,
+         #keep=TRUE,age_accuracy<100
+         ) %>% 
+  mutate(spot=row_number(),.by=sample) %>% 
+  pivot_longer(
+    cols = al27:ta181_2s) %>%
+  mutate(class=ifelse(str_detect(name,"_2s"),"s2","value"),
+         name=str_remove(name,"_2s")) %>% 
+  pivot_wider(names_from = class, values_from = value) %>% 
+  mutate(error_pct=s2*100/value,
+         element=str_remove_all(name,"[0-9]"),
+         element_alpha = str_extract(name, "[aA-zZ]+"),
+        element_num = as.integer(str_remove(name, "[aA-zZ]+"))) %>%     
+  mutate(n = n(),.by=sample) %>% 
+  filter(error_pct<200,
+         error_pct>0) -> BD3 
+  
+BD3 %>% 
+filter(element_num>= 139,
+       element_num<=175) %>% 
+ggplot(aes(x = fct_reorder(element_alpha, element_num),
+             y = error_pct,
+            # color = age_accuracy,
+             group = spot)) +
+  geom_violin()+
+  scale_y_continuous()+
+  #scale_y_log10(limits = c(0.0000000000000000000000001, 10000)) +
+#  scale_color_distiller(palette = "Reds", direction = -1) +
+ facet_wrap(~ sample, labeller = label_both) +  # Exibe o número de observações em cada faceta
+  geom_text(aes(label = paste("n =", n)), 
+            x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
+
+
+```
+
+```{r}
+BD3 %>% 
+filter(element_num< 139,
+       element_num<=175) %>% 
+ggplot(aes(x = fct_reorder(element_alpha, element_num),
+             y = error_pct,
+            # color = age_accuracy,
+             group = spot)) +
+  geom_violin()+
+  scale_y_continuous()+
+  #scale_y_log10(limits = c(0.0000000000000000000000001, 10000)) +
+#  scale_color_distiller(palette = "Reds", direction = -1) +
+ facet_wrap(~ sample, labeller = label_both) +  # Exibe o número de observações em cada faceta
+  geom_text(aes(label = paste("n =", n)), 
+            x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
+```
+
 ```{r}
 
 
@@ -149,6 +260,7 @@ BD2 %>%
             x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
 
 ```
+
 ```{r}
 BD2 %>% 
   mutate(age_accuracy=best_age_s2*100/best_age) %>% 
@@ -175,3 +287,392 @@ BD2 %>%
             x = Inf, y = Inf, hjust = 1.1, vjust = 1.1, size = 3, color = "black", inherit.aes = FALSE)
 ```
 
+### Error estimation
+
+```{r}
+
+BD2 %>% names()
+
+BD3<- BD2 %>% 
+  mutate(rho_75_68 = cov(pb207_u235, pb206_u238) / (pb207_u235_2s * pb206_u238_2s),
+         rho_68_76 = cov(pb206_u238, pb207_pb206) / (pb206_u238_2s * pb207_pb206_2s)) %>% 
+  dplyr::select(pb207_u235,pb207_u235_2s,pb206_u238,pb206_u238_2s,pb207_pb206,pb207_pb206_2s,rho_75_68,rho_68_76) %>% 
+  IsoplotR::read.data(method="U-Pb",type=3) %>% 
+  IsoplotR::age(ierr=2)
+  
+
+library(IsoplotR)
+IsoplotR::age()
+```
+
+```{r}
+
+library(dplyr)
+library(purrr)
+library(IsoplotR)
+
+
+use_isoplotr<-function(df,age_type=1){
+
+  col_name <- c("age_75", "s_2_75", "age_68", "s_2_68", "age_76", "s_2_76", "age_concordia", "s_2_concordia")
+  error_df<-data.frame(matrix(NA, nrow = 1, ncol = length(col_name)), stringsAsFactors = FALSE) %>%
+      `colnames<-`(col_name)
+   
+  safe_age <- purrr::possibly(.f = IsoplotR::age, otherwise = error_df)
+
+
+ result<- df %>% 
+    dplyr::select(pb207_u235, pb207_u235_2s, pb206_u238, pb206_u238_2s, pb207_pb206, pb207_pb206_2s,rho_207pb_206pb_v_238u_206pb) %>% 
+    IsoplotR::read.data(method = "U-Pb", type = 3, ierr = 2) %>% 
+    safe_age(type=age_type)
+
+ colnames(result)<-col_name
+     
+return(bind_cols(df,result))    
+  
+}
+
+
+
+tidy_isoplotr<-function(df,age_type=1){
+  df %>% 
+    split(1:nrow(.)) %>%
+    purrr::map_dfr(~ use_isoplotr(.,age_type=age_type)) 
+    
+}
+
+
+     
+BD3<-BD2 %>% 
+ # slice(1:100) %>% 
+  dplyr::select(sample,pb207_u235, pb207_u235_2s, pb206_u238, pb206_u238_2s, pb207_pb206, pb207_pb206_2s,rho_207pb_206pb_v_238u_206pb) %>%
+  tidy_isoplotr()
+
+  use_isoplotr(.) %>% view()
+  select(pb206_u238_age,age_68) %>% 
+  mutate(error=pb206_u238_age-age_68) %>% 
+  view()
+
+```
+
+# GGCONCORDIA
+
+```{r}
+geom_concordia <- function(mapping = NULL, data = NULL, stat = "identity", position = "identity",
+                           na.rm = FALSE, show.legend = NA, inherit.aes = TRUE, ...) {
+  layer(
+    stat = StatConcordia,
+    data = data,
+    mapping = mapping,
+    geom = GeomPolygon,  
+    position = position,
+    show.legend = show.legend,
+    inherit.aes = inherit.aes,
+    params = list(na.rm = na.rm, ...)
+  )
+}
+
+
+
+StatConcordia <- ggproto("StatConcordia", Stat,
+  compute_group = function(data, scales, ...) {
+    ellipses <- lapply(1:nrow(data), function(i) {
+      x <- data$x[i]
+      y <- data$y[i]
+      sigma_x <- data$sigma_x[i]
+      sigma_y <- data$sigma_y[i]
+      rho <- data$rho[i]
+      fill_value <- data$fill[i]  # Usa o valor de fill contínuo
+
+      # Verificação de valores ausentes para evitar falhas
+      if (is.na(x) || is.na(y) || is.na(sigma_x) || is.na(sigma_y) || is.na(rho)) {
+        return(NULL)
+      }
+
+      # Matriz de covariância para calcular a elipse
+      cov_matrix <- matrix(c(sigma_x^2, rho * sigma_x * sigma_y, rho * sigma_x * sigma_y, sigma_y^2), nrow = 2)
+      
+      # Gera pontos da elipse
+      angles <- seq(0, 2 * pi, length.out = 100)
+      unit_circle <- cbind(cos(angles), sin(angles))
+      ellipse_points <- t(chol(cov_matrix)) %*% t(unit_circle)
+      
+      # Ajusta para a posição central (x, y)
+      ellipse_df <- as.data.frame(t(ellipse_points))
+      ellipse_df$x <- ellipse_df$V1 + x
+      ellipse_df$y <- ellipse_df$V2 + y
+      ellipse_df$fill <- fill_value  
+      ellipse_df$group <- i  
+      
+      return(ellipse_df[, c("x", "y", "fill", "group")])
+    })
+
+
+    ellipses <- do.call(rbind, Filter(Negate(is.null), ellipses))
+    return(ellipses)
+  },
+  required_aes = c("x", "y", "sigma_x", "sigma_y", "rho", "fill")
+)
+
+add_concordia_line <- function(x_interval = 100, lambda_235 = 9.8485e-10, lambda_238 = 1.55125e-10) {
+  
+  # Gerar idades para a linha de concordia em intervalos de 1 milhão de anos
+  ages_line <- seq(0, 4500, by = 1) * 1e6
+  
+  # Calcular pontos para a linha de concordia
+  concordia_line_df <- data.frame(
+    x = exp(lambda_238 * ages_line) - 1,  # Pb206/U238
+    y = exp(lambda_235 * ages_line) - 1   # Pb207/U235
+  )
+  
+  # Gerar idades para os marcadores de idade em intervalos definidos pelo usuário (x_interval)
+  ages_labels <- seq(0, 4500, by = x_interval) * 1e6
+  
+  # Calcular pontos para os marcadores de idade
+  concordia_labels_df <- data.frame(
+    age = ages_labels / 1e6,  # idade em milhões de anos
+    x = exp(lambda_238 * ages_labels) - 1,
+    y = exp(lambda_235 * ages_labels) - 1
+  )
+  
+  # Retorna uma lista de camadas ggplot2 para serem adicionadas ao gráfico
+  list(
+    geom_line(data = concordia_line_df, aes(x = x, y = y), color = "blue", linetype = "solid"),
+    geom_point(data = concordia_labels_df, aes(x = x, y = y), color = "red"),
+    geom_text(data = concordia_labels_df, aes(x = x, y = y, label = round(age, 1)),
+              hjust = -0.2, vjust = 0.5, size = 3)
+  )
+}
+
+
+set_concordia_axes <- function(age_min = 0, age_max = 4500, lambda_235 = 9.8485e-10, lambda_238 = 1.55125e-10) {
+  
+  # Converte as idades mínimas e máximas em proporções Pb/U para os eixos
+  min_x <- exp(lambda_238 * age_min * 1e6) - 1  # Pb206/U238
+  max_x <- exp(lambda_238 * age_max * 1e6) - 1
+  
+  min_y <- exp(lambda_235 * age_min * 1e6) - 1  # Pb207/U235
+  max_y <- exp(lambda_235 * age_max * 1e6) - 1
+  
+  # Retorna as camadas de ajuste dos limites dos eixos no ggplot
+  list(
+    scale_x_continuous(limits = c(min_x, max_x), name = "Pb206/U238"),
+    scale_y_continuous(limits = c(min_y, max_y), name = "Pb207/U235")
+  )
+}
+
+
+# Plot with adjustments
+BD2 %>% 
+  mutate(pb204=ifelse(pb204<0,0,pb204)) %>% 
+  filter(age_concordia > 0,
+         s_2_concordia<50,
+         pb204<50) %>% 
+  ggplot() +
+
+  #geom_point() +  # Add points for clarity
+  geom_concordia(aes(x = pb206_u238, y = pb207_u235, sigma_x = pb206_u238_2s, sigma_y = pb207_u235_2s, rho = rho_206pb_238u_v_207pb_235u,fill=pb204),alpha=0.5) +
+  scale_fill_distiller(palette = "YlOrRd",direction=1)+
+    add_concordia_line(x_interval = 100)+
+  facet_wrap(~sample,
+         scales = "free")+
+  set_concordia_axes(age_min = 100,
+                     age_max = 1400)
+ #
+```
+
+# Classifier
+
+Based on belosouva 2002
+
+```{r}
+
+
+# Criação do banco de dados fictício com exemplos para cada classe
+TST <- tribble(
+  ~lu175, ~approx_u,  ~hf, ~Y, ~Yb, ~expected_class,
+  21,            0.4,    1,   "Ne-Syenite",
+  19,             0.4,    1,    "Syenite",
+  20,             0.6,    1,     "Carbonatite",
+  2,            0.6,    1,       "Kimberlite",
+  21,             0.6,    0.7,    "Basalt",
+  21,             0.6,    0.9,    "Dolerite",
+  21,             0.6,    1,      "Granitoid (>75% SiO2)",
+  21,             0.6,    1,      "Granitoid (70-75% SiO2)",
+  21,             0.6,    1,      "Granitoid (65-70% SiO2)"
+)
+
+# Aplicação do pipeline para calcular as colunas `ce_ce`, `hf` e `th_u`
+TST  %>% 
+  # mutate(
+  #   # ce_ce = anomaly(ce140, la139, pr141),
+  # #  hf = ppm_to_percent(hf177),
+  #  # th_u = approx_th / approx_u
+  # ) %>% 
+  classify_rock_long() %>% 
+  view()
+
+TST  %>% 
+  # mutate(
+  #   # ce_ce = anomaly(ce140, la139, pr141),
+  # #  hf = ppm_to_percent(hf177),
+  #  # th_u = approx_th / approx_u
+  # ) %>% 
+  classify_rock_long_no_ce() %>% 
+  view()
+
+# Visualizar o resultado, incluindo a coluna 'expected_class' para comparação
+test_data <- tribble(
+  ~lu175, ~hf,  ~approx_u, ~y89,    ~yb172,  ~expected_class,
+  19,     0.63,   2.8,     NA,    NA,   "Carbonatite",          
+  2,     1,    2.5,     NA,    NA,   "Kimberlite",           
+  21,     0.9,    1200,      4500,  600,  "Granitoid (>75% SiO2)", 
+  21,     2,    NA,      3000,  400,  "Granitoid (<65% SiO2)", 
+  21,     2,    NA,      3000,  600,  "Granitoid (70-75% SiO2)",
+  21,     0.7,    NA,      6500,  NA,   "Basalt",               
+  700,     0.7,    NA,      NA,    NA,   "Ne-syenite & Syenite Pegmatites", 
+  19,     0.5,    2.8,     NA,    NA,   "Syenite"                
+)
+
+test_data  %>% 
+  # mutate(
+  #   # ce_ce = anomaly(ce140, la139, pr141),
+  # #  hf = ppm_to_percent(hf177),
+  #  # th_u = approx_th / approx_u
+  # ) %>% 
+  classify_rock_short() %>% 
+  view()
+```
+
+# Zr/WR for trace and REE
+
+```{r}
+
+read.csv(system.file("extdata", "chapman_etal_2016.csv", package = "ztR")) 
+
+WR_calculator <- function(BD, 
+               element_vector = c(y89,nb93,la139:lu175),
+               database = "chapman_etal_2016.csv", 
+               element_plus_size = TRUE,
+               error_tag="_2s",
+               normalized=TRUE,
+               tag="") {
+
+
+  if (!is.data.frame(BD)) {
+    stop("BD argument must be a dataframe.")
+  }
+
+
+  normA <- read.csv(system.file("extdata", database, package = "ztR")) %>% dplyr::select(-element,element="element_2")
+  normB <- read.csv(system.file("extdata", database, package = "ztR")) %>% dplyr::select(-element_2)
+
+
+pre_norm <- if (element_plus_size) normA else normB
+  
+norm<-if(normalized) pre_norm %>% mutate(element=paste0(element,tag)) else pre_norm
+
+  BD_long <- BD %>%
+    select({{ element_vector }}, -contains(error_tag)) %>%
+    mutate(name = row_number()) %>%
+    pivot_longer(cols = -name, names_to = "element", values_to = "value_BD")
+
+
+  BD_normalized <- BD_long %>%
+    left_join(norm, by = "element") %>%
+    mutate(
+      value_BD = as.numeric(value_BD),
+      normalized_value = if_else(
+        is.na(value_BD) |  value_BD < 0 ,
+        NA_real_,
+        value_BD/(a*value_BD^b)
+      )
+    )
+
+
+  BD_normalized_wide <- BD_normalized %>%
+    select(name, element, normalized_value) %>%
+    pivot_wider(names_from = element, values_from = normalized_value, names_sep = "") %>%
+    rename_with(~ paste0(., "_WR"), -name)  
+  
+  
+ result <- BD %>%
+    bind_cols(BD_normalized_wide %>% select(-name))
+
+  return(result)
+}
+
+WR_crustal_thickness<- function(BD) {
+  
+  BD %>%
+    mutate(WR_crust=21.277*log(1.0204 *(la139_WR_N/yb172_WR_N)))
+  
+}
+
+
+normalize <- function(BD, 
+                      element_vector = al27:ta181,
+                      database = "mcdon_sun_1995.csv", 
+                      element_plus_size = TRUE,
+                      error_tag="_2s",
+                      normalized=TRUE,
+                      tag="") {
+
+
+  if (!is.data.frame(BD)) {
+    stop("BD argument must be a dataframe.")
+  }
+
+
+  normA <- read.csv(system.file("extdata", database, package = "ztR")) %>% dplyr::select(-element,element="element_2")
+  normB <- read.csv(system.file("extdata", database, package = "ztR")) %>% dplyr::select(-element_2)
+
+
+pre_norm <- if (element_plus_size) normA else normB
+  
+norm<-if(normalized) pre_norm %>% mutate(element=paste0(element,tag)) else pre_norm
+
+  BD_long <- BD %>%
+    select({{ element_vector }}, -contains(error_tag)) %>%
+    mutate(name = row_number()) %>%
+    pivot_longer(cols = -name, names_to = "element", values_to = "value_BD")
+
+
+  BD_normalized <- BD_long %>%
+    left_join(norm, by = "element") %>%
+    mutate(
+      value_BD = as.numeric(value_BD),  # Converte value_BD para numérico
+      value = as.numeric(value),        # Converte value para numérico
+      normalized_value = if_else(
+        is.na(value_BD) | is.na(value) | value_BD < 0 | value < 0,
+        NA_real_,
+        value_BD / value
+      )
+    )
+
+  # Convertendo de volta para o formato largo e adicionando o sufixo "_N"
+  BD_normalized_wide <- BD_normalized %>%
+    select(name, element, normalized_value) %>%
+    pivot_wider(names_from = element, values_from = normalized_value, names_sep = "") %>%
+    rename_with(~ paste0(., "_N"), -name)  # Adiciona o sufixo "_N" às colunas, exceto "name"
+
+  # Removendo a coluna "name_N" e retornando o dataframe final
+  result <- BD %>%
+    bind_cols(BD_normalized_wide %>% select(-name))
+
+  return(result)
+}
+
+
+BD %>% 
+ # normalize(normalized = FALSE) %>% 
+  WR_calculator(
+  
+   element_vector = c(y89,nb93,la139:lu175)
+    ) %>% 
+  normalize(tag = "_WR",element_vector = c(y89_WR,nb93_WR,la139_WR:lu175_WR)) %>% 
+  WR_crustal_thickness() 
+
+
+  
+```
