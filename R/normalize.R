@@ -12,6 +12,9 @@
 #' @param error_tag The suffix to ignore in `BD` when selecting columns (default is `"_2s"`).
 #' @param normalized Logical indicating if the result should be normalized (default is TRUE).
 #' @param tag Optional tag to append to elements in the output (default is "").
+#' @details The reference file is read with `.read_ref()`, which removes a UTF-8 BOM, parses numbers
+#'   written with thousands separators and converts wt% to ppm. The McDonough & Sun (1995) CI table
+#'   shipped with the package is stored entirely in ppm.
 #' @return A data frame with normalized values for each element.
 #' @export
 normalize <- function(BD,
@@ -26,10 +29,9 @@ normalize <- function(BD,
     stop("BD argument must be a dataframe.")
   }
 
-  normA <- read.csv(system.file("extdata", database, package = "ztR")) %>%
-    dplyr::select(-element, element = "element_2")
-  normB <- read.csv(system.file("extdata", database, package = "ztR")) %>%
-    dplyr::select(-element_2)
+  ref   <- .read_ref(database)
+  normA <- ref %>% dplyr::select(-element, element = "element_2")
+  normB <- ref %>% dplyr::select(-element_2)
 
   pre_norm <- if (element_plus_size) normA else normB
 

@@ -1,42 +1,51 @@
-#' Calculate zircon crystallization temperature
+#' Ti-in-zircon crystallization temperature
 #'
-#' This function calculates the crystallization temperature of zircon based on various parameters.
+#' @param pressure Pressure in GPa. Required only for `equation = "crisp"`.
+#' @param aSiO2 SiO2 activity (default 1). Used by `"ferry_watson2007"` and `"crisp"`.
+#' @param aTiO2 TiO2 activity (default 1). Used by `"ferry_watson2007"` and `"crisp"`.
+#' @param ti_ppm Ti in zircon (ppm).
+#' @param equation Calibration:
+#'   * `"watson"` (default, kept for compatibility) = `"watson_harrison2005"`:
+#'     log(Ti) = 6.01 - 5080/T (Watson & Harrison 2005);
+#'   * `"ferry_watson2007"`: log(Ti) = 5.711 - 4800/T - log(aSiO2) + log(aTiO2)
+#'     (Ferry & Watson 2007; equals Watson et al. 2006 when both activities are 1);
+#'   * `"crisp"`: pressure-dependent calibration of Crisp et al. (2023). The implementation has not
+#'     yet been checked against the published equation; use with care.
+#' @return Temperature in degrees Celsius. `NA` where `ti_ppm` is zero, negative or missing.
+#' @references
+#' Watson, E.B. and Harrison, T.M., 2005. Zircon thermometer reveals minimum melting conditions on
+#' earliest Earth. *Science*, 308, 841-844.
 #'
-#' References
-#' Crisp, Laura J., Andrew J. Berry, Antony D. Burnham, Laura A. Miller, and Matthew Newville. 2023. “The Ti-in-Zircon Thermometer Revised: The Effect of Pressure on the Ti Site in Zircon.” Geochimica Et Cosmochimica Acta 360 (November): 241–58. https://doi.org/10.1016/j.gca.2023.04.031.
-#' Watson, E. B., D. A. Wark, and J. B. Thomas. 2006. “Crystallization Thermometers for Zircon and Rutile.” Contributions to Mineralogy and Petrology 151 (4): 413–33. https://doi.org/10.1007/s00410-006-0068-5.
+#' Ferry, J.M. and Watson, E.B., 2007. New thermodynamic models and revised calibrations for the
+#' Ti-in-zircon and Zr-in-rutile thermometers. *Contributions to Mineralogy and Petrology*, 154,
+#' 429-437.
 #'
-#' @param pressure Pressure in giga Pascal.
-#' @param aSiO2 Activity fraction of SiO2 (default: 1).
-#' @param aTiO2 Activity fraction of TiO2 (default: 1).
-#' @param ti_ppm Concentration of titanium in parts per million.
-#' @param equation Equation to use for calculation: "crisp" or "watson" (default: "crisp").
-#'
-#' @return Crystallization temperature of zircon in Celsius.
-#'
+#' Crisp, L.J., Berry, A.J., Burnham, A.D., Miller, L.A. and Newville, M., 2023. The Ti-in-zircon
+#' thermometer revised: The effect of pressure on the Ti site in zircon. *Geochimica et
+#' Cosmochimica Acta*, 360, 241-258.
 #' @examples
-#' zircon_ti_t(pressure = 5, ti_ppm = 50)
-#'
+#' zircon_ti_t(ti_ppm = 10)
+#' zircon_ti_t(ti_ppm = 10, equation = "ferry_watson2007", aTiO2 = 0.6)
+#' zircon_ti_t(ti_ppm = 10, equation = "crisp", pressure = 0.5)
 #' @export
-zircon_ti_t <- function(pressure, aSiO2 = 1, aTiO2 = 1, ti_ppm, equation = "watson") {
+zircon_ti_t <- function(pressure = NULL, aSiO2 = 1, aTiO2 = 1, ti_ppm, equation = "watson") {
 
+  equation <- match.arg(equation, c("watson", "watson_harrison2005", "ferry_watson2007", "crisp"))
+  ti_ppm[!is.na(ti_ppm) & ti_ppm <= 0] <- NA
+  l_ti <- log10(ti_ppm)
 
-  l_ti<-log10(ti_ppm)
+  if (equation %in% c("watson", "watson_harrison2005")) {
+    return(5080 / (6.01 - l_ti) - 273.15)
+  }
 
+  if (equation == "ferry_watson2007") {
+    return(4800 / (5.711 - l_ti - log10(aSiO2) + log10(aTiO2)) - 273.15)
+  }
 
-  if (equation == "crisp") {
-
+  # crisp
+  if (is.null(pressure)) stop("`pressure` (GPa) is required for equation = \"crisp\".", call. = FALSE)
   f <- zircon_ti_f_site(pressure)
-    log_Ti_f <-  log10(ti_ppm* f)
-
-    T <- (4800 / (5.84 - log_Ti_f + 0.12 * pressure + 0.0056 * pressure^3 + log10(aSiO2) - log10(aTiO2)))- 273.15
-  }
-
-  if (equation == 'watson') {
-    T <- (5080 / (6.01 - l_ti)) - 273
-  }
-
-  return(T)
-
+  log_Ti_f <- log10(ti_ppm * f)
+  (4800 / (5.84 - log_Ti_f + 0.12 * pressure + 0.0056 * pressure^3 +
+             log10(aSiO2) - log10(aTiO2))) - 273.15
 }
-

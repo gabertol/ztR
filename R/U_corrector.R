@@ -1,3 +1,17 @@
+#' Initial U content of a zircon
+#'
+#' Back-calculates the U content at crystallization from the present-day content and the age,
+#' splitting U into 238U and 235U with `u238_u235_ratio`.
+#'
+#' @param U_ppm Present-day U (ppm).
+#' @param age_myr Crystallization age (Ma).
+#' @param lambda_238,lambda_235 Decay constants (1/yr).
+#' @param u238_u235_ratio Present-day 238U/235U (default 137, kept for compatibility; the
+#'   currently accepted value is 137.818, Hiess et al. 2012).
+#' @return Initial U (ppm).
+#' @examples
+#' u_corrector(100, 1000)
+#' @export
 u_corrector <- function(U_ppm, age_myr,
                                                  lambda_238 = 1.55125e-10,  # Decay constant for U-238
                                                  lambda_235 = 9.8485e-10,   # Decay constant for U-235

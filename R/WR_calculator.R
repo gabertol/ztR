@@ -12,8 +12,10 @@
 #' @param normalized Logical indicating if the result should be normalized (default is TRUE).
 #' @param tag Optional tag to append to elements in the output (default is "").
 #' @return A data frame with WR normalized values for each element, with suffix `_WR`.
-#' @details The reference dataset for normalization is Chapman, J.B., Dyar, M.D., McCanta, M.C., and others, 2016.
-#'          "The composition and behavior of trace elements in terrestrial rocks." *Journal of Geochemical Research*.
+#' @details Parent-rock concentrations are estimated as `C_zircon / (a * C_zircon^b)` with the
+#'   coefficients of Chapman, J.B., Gehrels, G.E., Ducea, M.N., Giesler, N. and Pullen, A., 2016.
+#'   A new method for estimating parent rock trace element concentrations from zircon.
+#'   *Chemical Geology*, 439, 59-70.
 #' @export
 WR_calculator <- function(BD,
                           element_vector = c(y89, nb93, la139:lu175),
@@ -27,10 +29,9 @@ WR_calculator <- function(BD,
     stop("BD argument must be a dataframe.")
   }
 
-  normA <- read.csv(system.file("extdata", database, package = "ztR")) %>%
-    dplyr::select(-element, element = "element_2")
-  normB <- read.csv(system.file("extdata", database, package = "ztR")) %>%
-    dplyr::select(-element_2)
+  ref   <- .read_ref(database)
+  normA <- ref %>% dplyr::select(-element, element = "element_2")
+  normB <- ref %>% dplyr::select(-element_2)
 
   pre_norm <- if (element_plus_size) normA else normB
 

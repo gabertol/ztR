@@ -1,44 +1,103 @@
 # ztR
-<b>Functions to deal with mineral geochemistry, zircon geochemistry normalization and convertion to whole-rock trace elements, ratios and proxies calculations</b>
 
+**Tidy tools for mineral chemistry and zircon geochemistry and geochronology.**
 
-<b>1. Mineral end-members and crystal chemistry calculations for SEM-EDS, EMPA or any mineral chemistry dataset.</b>
+ztR (Zircon–Tourmaline–Rutile) works the tidy way: a data frame goes in, the same data frame comes
+out with new columns. It also wraps IsoplotR so U-Pb ages can be computed without dealing with its
+own data classes.
 
-Function chemical_formula()
+## Installation
 
-Calculation based on the seminal book "An introduction to the rock-forming minerals" annex 1. The calculatios are based on the no of oxigens in the mineral formula- which works virtually with every mineral in the book. 
+```r
+install.packages("devtools")
+devtools::install_github("gabertol/ztR")
 
-The package is a simple wrap-up function of tidy- style operation to transform raw mineral chemistry from EPMA,SEM, LA-ICP to APFU values.
+# optional, for U-Pb ages
+install.packages("IsoplotR")
+```
 
-The data includes 3 mineral chemistry raw data from DHZ- garnet, tourmaline, and epidote- for benchmarkig (see vignette).
+## Quick example
 
-Howie, R.A., Zussman, J. and Deer, W., 1992. An introduction to the rock-forming minerals (p. 696). London, UK: Longman.
+```r
+library(ztR)
+library(tidyverse)
 
-<b>2. Zircon geochemistry normalization.</b>
+zircons <- read_csv(system.file("extdata", "stds_zircon.csv", package = "ztR")) %>%
+  rename_with(~ .x %>% str_replace_all("_mean|_ppm", "") %>% str_replace_all("_2se_int", "_2s"))
 
-Function normalize()
+zircons %>%
+  normalize(element_vector = c(la139:lu175)) %>%
+  mutate(eu_eu = anomaly(eu153_N, sm147_N, gd157_N),
+         t_ti  = zircon_ti_t(ti_ppm = ti49)) %>%
+  use_isoplotr(legacy = FALSE)
+```
 
-- "mcdon_sun_1995.csv" based on McDonough, W.F. and Sun, S.S., 1995. The composition of the Earth. *Chemical Geology*, 120(3-4), pp.223-253.
-- "taylor_mcclennan_1985.csv"` based on Taylor, S.R., 1985. The continental crust: Its composition and evolution. *Geoscience Texts*, 312.
+## What it does
 
-<b>3. Zircon geochemistry whole-rock calculation.</b>
+| Topic | Functions |
+|---|---|
+| Mineral formulae (APFU) | `chemical_formula()` |
+| Normalization | `normalize()` |
+| Ratios and proxies | `ratio_calculator()`, `anomaly()`, `FMQ()`, `crustal_thickness()` |
+| Ti-in-zircon | `zircon_ti_t()`, `zircon_ti_p()` |
+| Source-rock classification | `classify_rock_long()`, `classify_rock_long_no_ce()`, `classify_rock_short()` |
+| Parent-rock composition | `WR_calculator()`, `WR_crustal_thickness()` |
+| U-Pb ages | `use_isoplotr()` |
+| Concordia diagrams | `geom_concordia()`, `geom_concordia_line()` |
 
-Function WR_calculator()
-- based on Chapman, J.B., Gehrels, G.E., Ducea, M.N., Giesler, N. and Pullen, A., 2016. A new method for estimating parent rock trace element concentrations from zircon. Chemical Geology, 439, pp.59-70.
+## Conventions
 
-<b>4. Zircon geochemistry ratios and proxies.</b>
+* Columns named after element and isotope mass: `la139`, `ti49`, `pb206_u238`.
+* Uncertainties in a column with the suffix `_2s`, **2-sigma absolute**.
+* Concentrations in ppm, ages in Ma.
+* Normalized values get the suffix `_N`; whole-rock estimates, `_WR`.
 
-- FMQ() based on Loucks et al
-- crustal_thickness() based on Tang et al
-- WR_crustal_thickness() based on Profeta et al 2015
-- ratio_calculator based on Sundell et al 2020
-- anomaly() for Eu/Eu* or Ce/Ce* calculation
+## Articles
 
-<b>5. Zircon source rock classification based on geochemistry</b>  
+* `vignette("ztR")`: getting started
+* `vignette("zircon-geochemistry")`: normalization, ratios, thermometry, classification, whole rock
+* `vignette("u-pb-geochronology")`: ages with IsoplotR and concordia diagrams
+* `vignette("mineral-formula")`: APFU of tourmaline, garnet and epidote
 
-- classify_rock_long() to classify zircons based on long CART from Belosouva et al 2002
-- classify_rock_long_no_ce() to classify zircons based on long CART from Belosouva et al 2002 removing the Ce steps
-- classify_rock_short() to classify zircons based on short CART from Belosouva et al 2002
+Online: <https://gabertol.github.io/ztR/>
+
+## References
+
+**Mineral formulae.** Deer, W.A., Howie, R.A. and Zussman, J., 1992. *An introduction to the
+rock-forming minerals*. Longman, London. The package ships the garnet, tourmaline and epidote
+analyses of the book as benchmark data.
+
+**Normalization.**
+* McDonough, W.F. and Sun, S.S., 1995. The composition of the Earth. *Chemical Geology*, 120,
+  223–253 (`"mcdon_sun_1995.csv"`, default).
+* Taylor, S.R. and McLennan, S.M., 1985. *The continental crust: its composition and evolution*.
+  Blackwell (`"taylor_mcclennan_1985.csv"`).
+
+**Ratios and proxies.**
+* Loucks, R.R., Fiorentini, M.L. and Henríquez, G.J., 2020. New magmatic oxybarometer using trace
+  elements in zircon. *Journal of Petrology*, 61, egaa034 (`FMQ()`).
+* Tang, M., Ji, W.-Q., Chu, X., Wu, A. and Chen, C., 2021. Reconstructing crustal thickness
+  evolution from europium anomalies in detrital zircons. *Geology*, 49, 76–80
+  (`crustal_thickness()`).
+* Profeta, L., Ducea, M.N., Chapman, J.B. et al., 2015. Quantifying crustal thickness over time in
+  magmatic arcs. *Scientific Reports*, 5, 17786 (`WR_crustal_thickness()`).
+* Sundell, K.E. et al., 2020 (`ratio_calculator()`).
+
+**Ti-in-zircon.**
+* Watson, E.B. and Harrison, T.M., 2005. *Science*, 308, 841–844.
+* Ferry, J.M. and Watson, E.B., 2007. *Contributions to Mineralogy and Petrology*, 154, 429–437.
+* Crisp, L.J. et al., 2023. *Geochimica et Cosmochimica Acta*, 360, 241–258.
+
+**Classification.** Belousova, E.A., Griffin, W.L., O'Reilly, S.Y. and Fisher, N.I., 2002. Igneous
+zircon: trace element composition as an indicator of source rock type. *Contributions to
+Mineralogy and Petrology*, 143, 602–622.
+
+**Parent-rock composition.** Chapman, J.B., Gehrels, G.E., Ducea, M.N., Giesler, N. and Pullen,
+A., 2016. A new method for estimating parent rock trace element concentrations from zircon.
+*Chemical Geology*, 439, 59–70.
+
+**U-Pb.** Vermeesch, P., 2018. IsoplotR: a free and open toolbox for geochronology. *Geoscience
+Frontiers*, 9, 1479–1493.
 
 <b>How to use</b>                                                  
 1- Install devtools in R

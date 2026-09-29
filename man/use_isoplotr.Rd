@@ -2,24 +2,69 @@
 % Please edit documentation in R/use_isoplotr.R
 \name{use_isoplotr}
 \alias{use_isoplotr}
-\title{Calculate U-Pb Ages Using IsoplotR}
+\alias{tidy_isoplotr}
+\title{Single-grain U-Pb ages with IsoplotR}
 \usage{
-use_isoplotr(df, age_type = 1)
+use_isoplotr(
+  df,
+  age_type = 1,
+  discordance = "c",
+  concordia = TRUE,
+  legacy = TRUE
+)
+
+tidy_isoplotr(
+  df,
+  age_type = 1,
+  discordance = "c",
+  concordia = TRUE,
+  legacy = TRUE
+)
 }
 \arguments{
-\item{df}{A data frame with columns for isotopic ratios and uncertainties (\code{pb207_u235}, \code{pb207_u235_2s},
-\code{pb206_u238}, \code{pb206_u238_2s}, \code{pb207_pb206}, \code{pb207_pb206_2s}, \code{rho_207pb_206pb_v_238u_206pb}).}
+\item{df}{Data frame with \code{pb207_u235}, \code{pb207_u235_2s}, \code{pb206_u238}, \code{pb206_u238_2s},
+\code{pb207_pb206}, \code{pb207_pb206_2s} (2-sigma absolute) and, optionally, the error correlations
+\code{rho_206pb_238u_v_207pb_235u} (Wetherill) and \code{rho_207pb_206pb_v_238u_206pb}
+(Tera-Wasserburg). Missing correlations are inferred by IsoplotR from the redundancy of the
+three ratios.}
 
-\item{age_type}{Numeric specifying the type of age to compute in \code{IsoplotR::age}. Default is 1.}
+\item{age_type}{Only \code{1} (single-grain ages) is supported.}
+
+\item{discordance}{IsoplotR discordance option: \code{"c"} (concordia distance, default), \code{"a"},
+\code{"r"}, \code{"t"} or \code{"sk"}. See \code{IsoplotR::discfilter()}.}
+
+\item{concordia}{If \code{TRUE} (default), also computes the single-grain concordia age, its
+p-value and the discordance. This is what makes IsoplotR slow (~30 ms per grain); with
+\code{FALSE} only the 7/5, 6/8 and 7/6 ages are computed (~20 times faster).}
+
+\item{legacy}{If \code{TRUE} (default), also returns the columns of previous versions
+(\code{s_2_75}, \code{s_2_68}, \code{s_2_76}, \code{age_concordia}, \code{s_2_concordia}, \code{discordance_concordia}).
+\strong{The \verb{s_2_*} columns hold 1-sigma values}, as they always did (IsoplotR returns standard
+errors); a warning is issued once per session.}
 }
 \value{
-A data frame combining the input \code{df} with calculated ages (\code{age_75}, \code{age_68}, \code{age_76}, and concordia age).
+\code{df} with the new columns \code{age_75}, \code{age_75_2s}, \code{age_68}, \code{age_68_2s}, \code{age_76},
+\code{age_76_2s}, \code{age_conc}, \code{age_conc_2s}, \code{p_conc} and \verb{disc_<option>} (plus the legacy columns
+when \code{legacy = TRUE}). Rows with missing ratios get \code{NA}.
 }
 \description{
-This function calculates U-Pb ages using \code{IsoplotR::age}, handling possible errors and returning
-a data frame with age values and associated uncertainties.
+Computes 207Pb/235U, 206Pb/238U, 207Pb/206Pb and concordia ages, their 2-sigma uncertainties
+and the concordia-distance discordance for every row, using \code{IsoplotR::age(type = 1)} on the
+whole data frame at once.
 }
-\examples{
-# Assuming `df` is a data frame with the required columns
-use_isoplotr(df, age_type = 1)
+\details{
+Changes in version 0.0.0.9001:
+\itemize{
+\item the data are now read as IsoplotR format 3. Previous versions passed \code{type = 3} to
+\code{IsoplotR::read.data()}, whose argument is \code{format}, so the data were read as format 1 and
+the 207Pb/206Pb ratio was used as the error correlation. 206Pb/238U and 207Pb/235U ages were
+unaffected; 207Pb/206Pb ages, concordia ages and discordance changed;
+\item the Wetherill correlation is used as \code{rXY}, and the Tera-Wasserburg correlation (sign
+inverted) as \code{rYZ};
+\item the whole table is processed in one call (much faster than row by row);
+\item works with IsoplotR >= 7 (extra \code{p[conc]} column).
+}
+
+\code{tidy_isoplotr()} is kept for compatibility and now simply calls \code{use_isoplotr()} on the
+whole data frame.
 }

@@ -14,19 +14,23 @@
 #'
 #' @examples
 #' # Example for Tourmaline
-#' read.csv("./data/tourmaline_DHZ.csv") %>%
+#' read.csv(system.file("extdata", "tourmaline_DHZ.csv", package = "ztR")) %>%
 #'   chemical_formula(oxigens = 31, cations = 18, base = "anions")
 #'
 #' # Example for Epidote
-#' read.csv("./data/epidote_DHZ.csv") %>%
+#' read.csv(system.file("extdata", "epidote_DHZ.csv", package = "ztR")) %>%
 #'   chemical_formula(oxigens = c(12.5, 13, 12.5, 12.5, 12.5, 13), cations = 8, base = "cations")
 
 chemical_formula <- function(dataframe, oxigens, cations, weight_location = "/data/element_weights.csv", base = "anions") {
 
 
 
-  local <- paste(find.package("ztR"), weight_location, sep = "")
-  local_logic <- ifelse(weight_location == "/data/element_weights.csv", local, weight_location)
+  # default: table shipped in inst/extdata (the old path under /data only worked by accident)
+  local_logic <- if (identical(weight_location, "/data/element_weights.csv")) {
+    system.file("extdata", "element_weights.csv", package = "ztR")
+  } else {
+    weight_location
+  }
 
 
 

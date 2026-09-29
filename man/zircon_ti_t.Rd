@@ -2,33 +2,49 @@
 % Please edit documentation in R/zircon_ti_t.R
 \name{zircon_ti_t}
 \alias{zircon_ti_t}
-\title{Calculate zircon crystallization temperature}
+\title{Ti-in-zircon crystallization temperature}
 \usage{
-zircon_ti_t(pressure, aSiO2 = 1, aTiO2 = 1, ti_ppm, equation = "watson")
+zircon_ti_t(pressure = NULL, aSiO2 = 1, aTiO2 = 1, ti_ppm, equation = "watson")
 }
 \arguments{
-\item{pressure}{Pressure in giga Pascal.}
+\item{pressure}{Pressure in GPa. Required only for \code{equation = "crisp"}.}
 
-\item{aSiO2}{Activity fraction of SiO2 (default: 1).}
+\item{aSiO2}{SiO2 activity (default 1). Used by \code{"ferry_watson2007"} and \code{"crisp"}.}
 
-\item{aTiO2}{Activity fraction of TiO2 (default: 1).}
+\item{aTiO2}{TiO2 activity (default 1). Used by \code{"ferry_watson2007"} and \code{"crisp"}.}
 
-\item{ti_ppm}{Concentration of titanium in parts per million.}
+\item{ti_ppm}{Ti in zircon (ppm).}
 
-\item{equation}{Equation to use for calculation: "crisp" or "watson" (default: "crisp").}
+\item{equation}{Calibration:
+\itemize{
+\item \code{"watson"} (default, kept for compatibility) = \code{"watson_harrison2005"}:
+log(Ti) = 6.01 - 5080/T (Watson & Harrison 2005);
+\item \code{"ferry_watson2007"}: log(Ti) = 5.711 - 4800/T - log(aSiO2) + log(aTiO2)
+(Ferry & Watson 2007; equals Watson et al. 2006 when both activities are 1);
+\item \code{"crisp"}: pressure-dependent calibration of Crisp et al. (2023). The implementation has not
+yet been checked against the published equation; use with care.
+}}
 }
 \value{
-Crystallization temperature of zircon in Celsius.
+Temperature in degrees Celsius.
 }
 \description{
-This function calculates the crystallization temperature of zircon based on various parameters.
-}
-\details{
-References
-Crisp, Laura J., Andrew J. Berry, Antony D. Burnham, Laura A. Miller, and Matthew Newville. 2023. “The Ti-in-Zircon Thermometer Revised: The Effect of Pressure on the Ti Site in Zircon.” Geochimica Et Cosmochimica Acta 360 (November): 241–58. https://doi.org/10.1016/j.gca.2023.04.031.
-Watson, E. B., D. A. Wark, and J. B. Thomas. 2006. “Crystallization Thermometers for Zircon and Rutile.” Contributions to Mineralogy and Petrology 151 (4): 413–33. https://doi.org/10.1007/s00410-006-0068-5.
+Ti-in-zircon crystallization temperature
 }
 \examples{
-zircon_ti_t(pressure = 5, ti_ppm = 50)
+zircon_ti_t(ti_ppm = 10)
+zircon_ti_t(ti_ppm = 10, equation = "ferry_watson2007", aTiO2 = 0.6)
+zircon_ti_t(ti_ppm = 10, equation = "crisp", pressure = 0.5)
+}
+\references{
+Watson, E.B. and Harrison, T.M., 2005. Zircon thermometer reveals minimum melting conditions on
+earliest Earth. \emph{Science}, 308, 841-844.
 
+Ferry, J.M. and Watson, E.B., 2007. New thermodynamic models and revised calibrations for the
+Ti-in-zircon and Zr-in-rutile thermometers. \emph{Contributions to Mineralogy and Petrology}, 154,
+429-437.
+
+Crisp, L.J., Berry, A.J., Burnham, A.D., Miller, L.A. and Newville, M., 2023. The Ti-in-zircon
+thermometer revised: The effect of pressure on the Ti site in zircon. \emph{Geochimica et
+Cosmochimica Acta}, 360, 241-258.
 }

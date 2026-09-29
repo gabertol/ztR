@@ -2,3 +2,17 @@ url: https://gabertol.github.io/ztR/
 template:
   bootstrap: 5
 
+articles:
+- title: Start here
+  navbar: ~
+  contents:
+  - ztR
+- title: Zircon
+  navbar: Zircon
+  contents:
+  - zircon-geochemistry
+  - u-pb-geochronology
+- title: Other minerals
+  navbar: Other minerals
+  contents:
+  - mineral-formula

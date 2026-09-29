@@ -1,0 +1,111 @@
+---
+title: "Mineral formulae (APFU)"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Mineral formulae (APFU)}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 7, fig.height = 4.5)
+has_tern <- requireNamespace("ggtern", quietly = TRUE) && requireNamespace("ggarnet", quietly = TRUE)
+```
+
+`chemical_formula()` converts oxide wt% (EPMA, SEM-EDS) into atoms per formula unit (APFU),
+normalizing either to a fixed number of oxygens (`base = "anions"`) or of cations
+(`base = "cations"`).
+
+```{r setup, message = FALSE}
+library(ztR)
+library(tidyverse)
+```
+
+## Input
+
+One row per analysis, an identifier column called `specimen` and one column per oxide, named as
+in the oxide table of the package (`SiO2`, `Al2O3`, `FeO`, `Fe2O3`, `H2O_plus`, …). The oxides
+must be the last columns of the table, starting at `SiO2`. Missing oxides can be `NA`; they are
+treated as zero.
+
+The package ships three small example tables with textbook compositions (Deer, Howie & Zussman):
+
+```{r}
+read_ex <- function(file) {
+  read.csv(system.file("extdata", file, package = "ztR")) %>%
+    select(specimen, mineral, everything(), -X)
+}
+
+tourmaline <- read_ex("tourmaline_DHZ.csv")
+garnet     <- read_ex("garnet_DHZ.csv")
+epidote    <- read_ex("epidote_DHZ.csv")
+
+garnet
+```
+
+`chemical_formula()` returns `specimen` plus one column per cation (and the normalization bases),
+so the result is joined back to the input by `specimen`.
+
+## Tourmaline: 31 anions
+
+```{r}
+tur <- tourmaline %>%
+  select(specimen, mineral) %>%
+  left_join(chemical_formula(tourmaline, oxigens = 31, cations = 16), by = "specimen")
+
+tur %>% select(mineral, Si, Al, Fe, Fe3, Mg, Na, Ca)
+```
+
+## Garnet: 24 oxygens
+
+```{r}
+gt <- garnet %>%
+  select(specimen, mineral) %>%
+  left_join(chemical_formula(garnet, oxigens = 24, cations = 16), by = "specimen")
+
+gt %>% select(mineral, Si, Al, Fe, Fe3, Mn, Mg, Ca)
+```
+
+End-member proportions follow directly from the X-site cations:
+
+```{r}
+gt %>%
+  mutate(x_site = Fe + Mn + Mg + Ca,
+         Alm = Fe / x_site, Sps = Mn / x_site, Prp = Mg / x_site, Grs = Ca / x_site) %>%
+  select(mineral, Alm:Grs) %>%
+  pivot_longer(Alm:Grs, names_to = "end_member", values_to = "fraction") %>%
+  ggplot(aes(mineral, fraction, fill = end_member)) +
+  geom_col() +
+  labs(x = NULL, y = "Molar fraction", fill = NULL) +
+  theme_minimal()
+```
+
+## Epidote: different oxygen bases per row
+
+`oxigens` can be a vector with one value per row. Here the Fe-free members are normalized to 12.5
+oxygens and the rest to 13:
+
+```{r}
+epidote %>%
+  select(specimen, mineral) %>%
+  left_join(chemical_formula(epidote, oxigens = c(12.5, 13, 12.5, 12.5, 12.5, 13), cations = 8),
+            by = "specimen") %>%
+  select(mineral, Si, Al, Fe3, Ca)
+```
+
+## Ternary diagrams
+
+Classification diagrams can be drawn with the companion package
+[ggarnet](https://github.com/gabertol/ggarnet), built on ggtern. The chunk below only runs when
+both are installed.
+
+```{r, eval = has_tern, message = FALSE}
+library(ggtern)
+library(ggarnet)
+
+ggarnet_fe_mn() +
+  geom_point(data = gt, aes(x = Fe3 + Fe + Mn, z = Ca, y = Mg, shape = mineral), size = 4, alpha = 0.6)
+
+ggarnet_tourmaline() +
+  geom_point(data = tur, aes(x = Fe3 + Fe, y = Al, z = Mg, shape = mineral), size = 4, alpha = 0.6)
+```

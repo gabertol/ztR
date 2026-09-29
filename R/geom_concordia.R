@@ -1,80 +1,72 @@
-#' Add Concordia Ellipses to a Plot
+#' Error ellipses for concordia diagrams
 #'
-#' This function adds concordia ellipses to a plot, representing the uncertainty in isotope ratio data.
-#' Each ellipse is calculated based on the provided covariance structure of the data points.
+#' Draws one error ellipse per row from `x`, `y`, `sigma_x`, `sigma_y` and `rho`.
 #'
-#' @param mapping Aesthetic mappings for the plot, passed to `ggplot2::aes`.
-#' @param data Optional dataset for the layer. If `NULL`, the default, the data is inherited from the plot.
-#' @param stat The statistical transformation to use on the data, defaults to "identity".
-#' @param position The position adjustment, either as a string, or the result of a call to a position adjustment function.
-#' @param na.rm If `FALSE` (default), missing values are removed with a warning. If `TRUE`, they are removed silently.
-#' @param show.legend Should this layer be included in the legends? `NA` (default) includes if any aesthetics are mapped.
-#' @param inherit.aes If `TRUE`, inherit the default aesthetics from the plot. If `FALSE`, overrides them.
-#' @param ... Other arguments passed to `ggplot2::layer`.
+#' @param mapping,data,position,na.rm,show.legend,inherit.aes As in [ggplot2::layer()].
+#' @param stat Kept for compatibility; the stat is always `StatConcordia`.
+#' @param level Confidence level of the ellipse (default 0.95). Use `NULL` to draw the raw
+#'   1-sigma ellipse, as in versions before 0.0.0.9001.
+#' @param sigma_level Level of the uncertainties given in `sigma_x`/`sigma_y`: `1` (default,
+#'   standard errors) or `2` (2-sigma). With the package convention of `*_2s` columns, either map
+#'   `sigma_x = pb207_u235_2s` and set `sigma_level = 2`, or divide by 2 in the mapping.
+#' @param n Number of vertices per ellipse.
+#' @param ... Other arguments passed to the polygon geom (e.g. `alpha`, `colour`, `fill`).
 #'
-#' @return A ggplot2 layer with concordia ellipses.
+#' @details Required aesthetics: `x`, `y`, `sigma_x`, `sigma_y`, `rho`. `fill` (and any other
+#'   aesthetic) is optional. Each row gets its own polygon, so ellipses never merge, whatever the
+#'   grouping.
 #' @export
 #' @examples
-#' # Assuming `data` contains x, y, sigma_x, sigma_y, rho, and fill columns
-#' ggplot(data, aes(x = x, y = y, sigma_x = sigma_x, sigma_y = sigma_y, rho = rho, fill = fill)) +
-#'   geom_concordia()
+#' \dontrun{
+#' ggplot(df, aes(x = pb207_u235, y = pb206_u238, sigma_x = pb207_u235_2s,
+#'                sigma_y = pb206_u238_2s, rho = rho_206pb_238u_v_207pb_235u, fill = sample)) +
+#'   geom_concordia(sigma_level = 2, alpha = 0.5) +
+#'   geom_concordia_line(age_range = c(900, 1200))
+#' }
 geom_concordia <- function(mapping = NULL, data = NULL, stat = "identity", position = "identity",
-                           na.rm = FALSE, show.legend = NA, inherit.aes = TRUE, ...) {
-  layer(
+                           na.rm = FALSE, show.legend = NA, inherit.aes = TRUE,
+                           level = 0.95, sigma_level = 1, n = 100, ...) {
+  ggplot2::layer(
     stat = StatConcordia,
     data = data,
     mapping = mapping,
-    geom = GeomPolygon,
+    geom = ggplot2::GeomPolygon,
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
-    params = list(na.rm = na.rm, ...)
+    params = list(na.rm = na.rm, level = level, sigma_level = sigma_level, n = n, ...)
   )
 }
 
-#' Concordia Statistical Transformation
-#'
-#' A ggproto object for computing concordia ellipses based on input data's covariance structure.
-#' This transformation generates ellipse points centered at each (x, y) coordinate with the
-#' specified covariance values, using `sigma_x`, `sigma_y`, and `rho` as inputs.
-#'
-#' @format A ggproto object.
+#' @rdname geom_concordia
+#' @format NULL
+#' @usage NULL
 #' @export
-StatConcordia <- ggproto("StatConcordia", Stat,
-                         compute_group = function(data, scales, ...) {
-                           ellipses <- lapply(1:nrow(data), function(i) {
-                             x <- data$x[i]
-                             y <- data$y[i]
-                             sigma_x <- data$sigma_x[i]
-                             sigma_y <- data$sigma_y[i]
-                             rho <- data$rho[i]
-                             fill_value <- data$fill[i]
+StatConcordia <- ggplot2::ggproto("StatConcordia", ggplot2::Stat,
+  required_aes = c("x", "y", "sigma_x", "sigma_y", "rho"),
+  dropped_aes = c("sigma_x", "sigma_y", "rho"),
 
-                             # Check for missing values to avoid errors
-                             if (is.na(x) || is.na(y) || is.na(sigma_x) || is.na(sigma_y) || is.na(rho)) {
-                               return(NULL)
-                             }
+  compute_panel = function(data, scales, level = 0.95, sigma_level = 1, n = 100) {
+    k <- if (is.null(level)) 1 else sqrt(stats::qchisq(level, df = 2))
+    angles <- seq(0, 2 * pi, length.out = n)
+    unit <- cbind(cos(angles), sin(angles))
+    keep_cols <- setdiff(names(data), c("x", "y", "sigma_x", "sigma_y", "rho", "group"))
 
-                             # Covariance matrix to calculate ellipse
-                             cov_matrix <- matrix(c(sigma_x^2, rho * sigma_x * sigma_y, rho * sigma_x * sigma_y, sigma_y^2), nrow = 2)
-
-                             # Generate points for the ellipse
-                             angles <- seq(0, 2 * pi, length.out = 100)
-                             unit_circle <- cbind(cos(angles), sin(angles))
-                             ellipse_points <- t(chol(cov_matrix)) %*% t(unit_circle)
-
-                             # Adjust points to the center position (x, y)
-                             ellipse_df <- as.data.frame(t(ellipse_points))
-                             ellipse_df$x <- ellipse_df$V1 + x
-                             ellipse_df$y <- ellipse_df$V2 + y
-                             ellipse_df$fill <- fill_value
-                             ellipse_df$group <- i
-
-                             return(ellipse_df[, c("x", "y", "fill", "group")])
-                           })
-
-                           ellipses <- do.call(rbind, Filter(Negate(is.null), ellipses))
-                           return(ellipses)
-                         },
-                         required_aes = c("x", "y", "sigma_x", "sigma_y", "rho", "fill")
+    polys <- lapply(seq_len(nrow(data)), function(i) {
+      d <- data[i, , drop = FALSE]
+      sx <- d$sigma_x / sigma_level; sy <- d$sigma_y / sigma_level; r <- d$rho
+      if (anyNA(c(d$x, d$y, sx, sy, r)) || sx <= 0 || sy <= 0 || abs(r) > 1) return(NULL)
+      cv <- matrix(c(sx^2, r * sx * sy, r * sx * sy, sy^2), 2)
+      pts <- k * unit %*% chol(cv)
+      out <- data.frame(x = d$x + pts[, 1], y = d$y + pts[, 2], group = i)
+      if (length(keep_cols)) out <- cbind(out, d[rep(1, n), keep_cols, drop = FALSE])
+      out
+    })
+    dropped <- sum(vapply(polys, is.null, logical(1)))
+    if (dropped > 0) warning(dropped, " ellipse(s) skipped (NA, non-positive sigma or |rho| > 1).",
+                             call. = FALSE)
+    out <- do.call(rbind, polys)
+    rownames(out) <- NULL
+    out
+  }
 )

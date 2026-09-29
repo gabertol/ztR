@@ -1,0 +1,96 @@
+---
+title: "Getting started with ztR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with ztR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 7, fig.height = 4.5)
+```
+
+ztR (**Z**ircon–**T**ourmaline–**R**utile) is a small toolbox for mineral chemistry and zircon
+geochronology that works the *tidy* way: a data frame goes in, the same data frame comes out with
+new columns. It wraps the heavy lifting of packages such as IsoplotR so you do not have to deal
+with their own data classes.
+
+```{r setup, message = FALSE}
+library(ztR)
+library(tidyverse)
+```
+
+## What is in the package
+
+| Topic | Functions | Article |
+|---|---|---|
+| Mineral formulae (APFU) | `chemical_formula()` | `vignette("mineral-formula")` |
+| Zircon trace elements | `normalize()`, `ratio_calculator()`, `anomaly()` | `vignette("zircon-geochemistry")` |
+| Thermometry and oxybarometry | `zircon_ti_t()`, `zircon_ti_p()`, `FMQ()` | `vignette("zircon-geochemistry")` |
+| Source-rock classification | `classify_rock_long()`, `classify_rock_short()`, `classify_rock_long_no_ce()` | `vignette("zircon-geochemistry")` |
+| Parent-rock composition | `WR_calculator()`, `WR_crustal_thickness()`, `crustal_thickness()` | `vignette("zircon-geochemistry")` |
+| U-Pb ages | `use_isoplotr()` | `vignette("u-pb-geochronology")` |
+| Concordia diagrams | `geom_concordia()`, `geom_concordia_line()` | `vignette("u-pb-geochronology")` |
+
+## Conventions
+
+ztR expects lower-case column names made of the element symbol and the mass of the measured
+isotope, and uncertainties in a column with the same name plus the suffix `_2s`:
+
+| Quantity | Column | Uncertainty |
+|---|---|---|
+| La (ppm) | `la139` | `la139_2s` |
+| U (ppm) | `approx_u` | `approx_u_2s` |
+| 207Pb/235U | `pb207_u235` | `pb207_u235_2s` |
+| 206Pb/238U | `pb206_u238` | `pb206_u238_2s` |
+| 207Pb/206Pb | `pb207_pb206` | `pb207_pb206_2s` |
+| Wetherill error correlation | `rho_206pb_238u_v_207pb_235u` | — |
+| Tera-Wasserburg error correlation | `rho_207pb_206pb_v_238u_206pb` | — |
+
+* Concentrations are in ppm.
+* Uncertainties are **2-sigma absolute**.
+* Ages are in Ma.
+* Chondrite-normalized values get the suffix `_N`; whole-rock estimates the suffix `_WR`.
+
+## Reading an Iolite export
+
+The package ships a table of reference zircons (91500, Plešovice, FC-1 and PCIGR-1) exported from
+Iolite. Iolite names columns like `la139_ppm_mean` and `la139_ppm_2se_int`; one `rename_with()`
+brings them to the ztR convention:
+
+```{r}
+zircons <- read_csv(system.file("extdata", "stds_zircon.csv", package = "ztR"),
+                    show_col_types = FALSE, name_repair = "unique_quiet") %>%
+  rename_with(~ .x %>%
+                str_replace_all("_mean|_ppm", "") %>%
+                str_replace_all("_2se_int", "_2s")) %>%
+  mutate(sample = recode(sample, "91500-G" = "91500", "FC1" = "FC-1"))
+
+zircons %>% count(sample)
+```
+
+The same object is used in the other articles.
+
+## A first pipeline
+
+Every function adds columns, so they chain:
+
+```{r}
+zircons %>%
+  filter(sample == "PL") %>%
+  slice(1:5) %>%
+  normalize(element_vector = c(la139:lu175)) %>%
+  mutate(eu_eu = anomaly(eu153_N, sm147_N, gd157_N),
+         t_ti  = zircon_ti_t(ti_ppm = ti49)) %>%
+  select(sample, eu_eu, t_ti)
+```
+
+## Backwards compatibility
+
+Version 0.0.0.9001 fixed several bugs (see `NEWS.md`). Old code keeps running:
+
+* `ratio_calculator()` and `use_isoplotr()` return their old columns by default
+  (`legacy = TRUE`) and warn once per session about what those columns really contain;
+* `add_concordia_line()` still exists, with its original (transposed) axes;
+  `geom_concordia_line()` is the new version.

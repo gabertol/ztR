@@ -13,6 +13,10 @@
 #' @param ce_ce_col Column name as a string for the `ce_ce` parameter.
 #' @param nb_col Column name as a string for the `nb93` parameter.
 #' @param th_u_col Column name as a string for the `th_u` parameter.
+#' @details Each split uses `<` on the left branch and `>=` on the right branch, so values exactly at
+#'   a threshold are classified (before version 0.0.0.9001 they fell into "Unclassified").
+#'   Rows with `NA` in a variable needed by the tree are returned as "Unclassified".
+#'   Thresholds follow Belousova et al. (2002); Hf thresholds are in wt% and the other elements in ppm.
 #' @return A data frame with an added `classification` column specifying the classified rock type.
 #' @examples
 #' \dontrun{
@@ -32,59 +36,59 @@ classify_rock_long <- function(data,
     mutate(
       classification = case_when(
         # First branch
-        .data[[lu_col]] > 20.7 &
+        .data[[lu_col]] >= 20.7 &
           .data[[u_col]] < 38 ~ "Ne-Syenite",
 
         .data[[lu_col]] < 20.7 &
           .data[[ta_col]] < 0.5 ~ "Syenite",
 
         # Second branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
           .data[[ta_col]] < 0.58 ~ "Dolerite",
 
         .data[[lu_col]] < 20.7 &
-          .data[[ta_col]] > 0.5 &
-          .data[[lu_col]] > 2.3 ~ "Carbonatite",
+          .data[[ta_col]] >= 0.5 &
+          .data[[lu_col]] >= 2.3 ~ "Carbonatite",
 
         .data[[lu_col]] < 20.7 &
-          .data[[ta_col]] > 0.5 &
+          .data[[ta_col]] >= 0.5 &
           .data[[lu_col]] < 2.3 ~ "Kimberlite",
 
         # Third branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
           .data[[hf_col]] < 0.8 ~  "Basalt",
 
         # Fourth branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
-          .data[[hf_col]] > 0.8 &
-          .data[[ce_ce_col]] > 3.9 ~  "Larvikite",
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
+          .data[[hf_col]] >= 0.8 &
+          .data[[ce_ce_col]] >= 3.9 ~  "Larvikite",
 
         # Fifth branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
-          .data[[hf_col]] > 0.8 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
+          .data[[hf_col]] >= 0.8 &
           .data[[ce_ce_col]] < 3.9  &
-          .data[[nb_col]] > 170 ~ "Granitoid (>75% SiO2)",
+          .data[[nb_col]] >= 170 ~ "Granitoid (>75% SiO2)",
 
         # Sixth branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
-          .data[[hf_col]] > 0.8 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
+          .data[[hf_col]] >= 0.8 &
           .data[[ce_ce_col]] < 3.9 &
           .data[[nb_col]] < 170 &
-          .data[[th_u_col]] > 0.44  ~ "Granitoid (65-70% SiO2)",
+          .data[[th_u_col]] >= 0.44  ~ "Granitoid (65-70% SiO2)",
 
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
-          .data[[hf_col]] > 0.8 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
+          .data[[hf_col]] >= 0.8 &
           .data[[ce_ce_col]] < 3.9 &
           .data[[nb_col]] < 170 &
           .data[[th_u_col]] < 0.44 ~ "Granitoid (70-75% SiO2)",
@@ -95,6 +99,10 @@ classify_rock_long <- function(data,
     )
 }
 
+#' @rdname classify_rock_long
+#' @param y_col Column name for `y89`.
+#' @param yb_col Column name for `yb172`.
+#' @export
 classify_rock_short <- function(data, lu_col = "lu175",
                                 u_col = "approx_u",
                                 hf_col = "hf",
@@ -104,61 +112,61 @@ classify_rock_short <- function(data, lu_col = "lu175",
     mutate(
       classification = case_when(
         # First branch
-        .data[[lu_col]] > 20.71 &
-          .data[[lu_col]] > 601 ~ "Ne-Syenite",
+        .data[[lu_col]] >= 20.71 &
+          .data[[lu_col]] >= 601 ~ "Ne-Syenite",
 
         .data[[lu_col]] < 20.71 &
           .data[[hf_col]] < 0.62 ~ "Syenite",
 
         # Second branch
-        .data[[lu_col]] > 20.71 &
+        .data[[lu_col]] >= 20.71 &
           .data[[lu_col]] < 601 &
           .data[[hf_col]] < 0.8 ~ "Basalt",
 
         .data[[lu_col]] < 20.71 &
-          .data[[hf_col]] > 0.62 &
-          .data[[lu_col]] > 2.7 ~ "Carbonatite",
+          .data[[hf_col]] >= 0.62 &
+          .data[[lu_col]] >= 2.7 ~ "Carbonatite",
 
         .data[[lu_col]] < 20.71 &
-          .data[[hf_col]] > 0.62 &
+          .data[[hf_col]] >= 0.62 &
           .data[[lu_col]] < 2.7 ~ "Kimberlite",
 
         # fourth branch
 
-        .data[[lu_col]] > 20.71 &
+        .data[[lu_col]] >= 20.71 &
           .data[[lu_col]] < 601 &
-          .data[[hf_col]] > 0.8 &
-          .data[[y_col]] > 4433 &
+          .data[[hf_col]] >= 0.8 &
+          .data[[y_col]] >= 4433 &
           .data[[u_col]] < 1149~ "Monzonite",
 
-        .data[[lu_col]] > 20.71 &
+        .data[[lu_col]] >= 20.71 &
           .data[[lu_col]] < 601 &
-          .data[[hf_col]] > 0.8 &
-          .data[[y_col]] > 4433 &
-          .data[[u_col]] > 1149~ "Granitoid (>75 SiO2)",
+          .data[[hf_col]] >= 0.8 &
+          .data[[y_col]] >= 4433 &
+          .data[[u_col]] >= 1149~ "Granitoid (>75 SiO2)",
 
         # fifth branch
-        .data[[lu_col]] > 20.71 &
+        .data[[lu_col]] >= 20.71 &
           .data[[lu_col]] < 601 &
-          .data[[hf_col]] > 0.8 &
+          .data[[hf_col]] >= 0.8 &
           .data[[y_col]] < 4433 &
           .data[[hf_col]] < 1.015~ "Dolerite",
         #
         # # Sixth branch
         #
-        .data[[lu_col]] > 20.71 &
+        .data[[lu_col]] >= 20.71 &
           .data[[lu_col]] < 601 &
-          .data[[hf_col]] > 0.8 &
+          .data[[hf_col]] >= 0.8 &
           .data[[y_col]] < 4433 &
-          .data[[hf_col]] > 1.015 &
-          .data[[yb_col]] > 501~ "Granitoid (70-75% SiO2)",
+          .data[[hf_col]] >= 1.015 &
+          .data[[yb_col]] >= 501~ "Granitoid (70-75% SiO2)",
 
         #
-        .data[[lu_col]] > 20.71 &
+        .data[[lu_col]] >= 20.71 &
           .data[[lu_col]] < 601 &
-          .data[[hf_col]] > 0.8 &
+          .data[[hf_col]] >= 0.8 &
           .data[[y_col]] < 4433 &
-          .data[[hf_col]] > 1.015 &
+          .data[[hf_col]] >= 1.015 &
           .data[[yb_col]] < 501~ "Granitoid (<65% SiO2)",
 
         # Catch-all for unclassified data
@@ -167,6 +175,8 @@ classify_rock_short <- function(data, lu_col = "lu175",
     )
 }
 
+#' @rdname classify_rock_long
+#' @export
 classify_rock_long_no_ce <- function(data,
                                lu_col = "lu175",
                                u_col = "approx_u",
@@ -178,50 +188,50 @@ classify_rock_long_no_ce <- function(data,
     mutate(
       classification = case_when(
         # First branch
-        .data[[lu_col]] > 20.7 &
+        .data[[lu_col]] >= 20.7 &
           .data[[u_col]] < 38 ~ "Ne-Syenite",
 
         .data[[lu_col]] < 20.7 &
           .data[[ta_col]] < 0.5 ~ "Syenite",
 
         # Second branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
           .data[[ta_col]] < 0.58 ~ "Dolerite",
 
         .data[[lu_col]] < 20.7 &
-          .data[[ta_col]] > 0.5 &
-          .data[[lu_col]] > 2.3 ~ "Carbonatite",
+          .data[[ta_col]] >= 0.5 &
+          .data[[lu_col]] >= 2.3 ~ "Carbonatite",
 
         .data[[lu_col]] < 20.7 &
-          .data[[ta_col]] > 0.5 &
+          .data[[ta_col]] >= 0.5 &
           .data[[lu_col]] < 2.3 ~ "Kimberlite",
 
         # Third branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
           .data[[hf_col]] < 0.8 ~  "Basalt",
 
           # Fifth branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
-          .data[[hf_col]] > 0.8 &
-          .data[[nb_col]] > 170 ~ "Granitoid (>75% SiO2)",
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
+          .data[[hf_col]] >= 0.8 &
+          .data[[nb_col]] >= 170 ~ "Granitoid (>75% SiO2)",
 
         # Sixth branch
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
-          .data[[hf_col]] > 0.8 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
+          .data[[hf_col]] >= 0.8 &
           .data[[nb_col]] < 170 &
-          .data[[th_u_col]] > 0.44  ~ "Granitoid (65-70% SiO2)",
+          .data[[th_u_col]] >= 0.44  ~ "Granitoid (65-70% SiO2)",
 
-        .data[[lu_col]] > 20.7 &
-          .data[[u_col]] > 38 &
-          .data[[ta_col]] > 0.58 &
-          .data[[hf_col]] > 0.8 &
+        .data[[lu_col]] >= 20.7 &
+          .data[[u_col]] >= 38 &
+          .data[[ta_col]] >= 0.58 &
+          .data[[hf_col]] >= 0.8 &
           .data[[nb_col]] < 170 &
           .data[[th_u_col]] < 0.44 ~ "Granitoid (70-75% SiO2)",
 

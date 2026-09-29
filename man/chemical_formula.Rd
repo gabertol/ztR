@@ -32,10 +32,10 @@ The calculations can be based on either the number of oxygens (anions) or cation
 }
 \examples{
 # Example for Tourmaline
-read.csv("./data/tourmaline_DHZ.csv") \%>\%
+read.csv(system.file("extdata", "tourmaline_DHZ.csv", package = "ztR")) \%>\%
   chemical_formula(oxigens = 31, cations = 18, base = "anions")
 
 # Example for Epidote
-read.csv("./data/epidote_DHZ.csv") \%>\%
+read.csv(system.file("extdata", "epidote_DHZ.csv", package = "ztR")) \%>\%
   chemical_formula(oxigens = c(12.5, 13, 12.5, 12.5, 12.5, 13), cations = 8, base = "cations")
 }

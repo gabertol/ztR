@@ -1,33 +1,20 @@
-#' Calculate the Pressure for a Given Ti Concentration in Zircon
+#' Pressure from Ti in zircon
 #'
-#' This function calculates the pressure (in GPa) for a given Ti concentration in zircon (Ti concentration in ppm).
-#' The function uses a quadratic equation to solve for pressure.
+#' Solves 0.013 P^2 - 0.21 P + (3.41 - log10(Ti)) = 0 for P (GPa) and returns the smallest real
+#' root. Vectorized. Returns `NA` when there is no real solution (with these coefficients, for
+#' Ti below ~365 ppm).
 #'
-#' @param ti Numeric. The value of Ti concentration in ppm.
+#' The source of the coefficients is not documented yet; check before use.
 #'
-#' @return Numeric. The pressure in gigapascals (GPa) or NA if no real solution exists.
-#'
+#' @param ti Ti in zircon (ppm). Numeric vector.
+#' @return Pressure in GPa (numeric vector, `NA` where there is no real root).
 #' @examples
-#' # Example usage:
-#' zircon_ti_p(3.0)
-#'
-#'
+#' zircon_ti_p(c(10, 400, 1000))
+#' @export
 zircon_ti_p <- function(ti) {
-  l_ti<-log10(ti)
-
-  a <- 0.013
-  b <- -0.21
-  c <- 3.41 - l_ti
-
-  # Solver
-  coeficients <- c(a, b, c)
-  solutions <- pracma::roots(coeficients)
-
-  if (is.numeric(solutions)) {
-    return(min(solutions))
-  }
-
-  else {
-    return(NA)
-  }
+  a <- 0.013; b <- -0.21; c <- 3.41 - log10(ti)
+  disc <- b^2 - 4 * a * c
+  out <- (-b - sqrt(pmax(disc, 0))) / (2 * a)
+  out[is.na(disc) | disc < 0] <- NA_real_
+  out
 }

@@ -2,23 +2,24 @@
 % Please edit documentation in R/zircon_ti_p.R
 \name{zircon_ti_p}
 \alias{zircon_ti_p}
-\title{Calculate the Pressure for a Given Ti Concentration in Zircon}
+\title{Pressure from Ti in zircon}
 \usage{
 zircon_ti_p(ti)
 }
 \arguments{
-\item{ti}{Numeric. The value of Ti concentration in ppm.}
+\item{ti}{Ti in zircon (ppm). Numeric vector.}
 }
 \value{
-Numeric. The pressure in gigapascals (GPa) or NA if no real solution exists.
+Pressure in GPa (numeric vector, \code{NA} where there is no real root).
 }
 \description{
-This function calculates the pressure (in GPa) for a given Ti concentration in zircon (Ti concentration in ppm).
-The function uses a quadratic equation to solve for pressure.
+Solves 0.013 P^2 - 0.21 P + (3.41 - log10(Ti)) = 0 for P (GPa) and returns the smallest real
+root. Vectorized. Returns \code{NA} when there is no real solution (with these coefficients, for
+Ti below ~365 ppm).
+}
+\details{
+The source of the coefficients is not documented yet; check before use.
 }
 \examples{
-# Example usage:
-zircon_ti_p(3.0)
-
-
+zircon_ti_p(c(10, 400, 1000))
 }
