@@ -17,6 +17,9 @@ FMQ(ce, u, ti, age, correct_u = TRUE)
 
 \item{correct_u}{If \code{TRUE} (default) U is corrected to its initial value with \code{\link[=u_corrector]{u_corrector()}}.}
 }
+\value{
+Delta FMQ. \code{NA} where any concentration is zero, negative or missing.
+}
 \description{
 Delta FMQ = 3.998 * log10(Ce / sqrt(Ui * Ti)) + 2.284, with concentrations in ppm and Ui the
 initial U content (U corrected for decay since crystallization).

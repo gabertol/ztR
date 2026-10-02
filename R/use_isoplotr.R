@@ -51,8 +51,8 @@ use_isoplotr <- function(df, age_type = 1, discordance = "c", concordia = TRUE, 
   ryz <- if ("rho_207pb_206pb_v_238u_206pb" %in% names(df)) -df$rho_207pb_206pb_v_238u_206pb else NA_real_
   X <- cbind(df$pb207_u235, df$pb207_u235_2s, df$pb206_u238, df$pb206_u238_2s,
              df$pb207_pb206, df$pb207_pb206_2s, rxy, ryz)
-  X[, 7:8][abs(X[, 7:8]) >= 1] <- NA          # impossible correlations -> let IsoplotR infer
-  ok <- stats::complete.cases(X[, 1:6]) & X[, 1] > 0 & X[, 3] > 0 & X[, 5] > 0 &
+  X[, 7:8][abs(X[, 7:8, drop = FALSE]) >= 1] <- NA          # impossible correlations -> let IsoplotR infer
+  ok <- stats::complete.cases(X[, 1:6, drop = FALSE]) & X[, 1] > 0 & X[, 3] > 0 & X[, 5] > 0 &
     X[, 2] > 0 & X[, 4] > 0 & X[, 6] > 0
 
   disc_name <- paste0("disc_", discordance)

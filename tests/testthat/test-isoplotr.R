@@ -24,3 +24,12 @@ test_that("rows with bad ratios give NA instead of breaking the call", {
   expect_false(is.na(r$age_68[1]))
   expect_true(is.na(r$age_68[2]))
 })
+
+test_that("a single-row input works (drop = FALSE)", {
+  skip_if_not_installed("IsoplotR")
+  d <- tibble::tibble(pb207_u235 = 0.7, pb207_u235_2s = 0.02, pb206_u238 = 0.085,
+                      pb206_u238_2s = 0.002, pb207_pb206 = 0.0597, pb207_pb206_2s = 0.001)
+  r <- use_isoplotr(d, legacy = FALSE)
+  expect_equal(nrow(r), 1)
+  expect_false(is.na(r$age_conc))
+})

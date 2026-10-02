@@ -26,7 +26,7 @@ yet been checked against the published equation; use with care.
 }}
 }
 \value{
-Temperature in degrees Celsius.
+Temperature in degrees Celsius. \code{NA} where \code{ti_ppm} is zero, negative or missing.
 }
 \description{
 Ti-in-zircon crystallization temperature

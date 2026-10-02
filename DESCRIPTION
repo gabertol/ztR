@@ -1,6 +1,6 @@
 Package: ztR
 Title: ztR
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: 
     person("Gabriel", "Bertolini", , "gabertol@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3873-6190"))
@@ -18,6 +18,7 @@ Imports:
     tidyr,
     utils
 Encoding: UTF-8
+NeedsCompilation: no
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
 URL: https://gabertol.github.io/ztR/
